@@ -1,0 +1,67 @@
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  &_container {
+    height: $yr * 12;
+    padding: $yr * 3 $xr;
+    position: relative;
+  }
+
+  &_logo {
+    position: absolute;
+    width: 120px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    a {
+      display: block;
+
+      svg {
+        display: block;
+        fill: #fff;
+      }
+    }
+
+    @include mq($s) {
+      width: 150px;
+    }
+  }
+
+  &_burger {
+    padding: $yr * 1.5 $xr;
+    position: absolute;
+    left: 0;
+    top: $yr * 3;
+
+    svg {
+      display: block;
+      width: $yr * 3;
+      fill: #fff;
+    }
+  }
+
+  &_book {
+    border: 1px solid rgba(#fff, 0.3);
+    border-radius: 2px;
+    height: $yr * 6;
+    width: $yr * 6;
+    position: absolute;
+    right: $xr;
+    top: $yr * 3;
+  }
+
+  @include mq($l) {
+    &_burger {
+      display: none;
+    }
+
+    &_logo {
+      left: $xr * 3;
+      transform: translate(0, -50%);
+    }
+  }
+}

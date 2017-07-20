@@ -1,0 +1,12 @@
+header.header
+  .header_container
+    .header_burger
+      svg viewBox="0 0 24 24"
+        rect x=0 y=8 width=24 height=1
+        rect x=0 y=15 width=24 height=1
+
+    .header_logo
+      = link_to root_path do
+        = inline_svg 'logo.svg'
+
+    .header_book
