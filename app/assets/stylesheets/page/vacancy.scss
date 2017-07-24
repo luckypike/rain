@@ -1,0 +1,28 @@
+.page_vacancy {
+  &_image {
+    background-color: #b17881;
+    margin-bottom: $yr * 4.5;
+
+
+    .imef_ar {
+      @include aspect-ratio(4, 5);
+
+      @include mq($s) {
+        @include aspect-ratio-modify(5, 4);
+      }
+
+      @include mq($m) {
+        @include aspect-ratio-modify(2, 1);
+      }
+
+    }
+
+  }
+
+  &_intro {
+    margin-bottom: $yr * 4.5;
+    padding: 0 $xr;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}

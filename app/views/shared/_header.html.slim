@@ -9,4 +9,31 @@ header.header
       = link_to root_path do
         = inline_svg 'logo.svg'
 
+    .header_menu
+      .header_menu_item
+        = link_to 'Пространство', root_path(anchor: 'spc')
+
+      .header_menu_item
+        = link_to 'Философия', root_path(anchor: 'phl')
+
+      .header_menu_item
+        = link_to 'Цены', root_path(anchor: 'prc')
+
+      .header_menu_item
+        = link_to 'Работы', root_path(anchor: 'prc')
+
+      .header_menu_item
+        = link_to 'Сообщество', root_path(anchor: 'comm')
+
+      .header_menu_item
+        = link_to 'Вакансии', vacancy_path
+
     .header_book
+      .book.sign.ms_booking
+        .icon
+          svg viewBox="0 0 38 38"
+            rect x=15 y=18 width=8 height=2
+            rect x=18 y=15 width=2 height=8
+
+        .text
+          | Записаться

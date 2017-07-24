@@ -3,6 +3,8 @@
   left: 0;
   top: 0;
   width: 100%;
+  z-index: 5;
+  user-select: none;
 
   &_container {
     height: $yr * 12;
@@ -45,18 +47,96 @@
   }
 
   &_book {
-    border: 1px solid rgba(#fff, 0.3);
-    border-radius: 2px;
     height: $yr * 6;
-    width: $yr * 6;
     position: absolute;
     right: $xr;
     top: $yr * 3;
+    padding: $yr / 2 0;
+
+
+    .book {
+      cursor: pointer;
+      height: 100%;
+      border: 1px solid rgba(#fff, 0.3);
+      border-radius: 2px;
+      width: 100%;
+
+      .icon {
+        width: $yr * 4.75;
+
+        svg {
+          fill: #fff;
+        }
+      }
+
+      .text {
+        color: #fff;
+        display: none;
+        font-size: 0.8125rem;
+        letter-spacing: 0.2em;
+        line-height: $yr * 4.75;
+        padding: 0 $xr;
+        text-transform: uppercase;
+      }
+
+      @include mq($s) {
+        .icon {
+          display: none;
+        }
+
+        .text {
+          display: block;
+        }
+      }
+    }
+
+  }
+
+  &_menu {
+    display: none;
+  }
+
+  @include mq($m) {
+    &_burger {
+      left: $xr;
+    }
+
+    &_book {
+      right: $xr * 2;
+    }
   }
 
   @include mq($l) {
+    top: $yr;
+
     &_burger {
       display: none;
+    }
+
+    &_menu {
+      font-size: 0.8125rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      line-height: $yr * 4.75;
+      display: flex;
+      padding: $yr / 2 0;
+      position: absolute;
+      top: $yr * 3;
+      right: $xr * 3 + 10rem;
+
+      &_item {
+        margin-right: $xr;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          color: #fff;
+          display: block;
+          text-decoration: none;
+        }
+      }
     }
 
     &_logo {

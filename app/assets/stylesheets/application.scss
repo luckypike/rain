@@ -1,5 +1,6 @@
 @import 'breakpoint-sass/stylesheets/breakpoint';
 @import 'reset-css/_reset';
+@import 'swiper/dist/css/swiper.min.css';
 
 
 @font-face {
@@ -55,7 +56,32 @@ $m: 960px;
 $l: 1280px;
 
 body {
+  color: #212121;
   font-family: 'Century Gothic', serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+h2, .h2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  @include mq($s) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  @include mq($l) {
+    font-size: 2.125rem;
+    line-height: 3rem;
+  }
+}
+
+h3, .h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
 @import 'header';

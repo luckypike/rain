@@ -1,6 +1,7 @@
 .page_index {
   &_image {
-    background-color: #b17881;
+    background-color: #000000;
+    margin-bottom: $yr * 4.5;
 
     .imef_ar {
       @include aspect-ratio(4, 5);
@@ -14,6 +15,186 @@
       }
 
     }
+  }
 
+  &_intro {
+    margin-bottom: $yr * 4.5;
+
+    .intro {
+      padding: 0 $xr;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      margin-bottom: $yr * 3;
+    }
+
+    .contacts {
+      padding: 0 $xr;
+      font-size: 0.8125rem;
+      line-height: 1.5rem;
+      margin-bottom: $yr * 3;
+    }
+
+    .social_media {
+      padding: 0 $xr;
+    }
+
+    @include mq($s) {
+      display: flex;
+      flex-wrap: wrap;
+
+      .intro {
+        width: 6 / 8 * 100%;
+      }
+
+      .contacts {
+        width: 2 / 8 * 100%;
+      }
+
+      .social_media {
+        padding: 0;
+        display: flex;
+        width: 100%;
+
+        &_item {
+          padding: 0 $xr;
+          width: 25%;
+        }
+      }
+    }
+
+    @include mq($l) {
+      .intro {
+        width: 6 / 12 * 100%;
+        margin-left: 2 / 12 * 100%;
+      }
+
+      .contacts {
+        width: 2 / 12 * 100%;
+      }
+
+      .social_media {
+        width: 8 / 12 * 100%;
+        margin-left: 2 / 12 * 100%;
+      }
+    }
+  }
+
+  &_swiper {
+    margin-bottom: $yr * 4.5;
+
+    .swiper {
+      &-slide {
+        padding: 0 $xr;
+
+        .img_prg {
+          @include aspect-ratio(5, 4);
+
+          background-color: rgb(random(256)-1, random(256)-1, random(256)-1);
+        }
+
+        @for $i from 1 through 4 {
+          &:nth-child(4n+#{$i}) {
+            .img_prg {
+              background: rgb(random(256)-1, random(256)-1, random(256)-1);
+            }
+          }
+        }
+      }
+    }
+
+    @include mq($s) {
+
+
+      .swiper {
+        &-wrapper {
+          flex-wrap: wrap;
+        }
+
+        &-slide {
+          &.ss1 {
+            width: 50%;
+            margin-bottom: $yr * 3;
+          }
+
+          &.ss2 {
+            align-self: flex-end;
+            margin-bottom: $yr * 3;
+            width: 4 / 12 * 100%;
+          }
+
+          &.ss3 {
+            width: 4 / 12 * 100%;
+            margin-left: 2 / 12 * 100%;
+          }
+
+          &.ss4 {
+            width: 50%;
+          }
+
+
+        }
+      }
+    }
+  }
+
+  &_space {
+    padding: 0 $xr;
+    margin-bottom: $yr * 4.5;
+
+    .title {
+      margin-bottom: $yr * 3;
+    }
+
+    .text {
+      margin-bottom: $yr * 3;
+    }
+
+    .frees {
+      color: #727272;
+      font-size: 0.8125rem;
+      margin-bottom: $yr * 6;
+
+      ul {
+        li {
+          margin-bottom: $yr * 1.5;
+        }
+      }
+    }
+
+    .masters_text {
+      h3 {
+        margin-bottom: $yr * 3;
+      }
+    }
+  }
+
+  &_philosophy {
+    padding: 0 $xr;
+    margin-bottom: $yr * 4.5;
+
+    .image {
+      margin-bottom: $yr * 3;
+
+      .img_prg {
+        @include aspect-ratio(5, 4);
+
+        background-color: #f1f1f1;
+      }
+    }
+
+    .text {
+      h2 {
+        margin-bottom: $yr * 3;
+      }
+    }
+  }
+
+  &_video {
+    padding: 0 $xr;
+    margin-bottom: $yr * 4.5;
+
+    .video {
+      margin-bottom: $yr * 3;
+    }
   }
 }
