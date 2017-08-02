@@ -1,6 +1,6 @@
 main.page.page_index
   .page_index_image
-    .imef_ar
+    = cl_img '/top.jpg', 2560, 1280
 
   .page_index_intro
     .intro
@@ -75,7 +75,7 @@ main.page.page_index
           .name
             | Ирина
 
-          .book
+          / .book
             = link_to 'Записаться', '#'
 
         .masters_list_item.swiper-slide
@@ -86,7 +86,7 @@ main.page.page_index
           .name
             | Таня
 
-          .book
+          / .book
             = link_to 'Записаться', '#'
 
         .masters_list_item.swiper-slide
@@ -97,16 +97,16 @@ main.page.page_index
           .name
             | Лера
 
-          .book
+          / .book
             = link_to 'Записаться', '#'
 
 
   .page_index_nigga
-    .img_prg
+    = cl_img '/sis.jpg', 2560, 1280
 
   .page_index_philosophy
     .image
-      .img_prg
+      = cl_img '/ol.jpg', 800, 1000
 
     .text
       h2 Философия
@@ -127,11 +127,27 @@ main.page.page_index
       h2 Цены
       p Изо дня в день и от сезона к сезону мы создаем nail art, подчеркиваем вашу внутреннюю и внешнюю красоту.
 
-    .left
-      | LEFT
 
-    .right
-      | RIGHT
+    - %w(left right).each do |c|
+      div class=c
+        .prices
+          - @prices[c].each do |k, v|
+            .prices_row class="#{(v.is_a?(Array) && v[2].present? && v[2]) ? 'QQQ' : ''}"
+              .name
+                = k
+
+              .price
+                - if v.is_a? Integer
+                  => v
+                  i ₽
+
+                - else
+                  => v[0]
+                  i ₽
+
+            - if v.is_a?(Array) && v[1].present?
+              .prices_desc
+                = v[1]
 
 
   .page_index_works

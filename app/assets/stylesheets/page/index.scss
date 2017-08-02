@@ -1,10 +1,13 @@
 .page_index {
   &_image {
-    background-color: #000000;
     margin-bottom: $yr * 4.5;
 
-    .imef_ar {
+    .img_prg {
       @include aspect-ratio(4, 5);
+
+      &:before {
+        @include lnbg(#0A120F, #E4D4C3, #B7967F, #635242);
+      }
 
       @include mq($s) {
         @include aspect-ratio-modify(5, 4);
@@ -39,10 +42,35 @@
       font-size: 0.8125rem;
       line-height: 1.5rem;
       margin-bottom: $yr * 3;
+      text-align: center;
+
+      p {
+        margin-bottom: $yr * 1.5;
+      }
+
+      .sign {
+        border: 1px solid rgba(#000, 0.13);
+        display: block;
+        border-radius: 2px;
+        padding: 7px 0;
+        width: 100%;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-align: center;
+      }
     }
 
     .social_media {
       padding: 0 $xr;
+      text-align: center;
+      line-height: $yr * 4;
+
+      &_item {
+        a {
+          font-size: 0.8125rem;
+          text-transform: uppercase;
+        }
+      }
     }
 
     @include mq($s) {
@@ -59,16 +87,20 @@
 
       .contacts {
         width: 2 / 8 * 100%;
+        text-align: left;
       }
 
       .social_media {
         padding: 0;
         display: flex;
         width: 100%;
+        text-align: left;
 
         &_item {
           padding: 0 $xr;
           width: 25%;
+
+
         }
       }
     }
@@ -107,6 +139,30 @@
 
         .img_prg {
           @include aspect-ratio(5, 4);
+        }
+
+        &.ss1 {
+          .img_prg::before {
+            @include lnbg(#191C19, #D7C9CC, #514742, #988480);
+          }
+        }
+
+        &.ss2 {
+          .img_prg::before {
+            @include lnbg(#E4B2B6, #A86A62, #1E1713, #5F3C30);
+          }
+        }
+
+        &.ss3 {
+          .img_prg::before {
+            @include lnbg(#191C19, #D7C9CC, #514742, #988480);
+          }
+        }
+
+        &.ss4 {
+          .img_prg::before {
+            @include lnbg(#141513, #D2D0D5, #B78D82, #664D45);
+          }
         }
       }
     }
@@ -260,6 +316,7 @@
 
       .frees {
         width: 2 / 12 * 100%;
+        padding: $yr * 9 $xr 0;
         margin-left: 2 / 12 * 100%;
       }
 
@@ -399,6 +456,60 @@
 
       h2 {
         margin-bottom: $yr * 3;
+      }
+    }
+
+    .prices {
+      &_row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: $yr * 2;
+
+        &.QQQ {
+          margin-top: $yr * 4;
+        }
+
+        .name {
+          flex-grow: 1;
+          position: relative;
+          overflow: hidden;
+          padding-right: 1.2em;
+
+          &:after {
+            background-image: linear-gradient(to right, #bdbdbd 20%, rgba(255, 255, 255, 0) 0%);
+            background-position: bottom;
+            background-size: 10px 2px;
+            background-repeat: repeat-x;
+            content: '';
+            height: 2px;
+            position: absolute;
+            bottom: 0.3rem;
+            width: 100%;
+            margin-left: 0.3em;
+
+            @include mq($m) {
+              bottom: 0.6em;
+            }
+          }
+        }
+
+        .price {
+          align-self: flex-end;
+          flex-shrink: 0;
+          width: 70px;
+          text-align: left;
+          margin-left: 0.3em;
+          white-space: nowrap;
+        }
+      }
+
+      &_desc {
+        color: #727272;
+        margin-top: - $yr * 2;
+
+        @include mq($l){
+          padding-right: 100px;
+        }
       }
     }
 

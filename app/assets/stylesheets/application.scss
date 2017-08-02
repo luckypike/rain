@@ -24,6 +24,8 @@
     content: "";
     width: 100%;
     padding-top: ($height / $width) * 100%;
+    position: relative;
+    z-index: -1;
   }
   > img, > svg, > video, > iframe, > div {
     display: block;
@@ -35,6 +37,10 @@
     right: 0;
     bottom: 0;
   }
+}
+
+@mixin lnbg($c1, $c2, $c3, $c4) {
+  background: linear-gradient(45deg, $c1 0%, rgba($c1, 0) 100%), linear-gradient(135deg, $c2 0%, rgba($c2, 0) 100%), linear-gradient(225deg, $c3 0%, rgba($c3, 0) 100%), linear-gradient(315deg, $c4 0%, rgba($c4, 0) 100%);
 }
 
 @mixin aspect-ratio-modify($width, $height) {
@@ -93,6 +99,12 @@ h3, .h3 {
     size: cover;
     repeat: no-repeat;
   }
+}
+
+a {
+  border-bottom: 1px solid rgba(#000, 0.2);
+  color: #000;
+  text-decoration: none;
 }
 
 @import 'header';
