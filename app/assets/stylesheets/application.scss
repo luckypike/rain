@@ -67,6 +67,10 @@ body {
   font-size: 1rem;
   line-height: 1.5rem;
 
+  &.full_screen {
+    overflow: hidden;
+  }
+
   @include mq($m) {
     line-height: 2rem;
   }

@@ -18,6 +18,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    z-index: 5;
 
     a {
       display: block;
@@ -38,6 +39,7 @@
     position: absolute;
     left: 0;
     top: $yr * 3;
+    z-index: 5;
 
     svg {
       display: block;
@@ -52,6 +54,7 @@
     right: $xr;
     top: $yr * 3;
     padding: $yr / 2 0;
+    z-index: 5;
 
 
     .book {
@@ -89,11 +92,119 @@
         }
       }
     }
-
   }
 
   &_menu {
     display: none;
+
+    @include mq(0 ($s - 1)) {
+      background: #fff;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      left: 0;
+      opacity: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+      transition: .3s;
+      visibility: hidden;
+      width: 100%;
+
+      &_item {
+        padding: 0 $xr;
+        text-align: center;
+        line-height: 5 * $yr;
+
+        a {
+          border-bottom: none;
+          font-size: 0.8125rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  @include mq(0 ($s - 1)) {
+    &_container {
+
+      &:after {
+        border-bottom: 1px solid transparent;
+        bottom: 0;
+        content: '';
+        position: absolute;
+        transition: border-color .3s;
+        width: calc(100% - $yr);
+      }
+
+      svg {
+        transition: fill .3s;
+      }
+    }
+
+    &_book {
+      .book {
+        transition: border-color .3s;
+      }
+    }
+
+    &.menu_opened{
+      bottom: 0;
+      position: fixed;
+
+      .header {
+
+        &_container {
+          position: static;
+
+          &:after {
+            border-color: #e2e2e2;
+          }
+        }
+
+        &_menu {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        &_logo {
+          top: 6 * $yr;
+        }
+
+        &_book {
+          bottom: 3 * $yr;
+          left: 50%;
+          top: auto;
+          transform: translate(-50%, 0);
+          width: 150px;
+        }
+      }
+      svg {
+        fill: #000;
+      }
+
+      .book {
+        border: 1px solid rgba(#000, 0.3);
+
+        .icon {
+          svg {
+            fill: #000;
+          }
+        }
+
+        @include mq(0 ($s - 1)) {
+          .icon {
+            display: none;
+          }
+          .text {
+            color: #212121;
+            display: block; 
+          }
+        }
+      }
+    }
   }
 
   @include mq($m) {
