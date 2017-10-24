@@ -1,0 +1,26 @@
+main#prices.page.page_index
+  h1 Редактирование цен
+  / = debug @prices
+  .prices_control
+    = link_to 'Добавить услугу', new_price_path, class: 'control_link'
+    - @prices.each do |price|
+      .prices_control_item
+        .price_title
+          = price.title 
+        / td = price.id
+        .price_variants
+          .price_city 
+            span Цена в Москве: 
+            => price.price
+            i ₽
+          .price_city 
+            span Цена в Нижнем: 
+            => price.pricenn
+            i ₽
+        / td = price.description
+        / td = price.position
+        .price_control_item_links
+          = link_to 'Редактировать', edit_price_path(price), class: 'control_link'
+          =< link_to 'Удалить', price_path(price), method: :delete, class: 'control_link'
+
+          

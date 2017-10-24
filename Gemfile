@@ -12,9 +12,12 @@ gem 'puma'
 gem 'slim-rails'
 gem 'inline_svg'
 
+gem 'simple_form'
 gem 'sass-rails'
 gem 'autoprefixer-rails'
 gem 'uglifier'
+
+gem 'rails-i18n'
 
 gem 'capistrano'
 gem 'capistrano-rails'
