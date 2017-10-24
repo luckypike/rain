@@ -133,13 +133,13 @@ main.page.page_index
         .prices
           - @prices.each do |price|
             /= debug price.position
-            - if (price.position == c) && (price.price.present?)
+            - if (price.position == c) && (price["price_#{@city}"].present?)
               .prices_row
                 .name
                   = price.title
 
                 .price 
-                  => price.price
+                  => price["price_#{@city}"]
                   i ₽
 
               - if price.description.present?

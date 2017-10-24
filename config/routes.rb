@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   get 'vacancy', to: 'static#vacancy'
 
-  get 'nn', to: 'static#indexnn'
+  scope "(:city)", city: /nn/ do
+    get '', to: 'static#index' 
+  end
 
   resources :prices
 
