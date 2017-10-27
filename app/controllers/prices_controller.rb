@@ -24,7 +24,6 @@ class PricesController < ApplicationController
 
     if @price.update(price_params)
       redirect_to prices_path, notice: 'Prices was successfully updated.'
-      # render plain: params[:price].inspect
     else
       render 'edit'
     end

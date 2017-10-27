@@ -17,6 +17,9 @@ gem 'sass-rails'
 gem 'autoprefixer-rails'
 gem 'uglifier'
 
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+
 gem 'rails-i18n'
 
 gem 'capistrano'

@@ -1,0 +1,18 @@
+.form
+  = simple_form_for(@specialist) do |f|
+    = f.error_notification
+    .form_inputs
+      = f.input :name
+      - if @specialist.photo.presence 
+        = image_tag @specialist.photo.preview.url
+        = f.label :remove_photo do 
+          = f.check_box :remove_photo
+          | Удалить фото  
+      - else
+        = f.file_field :photo
+      = f.input :service
+      = f.input :quote
+      = f.input :city, collection: [['Москва', 'msk'], ['Нижний Новгород', 'nn']]
+
+    .form-actions
+      = f.button :submit, "Сохранить" 

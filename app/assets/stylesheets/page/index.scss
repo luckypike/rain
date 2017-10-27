@@ -246,7 +246,7 @@
     }
 
     .masters_list {
-      margin-top: $yr * 3;
+      margin-top: $yr * 4;
 
       &_item {
         padding: 0 $xr;
@@ -254,9 +254,24 @@
         // padding-right: 10%;
 
         .img_prg {
-          @include aspect-ratio(4, 5);
+          @include aspect-ratio(4, 6);
 
           background-color: #f1f1f1;
+        }
+
+        .quote {
+          margin-top: $yr * 2;
+          font-family: 'Playfair Display', serif;
+          font-size: 1.5rem;
+          line-height: 2rem;
+        }
+
+        .name {
+          margin-top: $yr * 3;
+
+          .services {
+            color: #727272;
+          }
         }
 
         &:last-child {

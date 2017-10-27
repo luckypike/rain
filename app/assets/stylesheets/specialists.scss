@@ -1,19 +1,15 @@
-// Place all the styles related to the Prices controller here.
+// Place all the styles related to the Specialists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#prices {
+#specialists {
   margin-top: $yr * 15;
   padding: 0 $xr;
 
-  .prices_control {
+  .specialists_control {
 
     &_item {
       border-bottom: 1px solid rgba(#000, 0.13);
       padding: 2 * $yr 0;
-
-      .price_city {
-        font-size: 0.8125rem;
-      }
 
       @include mq($s) {
         // display: flex;
@@ -37,5 +33,13 @@
   @include mq($s) {
     margin-left: 2/12 * 100%;
     width: 8/12 * 100%;    
+  }
+  .control {
+    .destroy {
+      background: #000;
+      display: block; 
+      width: 20px;
+      height: 20px;
+    }
   }
 }

@@ -14,8 +14,12 @@ ru:
       defaults:
         password: Пароль
         title: Название
-        price: Стоимость В Москве
-        pricenn: Стоимость в Нижнем
+        price_msk: Стоимость В Москве
+        price_nn: Стоимость в Нижнем
         description: Описание
         position: Расположение
         order: Порядок
+        name: Имя
+        service: Услуги
+        quote: Цитата
+        city: Город

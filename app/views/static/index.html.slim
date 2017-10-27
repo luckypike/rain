@@ -65,40 +65,27 @@ main.page.page_index
       h3 Мастера
       p Неподдельность — вот что мы олицетворяем. Это — неотъемлемая часть нашего характера.
 
-    .masters_list.swiper-container
-      .swiper-wrapper
-        .masters_list_item.swiper-slide
-          .img_prg
-          .q
-            | «Я вижу, что здесь люди находят комфорт, общение и атмосферу большой семьи».
+    - if @specialists.presence
+      .masters_list.swiper-container
+        .swiper-wrapper
+          - @specialists.each do |specialist|
+            .masters_list_item.swiper-slide
+              .img_prg
+                = image_tag specialist.photo.url
 
-          .name
-            | Ирина
+              .quote
+                | «
+                = specialist.quote
+                | ».
 
-          / .book
-            = link_to 'Записаться', '#'
+              .name
+                => specialist.name
+                i | 
+                span.services
+                  = specialist.service
 
-        .masters_list_item.swiper-slide
-          .img_prg
-          .q
-            | «Это больше чем отличный маникюр. Это романтика ощущений».
-
-          .name
-            | Таня
-
-          / .book
-            = link_to 'Записаться', '#'
-
-        .masters_list_item.swiper-slide
-          .img_prg
-          .q
-            | «Здесь люди проводят время, которое уносит их далеко от забот повседневной жизни».
-
-          .name
-            | Лера
-
-          / .book
-            = link_to 'Записаться', '#'
+            / .book
+              = link_to 'Записаться', '#'
 
 
   .page_index_nigga
@@ -131,7 +118,7 @@ main.page.page_index
       div class=c
         .prices
           - @prices.each do |price|
-            - if (price.position == c) && (price["price_#{@city}"].present?)
+            - if (price.position == c) && (price["price_#{@city}"].presence)
               .prices_row
                 .name
                   = price.title
@@ -140,7 +127,7 @@ main.page.page_index
                   => price["price_#{@city}"]
                   i ₽
 
-              - if price.description.present?
+              - if price.description.presence
                 .prices_desc = price.description
 
   .page_index_works
