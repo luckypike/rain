@@ -1,7 +1,7 @@
 main#specialists.page.page_index
-  h1 Редактирование мастеров
   / = debug @prices
   .specialists_control
+    h1 Редактирование мастеров
     = link_to 'Добавить мастера', new_specialist_path, class: 'control_link'
     - @specialists.each do |specialist|
       .specialists_control_item

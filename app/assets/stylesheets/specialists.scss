@@ -10,11 +10,6 @@
     &_item {
       border-bottom: 1px solid rgba(#000, 0.13);
       padding: 2 * $yr 0;
-
-      @include mq($s) {
-        // display: flex;
-        // justify-content: space-between;
-      }
     }
 
     .control_link {
@@ -28,18 +23,11 @@
       text-transform: uppercase;
       text-align: center;
     }
-  }
 
-  @include mq($s) {
-    margin-left: 2/12 * 100%;
-    width: 8/12 * 100%;    
-  }
-  .control {
-    .destroy {
-      background: #000;
-      display: block; 
-      width: 20px;
-      height: 20px;
+    @include mq($s) {
+      margin-left: 2/12 * 100%;
+      padding: 0 $xr;
+      width: 8/12 * 100%;    
     }
   }
 }

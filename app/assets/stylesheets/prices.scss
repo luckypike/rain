@@ -32,10 +32,11 @@
       text-transform: uppercase;
       text-align: center;
     }
-  }
 
-  @include mq($s) {
-    margin-left: 2/12 * 100%;
-    width: 8/12 * 100%;    
+    @include mq($s) {
+      margin-left: 2/12 * 100%;
+      padding: 0 $xr;
+      width: 8/12 * 100%;    
+    }
   }
 }
