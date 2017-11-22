@@ -10,7 +10,7 @@ footer.footer
         | info@irinarain.com
 
       .address
-        '|
+        'RAIN |
         = @switcher[@city.to_sym][:address].join(' | ')
         '
         '|
@@ -18,6 +18,9 @@ footer.footer
         |
         '
         = @switcher[@city.to_sym][:title_rus]
+
+      a class="sign ms_booking"
+          | Записаться
     .rght.cl
       ul
         li.i

@@ -124,6 +124,7 @@
 
       .sign {
         border: 1px solid rgba(#000, 0.13);
+        cursor: pointer;
         display: block;
         border-radius: 2px;
         padding: 7px 0;
@@ -136,6 +137,10 @@
         &:hover {
           background: #000;
           color: #fff;
+        }
+
+        @include mq($s) {
+          width: 150px;
         }
       }
     }
