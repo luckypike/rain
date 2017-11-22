@@ -11,6 +11,13 @@ $(function() {
     _h.toggleClass('menu_opened');
   });
 
+  $('.header_menu_item a').on('click', function(){
+    if(_h.hasClass('menu_opened')) {
+      _b.toggleClass('full_screen');
+      _h.toggleClass('menu_opened');
+    }
+  });
+
   $('.crnt_city').on('click', function(){
     _c.toggleClass('change');
   })
@@ -20,5 +27,9 @@ $(function() {
     setTimeout(function() {  window.location.href = _sc.attr('href');}, 300);
     return false;
   })
+
+  $('.header_menu a').smoothScroll({
+    offset: -63,
+  });
 
 });

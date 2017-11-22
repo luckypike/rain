@@ -21,6 +21,7 @@
     z-index: 5;
 
     a {
+      border-bottom: 0;
       display: block;
 
       svg {
@@ -140,6 +141,7 @@
       }
 
       .text {
+        border-bottom: 0;
         color: #fff;
         display: none;
         font-size: 0.8125rem;
