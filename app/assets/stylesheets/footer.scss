@@ -1,6 +1,7 @@
 .footer {
   font-size: 0.8125rem;
   line-height: 1.5rem;
+  margin-bottom: 4rem;
   padding: 0 $xr;
 
   .footer-data {
@@ -23,7 +24,11 @@
 
       .l_ike {
         margin-top: 2.25rem;
-      }    
+
+        a {
+          border-bottom: 0;
+        }
+      }
 
       @include mq($s) {
         padding: 0 $xr;
@@ -45,7 +50,7 @@
             width: 6 / 12 * 100%;
           }
         }
-      } 
+      }
     }
     @include mq($m) {
       .lft {

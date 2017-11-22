@@ -29,6 +29,73 @@
       }
     }
 
+    .city {
+      font-size: 0.75rem;
+      line-height: 2.25rem;
+      color: #fff;
+      cursor: pointer;
+      height: 9 * $base-rhythm-line;
+      margin-top: 1rem;
+      transform: translate(0, -50%);
+      position: absolute;
+
+      a {
+        color: #fff;
+        border: none;
+      }
+
+      .crnt_city {
+        @include visible;
+        transition: opacity .3s, visibility .3s, transform .3s;
+
+        svg {
+          fill: #fff;
+          height: 5px;
+          margin-left: 0.5 * $gutter;
+          width: 6px;
+        }
+      }
+
+      .swtch_city {
+
+        @include hidden;
+        top: 9 * $base-rhythm-line;
+        transition: opacity .3s, visibility .3s, transform .3s;
+
+        @media screen and (min-width: 0) and (max-width: 767px)  {
+          text-align: center;
+          width: 100%;
+        }
+      }
+
+      &.change {
+        .swtch_city {
+          @include visible;
+        }
+      }
+
+      &.changed {
+
+        .crnt_city {
+          @include hidden;
+          transform: translate(100px, 0px);
+        }
+
+        .swtch_city {
+          transform: translate(0, -9 * $base-rhythm-line);
+        }
+      }
+
+      @media screen and (min-width: 0) and (max-width: 767px)  {
+        width: 100%;
+
+        .crnt_city {
+          text-align: center;
+          width: 100%;
+        }
+      }
+    }
+
     @include mq($s) {
       width: 150px;
     }
@@ -80,6 +147,20 @@
         line-height: $yr * 4.75;
         padding: 0 $xr;
         text-transform: uppercase;
+        transition: color .3s;
+      }
+
+      &.sign {
+        transition: background .3s, color .3s;
+
+        &:hover {
+          background-color: #fff;
+          color: #000;
+
+          .text  {
+            color: #000;
+          }
+        }
       }
 
       @include mq($s) {
@@ -200,7 +281,7 @@
           }
           .text {
             color: #212121;
-            display: block; 
+            display: block;
           }
         }
       }
@@ -243,6 +324,7 @@
         }
 
         a {
+          border-bottom: 0;
           color: #fff;
           display: block;
           text-decoration: none;

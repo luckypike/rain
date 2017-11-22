@@ -8,6 +8,16 @@ header.header
     .header_logo
       = link_to root_path do
         = inline_svg 'logo.svg'
+      .city
+        .crnt_city
+          span
+            = @switcher[@city.to_sym][:title]
+          svg
+            polygon points="0 0 6 0 3 3 0 0"
+        - %w(msk nn).each do |c|
+          -if c != @city
+            a.swtch_city href="#{@switcher[c.to_sym][:link]}"
+              = @switcher[c.to_sym][:title]
 
     .header_menu
       .header_menu_item
@@ -25,7 +35,7 @@ header.header
       .header_menu_item
         = link_to 'Сообщество', root_path(anchor: 'comm')
 
-      .header_menu_item
+      / .header_menu_item
         = link_to 'Вакансии', vacancy_path
 
     .header_book
@@ -35,5 +45,5 @@ header.header
             rect x=15 y=18 width=8 height=2
             rect x=18 y=15 width=2 height=8
 
-        .text
+        a.text
           | Записаться

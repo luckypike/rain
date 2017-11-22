@@ -49,10 +49,26 @@
   }
 }
 
+@mixin visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 
 * {
   box-sizing: border-box;
 }
+
+$gutter: 1.25rem;
+
+$base-line-height: 8;
+$base-rhythm-line: .25rem;
+$base-rhythm: $base-line-height * $base-rhythm-line;
 
 $xr: 1.25rem;
 $yr: 0.5rem;
@@ -105,10 +121,20 @@ h3, .h3 {
   }
 }
 
-a {
-  border-bottom: 1px solid rgba(#000, 0.2);
+a, a .pl {
   color: #000;
   text-decoration: none;
+  border-bottom: 1px solid rgba(#000, 0.2);
+  transition-duration: 0.38s;
+  transition-property: border-bottom-color;
+
+  &:hover {
+    border-bottom-color: #000;
+
+    .pl {
+      border-bottom-color: #000;
+    }
+  }
 }
 
 @import 'header';

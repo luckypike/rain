@@ -1,4 +1,78 @@
 .page_index {
+  .geo_bg {
+    background: rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    transition: opacity .3s, visibility .3s;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+
+    &.act {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .geo_sl {
+      background: #fff;
+      padding: 12 * $base-rhythm-line $gutter;
+      position: absolute;
+      text-align: center;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+
+      .geo_logo {
+
+        height: 8 * $base-rhythm-line;
+        padding: $base-rhythm-line 0;
+
+        svg {
+          height: 20px;
+          width: 150px;
+        }
+      }
+
+      .geo_q {
+        margin-bottom: $base-rhythm;
+        margin-top: 4 * $base-rhythm-line;
+      }
+
+      .geo_msk {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.13);
+        border-radius: 2px;
+        padding: 7px 0;
+        display: inline-block;
+        text-align: center;
+        width: 180px;
+
+        &:hover {
+          background-color: #212121;
+          color: #fff;
+          transition-property: background, color;
+        }
+      }
+
+      .geo_or {
+        font-size: 0.75rem;
+        line-height: 1.5rem;
+        margin: 4 * $base-rhythm-line 0;
+      }
+
+      @include mq($s) {
+        width: 400px;
+      }
+    }
+
+    @include mq($s) {
+      background: rgba(255, 255, 255, 0.8);
+    }
+  }
   &_image {
     margin-bottom: $yr * 4.5;
 
@@ -57,6 +131,12 @@
         letter-spacing: 0.12em;
         text-transform: uppercase;
         text-align: center;
+        transition: background .3s, color .3s;
+
+        &:hover {
+          background: #000;
+          color: #fff;
+        }
       }
     }
 
@@ -589,6 +669,11 @@
           size: contain;
           repeat: no-repeat;
         }
+        margin-bottom: 1rem;
+      }
+
+      .pl {
+        display: inline-block;
       }
     }
 
@@ -617,10 +702,12 @@
 
           &:before {
             transition-duration: 0.3s;
+            z-index: 0;
           }
 
           ul {
             font-size: 1rem;
+            line-height: 1.25rem;
             justify-content: center;
             z-index: 3;
             opacity: 0;
@@ -633,12 +720,12 @@
             transition-duration: 0.3s;
 
             li.likes {
-              background-image: url('../images/likes.png');
+              background-image: image_url('likes.png');
               margin-right: 2em;
             }
 
             li.comments {
-              background-image: url('../images/comments.png');
+              background-image: image_url('comments.png');
             }
 
             li {

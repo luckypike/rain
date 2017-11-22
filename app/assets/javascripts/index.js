@@ -1,3 +1,8 @@
+_ref = document.referrer.replace(/^[^:]+:\/\/[^/]+/, '').replace(/#.*/, '');
+_wlp = window.location.pathname;
+if(_ref == '' && Cookies.get('geo') == 'nn' && _wlp == '/') window.location.href = '/nizhny/';
+if(_ref == '' && Cookies.get('geo') == 'msk' && _wlp == '/nizhny/') window.location.href = '/';
+
 $(function() {
   var _sc = $('.page_index_swiper .swiper-container');
   var _sw = $('.swiper-wrapper', _sc);
@@ -47,7 +52,7 @@ $(function() {
   var _insta = $('.insta');
 
   if(_insta.length > 0) {
-    $.getJSON('https://api.instagram.com/v1/users/1388142751/media/recent/?access_token=1388142751.0871ed8.91a000466c7e4f9eafcfd716eae218e4&count=20&callback=?', function(data) {
+    $.getJSON('https://api.instagram.com/v1/users/1388142751/media/recent/?access_token=1388142751.0871ed8.a1fe16d1d5a24294b6304f061fc27512&count=20&callback=?', function(data) {
       var works = [];
       $.each(data.data, function(i, el) {
         if(works.length < 4) $.each(el.tags, function(i, tag) {
@@ -69,4 +74,24 @@ $(function() {
       });
     });
   }
+
+  if(Cookies.get('geo') == null)  {
+    $('.geo_bg').addClass('act');
+    $('body').addClass('full_screen');
+  }
+
+  $('.geo_sl .geo_ct').on('click', function() {
+    $('body').removeClass('full_screen');
+    Cookies.set('geo', $(this).data('geo'), {
+      expires: 7
+    });
+    if ($(this).hasClass('geo_msk') && _wlp == '/') {
+      $('.geo_bg').removeClass('act');
+      return false;
+    }
+    if ($(this).hasClass('geo_nn') && _wlp == '/nizhny/') {
+      $('.geo_bg').removeClass('act');
+      return false;
+    }
+  });
 });

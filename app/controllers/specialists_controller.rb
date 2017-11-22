@@ -1,21 +1,19 @@
 class SpecialistsController < ApplicationController
+  http_basic_authenticate_with name: Rails.application.secrets[:admin_name], password: Rails.application.secrets[:admin_pass]
+
   before_action :set_specialist, only: [:show, :edit, :update, :destroy]
 
-  # GET /specialists
   def index
     @specialists = Specialist.all
   end
 
-  # GET /specialists/new
   def new
     @specialist = Specialist.new
   end
 
-  # GET /specialists/1/edit
   def edit
   end
 
-  # POST /specialists
   def create
     @specialist = Specialist.new(specialist_params)
 
@@ -26,7 +24,6 @@ class SpecialistsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /specialists/1
   def update
     # render plain: params[:specialist].inspect
     if @specialist.update(specialist_params)
@@ -37,14 +34,12 @@ class SpecialistsController < ApplicationController
     end
   end
 
-  # DELETE /specialists/1
   def destroy
     @specialist.destroy
     redirect_to specialists_url, notice: 'Specialist was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_specialist
       @specialist = Specialist.find(params[:id])
     end

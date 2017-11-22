@@ -1,22 +1,28 @@
 footer.footer
- .footer-data
+  .footer-data
     .lft.cl
       p
-        | +7 926 042-58-85
+        |
+        '
+        = @switcher[@city.to_sym][:phone]
 
       p
         | info@irinarain.com
 
       .address
-        | RAIN | Духовской переулок | дом 17 | строение 15 |
+        '|
+        = @switcher[@city.to_sym][:address].join(' | ')
+        '
+        '|
         br
-        | Москва
-
+        |
+        '
+        = @switcher[@city.to_sym][:title_rus]
     .rght.cl
       ul
         li.i
           a href="//instagram.com/irina_rain" Instagram
-          
+
         li.fb
           a href="//fb.com/rainnailbar" Facebook
 
@@ -30,5 +36,9 @@ footer.footer
           a href="//youtube.com/channel/UCAqvSQ0oo9v-6jPQKu_vSGQ" YouTube
 
       .l_ike
-        a href="//luckypike.com" Создание сайта — 
+        = link_to 'luckypike.com' do
+          | Создание сайта —
+          '
           span.pl L..IKE
+
+= javascript_include_tag "//#{@switcher[@city.to_sym][:yclients]}.yclients.com/widgetJS"
