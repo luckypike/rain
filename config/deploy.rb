@@ -12,6 +12,3 @@ append :linked_files, 'config/database.yml', 'config/secrets.yml', 'db/productio
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "public/uploads"
 
 set :keep_releases, 5
-
-
-after 'deploy:finishing', 'sitemap:create'
