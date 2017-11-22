@@ -93,8 +93,7 @@ main.page.page_index
             .masters_list_item.swiper-slide
               .img_prg
                 - if specialist.photo.present?
-                  = image_tag specialist.photo.url
-
+                  = image_tag specialist.photo.medium
               .quote
                 | «
                 = specialist.quote

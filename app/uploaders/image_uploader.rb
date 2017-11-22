@@ -18,7 +18,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   def delete_empty_upstream_dirs
     path = ::File.expand_path(store_dir, root)
-    Dir.delete(path) # fails if path not empty dir, beware ".DS_Store" when in development  
+    Dir.delete(path) # fails if path not empty dir, beware ".DS_Store" when in development
   rescue SystemCallError
     true # nothing, the dir is not empty
   end
@@ -33,10 +33,13 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   process resize_to_limit: [5000, 5000]
-  
+
   version :preview do
     process resize_to_fill: [150, 200]
-    # process :optimize
+  end
+
+  version :medium do
+    process resize_to_fill: [600, 850]
   end
 
   # Create different versions of your uploaded files:

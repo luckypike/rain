@@ -362,7 +362,7 @@
       @include mq($s) {
         .swiper {
           &-wrapper {
-            flex-wrap: wrap;
+            // flex-wrap: wrap;
           }
         }
 
