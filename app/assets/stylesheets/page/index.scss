@@ -122,27 +122,7 @@
         margin-bottom: $yr * 1.5;
       }
 
-      .sign {
-        border: 1px solid rgba(#000, 0.13);
-        cursor: pointer;
-        display: block;
-        border-radius: 2px;
-        padding: 7px 0;
-        width: 100%;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        text-align: center;
-        transition: background .3s, color .3s;
-
-        &:hover {
-          background: #000;
-          color: #fff;
-        }
-
-        @include mq($s) {
-          width: 150px;
-        }
-      }
+      @include sign;
     }
 
     .social_media {
@@ -421,8 +401,13 @@
       }
 
       .masters_text {
-        width: 4 / 12 * 100%;
+        width: 6 / 12 * 100%;
         margin-left: 2 / 12 * 100%;
+      }
+    }
+    @include mq($l) {
+      .masters_text {
+        width: 4 / 12 * 100%;
       }
     }
   }
@@ -552,7 +537,7 @@
     margin-bottom: $yr * 4.5;
 
     .text {
-      margin-bottom: $yr * 3;
+      margin-bottom: $yr * 8;
 
       h2 {
         margin-bottom: $yr * 3;
@@ -613,6 +598,20 @@
       }
     }
 
+    .under {
+      font-size: 0.75rem;
+      line-height: 1.5rem;
+      margin-top: $yr * 4;
+      text-align: center;
+      width: 100%;
+
+      @include sign;
+
+      .sign {
+        margin: 0 auto;
+      }
+    }
+
     @include mq($s) {
       margin-bottom: $yr * 6;
       display: flex;
@@ -631,6 +630,10 @@
       .right {
         padding: 0 $xr;
         width: 4 / 8 * 100%;
+      }
+
+      .under {
+        padding: 0 $xr;
       }
     }
 
@@ -760,6 +763,7 @@
       }
 
       @include mq($s) {
+        margin-bottom: 2.75rem;
         display: flex;
 
         &_item {
