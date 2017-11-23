@@ -27,6 +27,8 @@ gem 'capistrano-rails'
 gem 'capistrano-passenger'
 gem 'capistrano-rbenv'
 
+gem 'meta-tags'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
