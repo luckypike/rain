@@ -33,7 +33,7 @@ main.page.page_index
       p
         = @switcher[@city.to_sym][:address].join(', ')
         br
-        | Нижний Новгород
+        = @switcher[@city.to_sym][:title_rus]
 
       p
       a href="#" class="sign ms_booking"
@@ -123,7 +123,7 @@ main.page.page_index
   .page_index_video
     .video
       .video_ar
-        iframe src="https://www.youtube.com/embed/qkuyIJWJbk0" frameborder="0" allowfullscreen=true
+        iframe src="https://www.youtube.com/embed/#{@switcher[@city.to_sym][:video]}" frameborder="0" allowfullscreen=true
 
     .desc
       | Бэкстейдж с промо съёмок, процесс создания маникюра, уроки
