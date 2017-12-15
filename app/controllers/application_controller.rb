@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
         link: '/',
         address: ['Духовской переулок', 'дом 17', 'строение 15'],
         phone: '+7 926 042-58-85',
-        yclients: 'w80823',
+        yclients: 'w81206',
         video: 'fgeYJU9x8wY'},
       nn: {
         title: 'Nizhny Novgorod',
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
         link: '/nizhny',
         address: ['улица Новая', 'дом 28', '1 подъезд', '5 этаж'],
         phone: '+7 920 111-56-88',
-        yclients: 'w39823',
+        yclients: 'w81206',
         video: 'qkuyIJWJbk0'
       },
     }
