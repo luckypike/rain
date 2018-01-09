@@ -39,6 +39,6 @@ class PricesController < ApplicationController
 
   private
     def price_params
-      params.require(:price).permit(:title, :price, :pricenn, :description, :position, :order)
+      params.require(:price).permit(:title, :price_msk, :price_nn, :description, :position, :order)
     end
 end
