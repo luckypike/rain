@@ -125,8 +125,9 @@
     z-index: 5;
 
 
-    .book {
+    a.book {
       cursor: pointer;
+      display: block;
       height: 100%;
       border: 1px solid rgba(#fff, 0.3);
       border-radius: 2px;
