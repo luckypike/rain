@@ -199,8 +199,6 @@ GEM
     tilt (2.0.8)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.6)
-      execjs (>= 0.3.0, < 3)
     web-console (3.5.1)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -226,7 +224,7 @@ DEPENDENCIES
   meta-tags
   mini_magick
   puma
-  rails (~> 5.1.2)
+  rails (~> 5.1)
   rails-i18n
   rspec-rails
   sass-rails
@@ -235,7 +233,6 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
-  uglifier
   web-console (>= 3.3.0)
 
 BUNDLED WITH
