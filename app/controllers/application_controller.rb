@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
 
     @switcher = {
       msk: {
+        key: nil,
         title: 'Moscow',
         title_rus: 'Москва',
         title_in: 'в Москве',
@@ -20,6 +21,7 @@ class ApplicationController < ActionController::Base
         yclients: 'w81206',
         video: 'fgeYJU9x8wY'},
       nn: {
+        key: :nizhny,
         title: 'Nizhny Novgorod',
         title_rus: 'Нижний Новгород',
         title_in: 'в Нижнем Новгороде',
