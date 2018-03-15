@@ -1,19 +1,22 @@
 doctype html
 html
   head
-    = display_meta_tags og: { \
-      title: "RAIN — ногтевая студия #{@switcher[@city.to_sym][:title_in]}",
-      description: "Заботливый маникюр и педикюр #{@switcher[@city.to_sym][:title_in]}" \
-    }, 'p:domain_verify': '6e1ed7c231788211894f0aa101e1e1b4'
-    = tag('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' })
-    = favicon_link_tag
+    = display_meta_tags site: 'RAIN', reverse: true, separator: '—', og: { \
+      title: "RAIN — ногтевая студия",
+      description: "Заботливый маникюр и педикюр" \
+    }
 
+    = favicon_link_tag '/favicon.ico'
     = csrf_meta_tags
 
-    = stylesheet_link_tag 'application', media: 'all'
-    = javascript_include_tag 'application'
+    = tag('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' })
 
   body
     == render 'shared/header'
     = yield
+
+    = javascript_pack_tag 'app'
+    = stylesheet_pack_tag 'app'
+    = stylesheet_link_tag '//fonts.googleapis.com/css?family=Playfair+Display&amp;subset=cyrillic'
+
     == render 'shared/footer'

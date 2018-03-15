@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
-  resources :specialists
-  root 'static#index'
-
-  get 'vacancy', to: 'static#vacancy'
-
   scope "(:city)", city: /nizhny/ do
-    get '', to: 'static#index', as: :index 
+    root 'pages#index'
+
+    get :about, to: 'pages#about'
+    get :career, to: 'pages#career'
   end
-
-  resources :prices, :specialists
-
 end

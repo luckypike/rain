@@ -8,7 +8,8 @@ header.header
     .header_logo
       = link_to root_path do
         = inline_svg 'logo.svg'
-      .city
+
+      / .city
         .crnt_city
           span
             = @switcher[@city.to_sym][:title]
@@ -21,22 +22,22 @@ header.header
 
     .header_menu
       .header_menu_item
-        = link_to 'Пространство', '#spc'
+        = link_to 'Пространство', [:about]
+
+      .header_menu_item.in
+        | Услуги
+
+      .header_menu_item.in
+        | Работы
+
+      .header_menu_item.in
+        | Команда
 
       .header_menu_item
-        = link_to 'Философия', '#phl'
+        = link_to 'Вакансии', [:career]
 
-      .header_menu_item
-        = link_to 'Цены', '#prc'
-
-      .header_menu_item
-        = link_to 'Работы', '#prc'
-
-      .header_menu_item
-        = link_to 'Сообщество', '#comm'
-
-      / .header_menu_item
-        = link_to 'Вакансии', vacancy_path
+      .header_menu_item.in
+        | Ценности
 
     .header_book
       a.book.sign.ms_booking

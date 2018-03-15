@@ -1,0 +1,130 @@
+main.page.page_index
+  .page_section.page_section_top.page_index_top
+    .placeholder
+
+  .page_section.page_section_intro.page_index_intro
+    .text
+      | Стильный маникюр и педикюр для прогрессивных людей. Бережное отношение к&nbsp;мелочам и&nbsp;деталям. Акцент на&nbsp;естественность, натуральность, элегантность и&nbsp;женственность. Пространство маникюрных встреч RAIN&nbsp;<em>#irinarain</em>
+
+    .contacts
+      p +7 920 111-56-88
+      p 10:00 — 22:00
+      p
+        | улица Новая, дом 28, 1 подъезд, 5 этаж
+        br
+        | Нижний Новгород
+
+      p
+        a href="#" class="sign ms_booking"
+          | Записаться
+
+
+  .page_section.page_section_16.page_index_swiper
+    .swiper-container
+      .swiper-wrapper
+        .swiper-slide.ss1
+          figure.ar_5_4
+            .img
+          / = cl_img '/IMG_0192_hk90x9.jpg', 1220, 976
+
+        .swiper-slide.ss2
+          figure.ar_5_4
+            .img
+          / = cl_img '/IMG_0386_wkcyja.jpg', 800, 640
+
+        .swiper-slide.ss3
+          figure.ar_5_4
+            .img
+          / = cl_img '/IMG_0336_a391p4.jpg', 800, 640
+
+        .swiper-slide.ss4
+          figure.ar_5_4
+            .img
+          / = cl_img '/IMG_4752_c7cwcr.jpg', 1220, 976
+
+
+  .page_section.page_index_space
+    .text
+      h2 Пространство
+      p RAIN&nbsp;&mdash; это пространство для современных, интеллигентных, уверенных, естественных, веселых и&nbsp;непринужденных девушек. Ценящих свободу самовыражения, свободу творчества, свободу быть собой. Которые привыкли к&nbsp;качественному обслуживанию по&nbsp;доступным ценам.
+
+    .free
+      ul
+        li Free WiFi
+        li Free Coffee
+        li Free Tea
+        li Free Candy Bar
+        li Free Community
+
+
+  .page_section.page_index_masters
+    .text
+      h2 Мастера
+      p Неподдельность — вот что мы олицетворяем. Это — неотъемлемая часть нашего характера.
+
+    - if @specialists.present?
+      .masters_list.swiper-container
+        .swiper-wrapper
+          - @specialists.each do |specialist|
+            .masters_list_item.swiper-slide
+              .img_prg
+                - if specialist.photo.present?
+                  = image_tag specialist.photo.medium
+              .quote
+                | «
+                = specialist.quote
+                | ».
+
+              .name
+                => specialist.name
+                i |
+                span.services
+                  = specialist.service
+
+            / .book
+              = link_to 'Записаться', '#'
+
+
+  .page_section.page_index_sis.page_section_16
+    figure.ar_16_9
+      .img
+
+  .page_section.page_index_phil
+    .text
+      h2 Философия
+      p Мы&nbsp;поняли, что у&nbsp;нас есть только один способ отличаться от&nbsp;других, он&nbsp;заключен в&nbsp;людях, которых мы&nbsp;обслуживаем, и&nbsp;людях которые у&nbsp;нас работают. Мы&nbsp;хотим, чтобы вы&nbsp;чувствовали себя здесь как дома или в&nbsp;кругу близких друзей. Мы&nbsp;заботимся о&nbsp;наших сотрудниках также, как о&nbsp;гостях студии. Мы&nbsp;создаем сообщество, которое растет и&nbsp;развивается вместе с&nbsp;вами, и&nbsp;в&nbsp;котором есть место для каждой.
+
+    figure.ar_4_5
+      .img
+
+
+  .page_section.page_index_video
+    .video
+      .video_ar
+        iframe src="https://www.youtube.com/embed/fgeYJU9x8wY" frameborder="0" allowfullscreen=true
+
+    .text
+      | Бэкстейдж с промо съёмок, процесс создания маникюра, уроки
+        и другое видео <a href="//www.youtube.com/channel/UCy6W5Izwkif_RyYOMU7rafQ">на нашем Youtube канале</a>.
+
+  .page_section.page_index_works
+    .insta
+
+    .text
+      h2 Работы
+      p Мы&nbsp;верим в&nbsp;природную красоту, которую можно увидеть во&nbsp;всем и&nbsp;во&nbsp;всех. Мы&nbsp;работаем не&nbsp;только для того, чтобы сделать ваши руки ухоженными и&nbsp;красивыми, но&nbsp;и&nbsp;для того, чтобы вдохновить на&nbsp;поиски прекрасного, любить несовершенства, ценить каждую линию на&nbsp;теле и&nbsp;историю, которую она рассказывает.
+
+    .triangle
+      = link_to '//instagram.com/irina_rain' do
+        .img_ar
+        .pl @irina_rain
+
+
+  .page_section.page_index_community
+    .text
+      h2 Сообщество
+
+      p Мне всегда хотелось создать место теплое и&nbsp;уютное, где я&nbsp;бы могла проводить большую часть своей жизни. Заниматься творчеством и&nbsp;знакомиться с&nbsp;удивительными людьми. Сейчас это &laquo;RAIN&raquo;. Возможно в&nbsp;будущем это пространство трансформируется в&nbsp;нечто иное, уникальное и&nbsp;запоминающееся.
+
+  .page_index_rain
+    figure

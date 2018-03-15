@@ -1,37 +1,30 @@
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
-
-gem 'rails', '~> 5.1'
+gem 'rails', '~> 5.2.0.rc1'
 gem 'sqlite3'
-gem 'puma'
+gem 'puma', '~> 3.11'
+
+gem 'webpacker'
 
 gem 'slim-rails'
-gem 'inline_svg'
 
 gem 'simple_form'
-gem 'sass-rails'
-gem 'autoprefixer-rails'
-gem 'uglifier'
 
-gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 
 gem 'rails-i18n'
 
-gem 'capistrano'
+gem 'meta-tags'
+
+gem 'bootsnap', '>= 1.1.0', require: false
+
 gem 'capistrano-rails'
 gem 'capistrano-passenger'
 gem 'capistrano-rbenv'
 
-gem 'meta-tags'
-
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails'
 end
 
 group :development do

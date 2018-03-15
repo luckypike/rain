@@ -1,4 +1,28 @@
-footer.footer
+footer.page_section
+  .socials
+    .socials_item
+      a href="//instagram.com/irina_rain" Instagram
+
+    .socials_item
+      a href="//fb.com/rainnailbar" Facebook
+
+    .socials_item
+      a href="//vk.com/irina.rain" Vkontakte
+
+    .socials_item
+      a href="//pinterest.com/irina_rain" Pinterest
+
+    .socials_item
+      a href="//youtube.com/channel/UCAqvSQ0oo9v-6jPQKu_vSGQ" YouTube
+
+  .book
+    a href="#" class="sign ms_booking" Записаться
+
+  .l_ike
+    = link_to 'L..IKE', '//luckypike.com'
+
+
+/ footer.footer
   .footer-data
     .lft.cl
       p
@@ -44,6 +68,6 @@ footer.footer
           '
           span.pl L..IKE
 
-= javascript_include_tag "//#{@switcher[@city.to_sym][:yclients]}.yclients.com/widgetJS"
+/ = javascript_include_tag "//#{@switcher[@city.to_sym][:yclients]}.yclients.com/widgetJS"
 
 == render '/shared/c'

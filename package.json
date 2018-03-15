@@ -2,12 +2,13 @@
   "name": "rain",
   "private": true,
   "dependencies": {
-    "breakpoint-sass": "^2.7.1",
-    "jquery": "^3.2.1",
-    "jquery-debouncedresize": "^0.0.2",
-    "jquery-smooth-scroll": "^2.2.0",
-    "js-cookie": "^2.2.0",
-    "reset-css": "^2.2.0",
-    "swiper": "^3.4.2"
+    "@rails/webpacker": "^3.3.1",
+    "jquery": "^3.3.1",
+    "normalize.css": "^8.0.0",
+    "postcss-nested": "^3.0.0",
+    "swiper": "^4.1.6"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
   }
 }
