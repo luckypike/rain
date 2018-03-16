@@ -20,6 +20,39 @@
     transform: translate(-50%, -50%);
     z-index: 5;
 
+    .city {
+      line-height: calc(var(--yr) * 5);
+      font-size: calc(var(--yr) * 2.75);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      position: absolute;
+      top: calc(100% + var(--yr) * 2);
+      color: var(--light_color);
+
+      .current {
+        cursor: pointer;
+
+        svg {
+          fill: var(--light_color);
+          height: 7px;
+          margin-left: calc(var(--yr));
+          width: 7px;
+        }
+      }
+
+      .switch {
+        visibility: hidden;
+
+        a {
+          color: var(--light_color);
+        }
+
+        &.active {
+          visibility: visible;
+        }
+      }
+    }
+
     a {
       border-bottom: 0;
       display: block;
@@ -55,14 +88,12 @@
 
   &_book {
     height: calc(var(--yr) * 12);
-
     position: absolute;
     right: var(--xr);
     top: 50%;
     padding: calc(var(--yr)) 0;
     z-index: 5;
     transform: translate(0, -50%);
-
 
     a.book {
       cursor: pointer;
@@ -92,24 +123,22 @@
         line-height: calc(var(--yr) * 10);
         padding: 0 var(--xr);
         text-transform: uppercase;
-        transition: color .3s;
+        transition: color 0.3s;
       }
 
-      &.sign {
-        transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+      transition: background 0.3s, box-shadow 0.3s, color 0.3s;
 
-        &:hover {
-          background-color: #fff;
-          box-shadow: 0 0 0 1px var(--light_color);
+      &:hover {
+        background-color: #fff;
+        box-shadow: 0 0 0 1px var(--light_color);
+        color: #000;
+
+        svg {
+          fill: var(--base_color);
+        }
+
+        .text {
           color: #000;
-
-          svg {
-            fill: var(--base_color);
-          }
-
-          .text  {
-            color: #000;
-          }
         }
       }
 

@@ -178,7 +178,7 @@ figure {
   margin: 0;
 }
 
-footer {
+.footer {
   font-size: calc(var(--yr) * 3.25);
 
   .socials {
@@ -208,6 +208,7 @@ footer {
   @media (--s) {
     display: flex;
     flex-wrap: wrap;
+    padding: 0 calc(var(--xr) / 2);
 
     .book {
       width: calc(3 / 12 * 100%);
@@ -217,6 +218,7 @@ footer {
     .socials {
       width: calc(9 / 12 * 100%);
       justify-content: flex-end;
+      align-items: center;
 
 
       &_item {
@@ -224,6 +226,18 @@ footer {
         margin-left: var(--xr);
       }
     }
+
+    .l_ike {
+      margin-left: auto;
+    }
+  }
+
+  @media (--m) {
+    padding: 0 var(--xr);
+  }
+
+  @media (--l) {
+    padding: 0 calc(var(--xr) * 2);
   }
 }
 

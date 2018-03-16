@@ -28,21 +28,20 @@
       }
     }
 
-    @media(--m) {
+    @media (--m) {
       grid-gap: calc(var(--xr) * 2);
     }
   }
 
   &_swiper {
     @media (width < 720px) {
-      margin-left: calc(-1 * var(--xr));
-      margin-right: calc(-1 * var(--xr));
+      margin-left: 0;
+      margin-right: 0;
     }
 
     .swiper {
       &-slide {
         padding-right: calc(var(--xr) / 2);
-
         width: 80%;
 
         &.ss1 .img {

@@ -8,4 +8,8 @@ $(function(){
     _b.toggleClass('full_screen');
     _h.toggleClass('menu_opened');
   });
+
+  $('.header_logo .city .current').on('click', function(){
+    $(this).next().toggleClass('active');
+  });
 });

@@ -1,3 +1,5 @@
+- set_meta_tags title: "RAIN — ногтевая студия. Заботливый маникюр и педикюр #{@city[:title_in]}.", site: nil
+
 main.page.page_index
   .page_section.page_section_top.page_index_top
     .placeholder
@@ -7,12 +9,14 @@ main.page.page_index
       | Стильный маникюр и педикюр для прогрессивных людей. Бережное отношение к&nbsp;мелочам и&nbsp;деталям. Акцент на&nbsp;естественность, натуральность, элегантность и&nbsp;женственность. Пространство маникюрных встреч RAIN&nbsp;<em>#irinarain</em>
 
     .contacts
-      p +7 920 111-56-88
+      p
+        = @city[:phone]
+
       p 10:00 — 22:00
       p
-        | улица Новая, дом 28, 1 подъезд, 5 этаж
+        = @city[:address].join(', ')
         br
-        | Нижний Новгород
+        = @city[:title_ru]
 
       p
         a href="#" class="sign ms_booking"
