@@ -6,6 +6,7 @@ gem 'sqlite3'
 gem 'puma', '~> 3.11'
 
 gem 'webpacker'
+gem 'react-rails'
 
 gem 'slim-rails'
 
