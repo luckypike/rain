@@ -254,6 +254,7 @@ p {
   }
 
   @media (--s) {
-    width: 150px;
+    width: 140px;
+    padding: var(--yr) 0;
   }
 }

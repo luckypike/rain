@@ -27,26 +27,11 @@ $(function() {
     });
   }
 
-  var _scm = $('.page_index_space .masters_list');
-  var _swm = $('.swiper-wrapper', _scm);
+  let _sml = $('.page_index_masters_list .masters_list');
 
-  if(_scm.length > 0) {
-    var masters_swiper;
-    _window.on('resize', function() {
-      if(_swm.css('flex-wrap') == 'wrap') {
-        if(masters_swiper != undefined) {
-          masters_swiper.destroy(true, true);
-          masters_swiper = undefined;
-        }
-      } else {
-        if(masters_swiper == undefined) {
-          masters_swiper = new Swiper (_scm, {
-            slidesPerView: 'auto',
-          });
-        }
-      }
+  if(_sml.length > 0) {
+    let masters_swiper = new Swiper (_sml, {
+      slidesPerView: 'auto',
     });
   }
-
-  _window.trigger('resize');
 });

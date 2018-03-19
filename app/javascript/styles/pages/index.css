@@ -1,6 +1,35 @@
 .page_index {
   &_top {
     background-image: url('../images/index/top.jpg');
+    overflow: hidden;
+
+    .ppl {
+      position: absolute;
+      height: 110%;
+      width: 110%;
+      left: -5%;
+      top: -5%;
+
+      .l {
+        background-image: url('../images/index/top_l.png');
+        z-index: 1;
+      }
+
+      .r {
+        background-image: url('../images/index/top_r.png');
+      }
+
+      .l,
+      .r {
+        background-position: center bottom;
+        background-size: cover;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0%;
+      }
+    }
   }
 
   &_intro {
@@ -84,11 +113,87 @@
   }
 
   &_masters {
-    .text {
-      margin-bottom: calc(var(--yr) * 3);
+    margin-bottom: calc(var(--yr) * 6);
 
-      @media (--m) {
-        margin: 0 0 calc(var(--yr) * 4);
+    @media (--s) {
+      margin-bottom: calc(var(--yr) * 12);
+    }
+
+    @media (--m) {
+      margin-bottom: calc(var(--yr) * 16);
+    }
+
+    &_list {
+      margin-top: 0;
+
+      &_wrapper {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .masters_list {
+        margin: 0 calc(-1 * var(--xr));
+        overflow: visible;
+
+        &_item {
+          overflow: hidden;
+          padding-bottom: 4px;
+
+          figure {
+            margin-bottom: calc(var(--yr) * 3);
+          }
+
+          .name {
+            white-space: nowrap;
+
+            i {
+              font-style: normal;
+              margin: 0 0.3em;
+            }
+
+            .services {
+              color: var(--grey_color);
+            }
+          }
+
+          .book {
+            margin-top: calc(var(--yr) * 6);
+          }
+        }
+
+        .swiper {
+          &-wrapper {
+            overflow: visible;
+            align-items: stretch;
+          }
+
+          &-slide {
+            padding-left: calc(var(--xr));
+            width: 80%;
+
+            &:last-child {
+              width: 100%;
+              padding-right: 20%;
+            }
+
+            @media (--s) {
+              width: 22%;
+
+              &:last-child {
+                width: 22%;
+                margin-right: calc(var(--xr));
+                padding-right: 0;
+              }
+            }
+          }
+        }
+
+        @media (--s) {
+          /* margin: 0 0 0 calc(-1 * var(--xr)); */
+        }
+      }
+
+      @media (--s) {
       }
     }
   }

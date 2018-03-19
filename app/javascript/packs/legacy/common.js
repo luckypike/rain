@@ -1,4 +1,6 @@
 import $ from 'jquery';
+import Parallax from 'parallax-js';
+
 
 $(function(){
   var _b = $('body');
@@ -12,4 +14,11 @@ $(function(){
   $('.header_logo .city .current').on('click', function(){
     $(this).next().toggleClass('active');
   });
+
+
+  let _ppl = $('.ppl');
+  if(_ppl.length > 0) {
+    var parallaxInstance = new Parallax(_ppl.get(0));
+  }
+
 });

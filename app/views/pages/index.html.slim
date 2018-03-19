@@ -3,6 +3,9 @@
 main.page.page_index
   .page_section.page_section_top.page_index_top
     .placeholder
+    .ppl
+      .l data-depth="0.1"
+      .r data-depth="0.2"
 
   .page_section.page_section_intro.page_index_intro
     .text
@@ -66,28 +69,26 @@ main.page.page_index
       h2 Мастера
       p Неподдельность — вот что мы олицетворяем. Это — неотъемлемая часть нашего характера.
 
-    = react_component 'Specialists'
-    - if @specialists.present?
-      .masters_list.swiper-container
-        .swiper-wrapper
-          - @specialists.each do |specialist|
-            .masters_list_item.swiper-slide
-              .img_prg
-                - if specialist.photo.present?
-                  = image_tag specialist.photo.medium
-              .quote
-                | «
-                = specialist.quote
-                | ».
+  - if @specialists.present?
+    .page_index_masters_list_wrapper
+      .page_index_masters_list.page_section
+        .masters_list.swiper-container
+          .swiper-wrapper
+            - @specialists.each do |specialist|
+              .masters_list_item.swiper-slide
+                figure.ar_4_5
+                  .img
+                  / - if specialist.photo.present?
+                    = image_tag specialist.photo.medium
 
-              .name
-                => specialist.name
-                i |
-                span.services
-                  = specialist.service
+                .name
+                  = specialist.name
+                  i |
+                  span.services
+                    = specialist.service
 
-            / .book
-              = link_to 'Записаться', '#'
+                .book
+                  = link_to 'Записаться', '#', class: [:sign, :ms_booking]
 
 
   .page_section.page_index_sis.page_section_16
@@ -106,7 +107,8 @@ main.page.page_index
   .page_section.page_index_video
     .video
       .video_ar
-        iframe src="https://www.youtube.com/embed/fgeYJU9x8wY" frameborder="0" allowfullscreen=true
+        - if Rails.env.production?
+          iframe src="https://www.youtube.com/embed/fgeYJU9x8wY" frameborder="0" allowfullscreen=true
 
     .text
       | Бэкстейдж с промо съёмок, процесс создания маникюра, уроки

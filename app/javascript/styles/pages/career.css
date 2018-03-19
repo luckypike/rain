@@ -1,10 +1,67 @@
 .page_career {
   &_top {
     background-image: url('../images/career/top.jpg');
+    overflow: hidden;
+
+    .ppl {
+      position: absolute;
+      height: 110%;
+      width: 110%;
+      left: -5%;
+      top: -5%;
+
+      .l {
+        background-image: url('../images/career/top_l.png');
+      }
+
+      .r {
+        background-image: url('../images/career/top_r.png');
+      }
+
+      .l,
+      .r {
+        background-position: center bottom;
+        background-size: cover;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0%;
+      }
+    }
+  }
+
+  &_atmo {
+    .title {
+      margin: 0 0 calc(var(--yr) * 3);
+
+      @media (--m) {
+        margin: 0 0 calc(var(--yr) * 4);
+      }
+    }
+
+    @media (--s) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0 var(--xr);
+
+      .title {
+        grid-column: 1 / 3;
+      }
+
+      .list {
+        margin: 0;
+      }
+    }
+
+    @media (--m) {
+      grid-gap: 0 calc(var(--xr) * 2);
+    }
   }
 
   &_value {
-    .title, .text {
+    .title,
+    .text {
       margin: 0 0 calc(var(--yr) * 3);
 
       @media (--m) {
@@ -18,7 +75,6 @@
 
     @media (--s) {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
       grid-gap: 0 var(--xr);
 
@@ -41,35 +97,6 @@
       .img {
         background-image: url('../images/career/rain.jpg');
       }
-    }
-  }
-
-  &_atmo {
-    .title {
-      margin: 0 0 calc(var(--yr) * 3);
-
-      @media (--m) {
-        margin: 0 0 calc(var(--yr) * 4);
-      }
-    }
-
-    @media (--s) {
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 0 var(--xr);
-
-      .title {
-        grid-column: 1 / 3;
-      }
-
-      .list {
-        margin: 0;
-      }
-    }
-
-    @media (--m) {
-      grid-gap: 0 calc(var(--xr) * 2);
     }
   }
 
@@ -97,7 +124,7 @@
       }
     }
 
-    @media(--m) {
+    @media (--m) {
       grid-gap: calc(var(--xr) * 2);
     }
   }

@@ -1,19 +1,20 @@
 footer.page_section.footer
   .socials
     .socials_item
-      a href="//instagram.com/irina_rain" Instagram
+      = link_to 'Instagram', '//instagram.com/irina_rain', target: '_blank'
 
     .socials_item
-      a href="//fb.com/rainnailbar" Facebook
+      = link_to 'Facebook', '//fb.com/rainnailbar', target: '_blank'
+      a href=""
 
     .socials_item
-      a href="//vk.com/irina.rain" Vkontakte
+      = link_to 'Vkontakte', '//vk.com/irina.rain', target: '_blank'
 
     .socials_item
-      a href="//pinterest.com/irina_rain" Pinterest
+      = link_to 'Pinterest', '//pinterest.com/irina_rain', target: '_blank'
 
     .socials_item
-      a href="//youtube.com/channel/UCAqvSQ0oo9v-6jPQKu_vSGQ" YouTube
+      = link_to 'YouTube', '//youtube.com/channel/UCAqvSQ0oo9v-6jPQKu_vSGQ', target: '_blank'
 
   .book
     a href="#" class="sign ms_booking" Записаться
@@ -21,53 +22,6 @@ footer.page_section.footer
   .l_ike
     = link_to 'L..IKE', '//luckypike.com'
 
-
-/ footer.footer
-  .footer-data
-    .lft.cl
-      p
-        |
-        '
-        = @switcher[@city.to_sym][:phone]
-
-      p
-        | info@irinarain.com
-
-      .address
-        'RAIN |
-        = @switcher[@city.to_sym][:address].join(' | ')
-        '
-        '|
-        br
-        |
-        '
-        = @switcher[@city.to_sym][:title_rus]
-
-      a.sign.ms_booking
-          | Записаться
-    .rght.cl
-      ul
-        li.i
-          a href="//instagram.com/irina_rain" Instagram
-
-        li.fb
-          a href="//fb.com/rainnailbar" Facebook
-
-        li.vk
-          a href="//vk.com/irina.rain" VKontakte
-
-        li.pnt
-          a href="//pinterest.com/irina_rain" Pinterest
-
-        li.yt
-          a href="//youtube.com/channel/UCAqvSQ0oo9v-6jPQKu_vSGQ" YouTube
-
-      .l_ike
-        = link_to 'luckypike.com' do
-          | Создание сайта —
-          '
-          span.pl L..IKE
-
-/ = javascript_include_tag "//#{@switcher[@city.to_sym][:yclients]}.yclients.com/widgetJS"
+= javascript_include_tag '//w81206.yclients.com/widgetJS'
 
 == render '/shared/c'

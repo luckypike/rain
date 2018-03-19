@@ -1,11 +1,11 @@
 class PagesController < ApplicationController
   def index
-
+    @specialists = Specialist.where(city: @city_key)
   end
 
   def career
   end
 
-  def career
+  def about
   end
 end
