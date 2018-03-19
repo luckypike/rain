@@ -1,10 +1,7 @@
 @import 'normalize.css/normalize';
 @import 'swiper/dist/css/swiper.css';
-
 @import './vars.css';
-
 @import './header.css';
-
 @import './pages/page.css';
 @import './pages/about.css';
 @import './pages/career.css';
@@ -12,11 +9,7 @@
 
 @font-face {
   font-family: 'Century Gothic';
-  src: url('./fonts/cg/subset-CenturyGothic.eot');
-  src: url('./fonts/cg/subset-CenturyGothic.eot?#iefix') format('embedded-opentype'),
-  url('./fonts/cg/subset-CenturyGothic.woff') format('woff'),
-  url('./fonts/cg/subset-CenturyGothic.ttf') format('truetype'),
-  url('./fonts/cg/subset-CenturyGothic.svg#CenturyGothic') format('svg');
+  src: url('./fonts/cg/subset-CenturyGothic.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,13 +19,15 @@
 }
 
 figure {
+  margin: 0;
+
   .img {
     background-color: #f1f1f1;
     background-position: center;
     background-size: cover;
     position: relative;
 
-    &:before {
+    &::before {
       display: block;
       content: '';
       width: 100%;
@@ -43,7 +38,7 @@ figure {
 
   &.ar_16_9 {
     .img {
-      &:before {
+      &::before {
         padding-top: calc(4 / 5 * 100%);
 
         @media (--s) {
@@ -55,7 +50,7 @@ figure {
 
   &.ar_4_5 {
     .img {
-      &:before {
+      &::before {
         padding-top: calc(5 / 4 * 100%);
       }
     }
@@ -63,7 +58,7 @@ figure {
 
   &.ar_3_2 {
     .img {
-      &:before {
+      &::before {
         padding-top: calc(2 / 3 * 100%);
       }
     }
@@ -71,7 +66,7 @@ figure {
 
   &.ar_5_4 {
     .img {
-      &:before {
+      &::before {
         padding-top: calc(4 / 5 * 100%);
       }
     }
@@ -92,23 +87,9 @@ body {
   }
 }
 
-h1, h2, h3, p {
-  margin: 0 0 calc(var(--yr) * 3);
-  font-weight: normal;
-
-  @media (--m) {
-    margin: 0 0 calc(var(--yr) * 4);
-  }
-
-  &:last-child {
-    margin: 0;
-  }
-}
-
 a {
   text-decoration: none;
   color: var(--base_color);
-
   border-bottom: 1px solid color(var(--base_color) alpha(-80%));
 }
 
@@ -121,7 +102,7 @@ ul {
     padding-left: 1.4rem;
     margin: 0 0 calc(var(--yr) * 1.5);
 
-    &:before {
+    &::before {
       content: '—';
       display: block;
       float: left;
@@ -174,8 +155,20 @@ h2 {
   }
 }
 
-figure {
-  margin: 0;
+h1,
+h2,
+h3,
+p {
+  margin: 0 0 calc(var(--yr) * 3);
+  font-weight: normal;
+
+  @media (--m) {
+    margin: 0 0 calc(var(--yr) * 4);
+  }
+
+  &:last-child {
+    margin: 0;
+  }
 }
 
 .footer {
@@ -183,7 +176,6 @@ figure {
 
   .socials {
     margin-bottom: calc(var(--yr) * 7);
-
     display: flex;
     flex-wrap: wrap;
 
@@ -220,7 +212,6 @@ figure {
       justify-content: flex-end;
       align-items: center;
 
-
       &_item {
         width: auto;
         margin-left: var(--xr);
@@ -244,10 +235,8 @@ figure {
 .sign {
   font-size: calc(var(--yr) * 3.25);
   line-height: calc(var(--yr) * 8);
-
   box-shadow: 0 0 0 1px color(var(--base_color) alpha(-89%));
   border: 0;
-
   cursor: pointer;
   display: block;
   border-radius: 2px;

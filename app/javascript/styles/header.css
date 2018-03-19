@@ -12,6 +12,44 @@
     position: relative;
   }
 
+  &_burger {
+    padding: calc(var(--yr) * 3) calc(var(--xr));
+    position: absolute;
+    left: 0;
+    top: calc(var(--yr) * 3);
+    z-index: 5;
+
+    svg {
+      display: block;
+      width: calc(var(--yr) * 6);
+      fill: #fff;
+    }
+
+    @media (--s) {
+      left: calc(var(--xr) / 2);
+    }
+  }
+
+  &_menu {
+    visibility: hidden;
+    font-size: calc(var(--yr) * 3.25);
+    line-height: calc(var(--yr) * 10);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-top: calc(var(--yr) * 36);
+    text-align: center;
+
+    &_item {
+      &.in {
+        opacity: 0.25;
+      }
+
+      a {
+        border-bottom: 0;
+      }
+    }
+  }
+
   &_logo {
     position: absolute;
     width: 120px;
@@ -19,6 +57,16 @@
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 5;
+
+    a {
+      border-bottom: 0;
+      display: block;
+
+      svg {
+        display: block;
+        fill: #fff;
+      }
+    }
 
     .city {
       line-height: calc(var(--yr) * 5);
@@ -53,36 +101,8 @@
       }
     }
 
-    a {
-      border-bottom: 0;
-      display: block;
-
-      svg {
-        display: block;
-        fill: #fff;
-      }
-    }
-
     @media (--s) {
       width: 150px;
-    }
-  }
-
-  &_burger {
-    padding: calc(var(--yr) * 3) calc(var(--xr));
-    position: absolute;
-    left: 0;
-    top: calc(var(--yr) * 3);
-    z-index: 5;
-
-    svg {
-      display: block;
-      width: calc(var(--yr) * 6);
-      fill: #fff;
-    }
-
-    @media (--s) {
-      left: calc(var(--xr) / 2);
     }
   }
 
@@ -166,30 +186,6 @@
     }
   }
 
-  &_menu {
-    visibility: hidden;
-
-    font-size: calc(var(--yr) * 3.25);
-    line-height: calc(var(--yr) * 10);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-
-    margin-top: calc(var(--yr) * 36);
-
-    text-align: center;
-
-    &_item {
-      &.in {
-        opacity: 0.25;
-      }
-
-      a {
-        border-bottom: 0;
-      }
-    }
-    /* color: var(--light_grey_color); */
-  }
-
   @media (--l) {
     position: absolute;
 
@@ -231,7 +227,6 @@
     }
   }
 
-
   &.menu_opened {
     bottom: 0;
     position: fixed;
@@ -239,7 +234,7 @@
 
     .header {
       &_container {
-        &:after {
+        &::after {
           content: '';
           position: absolute;
           bottom: 0;
@@ -255,13 +250,14 @@
       }
 
       &_logo {
+        /* stylelint-disable-next-line */
         svg {
           fill: var(--base_color);
         }
-        /* top: 6 * $yr; */
       }
 
       &_burger {
+        /* stylelint-disable-next-line */
         svg {
           fill: var(--base_color);
         }
@@ -279,8 +275,6 @@
         }
       }
     }
-
-
 
     /* .book {
       border: 1px solid rgba(#000, 0.3);

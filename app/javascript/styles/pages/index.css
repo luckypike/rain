@@ -33,94 +33,6 @@
     }
   }
 
-  &_swiper {
-    @media (width < 720px) {
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    .swiper {
-      &-slide {
-        padding-right: calc(var(--xr) / 2);
-        width: 80%;
-
-        &.ss1 .img {
-          background-image: url('../images/index/ss1.jpg');
-        }
-
-        &.ss2 .img {
-          background-image: url('../images/index/ss2.jpg');
-        }
-
-        &.ss3 .img {
-          background-image: url('../images/index/ss3.jpg');
-        }
-
-        &.ss4 .img {
-          background-image: url('../images/index/ss4.jpg');
-        }
-      }
-    }
-
-    @media (--s) {
-      .swiper {
-        &-container {
-          margin: 0 calc(-0.5 * var(--xr));
-        }
-
-        &-wrapper {
-          flex-wrap: wrap;
-        }
-
-        &-slide {
-          padding: 0 calc(var(--xr) / 2);
-
-          &.ss1, &.ss2 {
-            margin-bottom: var(--xr);
-          }
-
-
-          &.ss1 {
-            width: calc(8 / 16 * 100%);
-            /* margin-bottom: $yr * 3; */
-          }
-
-          &.ss2 {
-            align-self: flex-end;
-            width: calc(6 / 16 * 100%);
-          }
-
-          &.ss3 {
-            width: calc(6 / 16 * 100%);
-            margin-left: calc(2 / 16 * 100%);
-          }
-
-          &.ss4 {
-            width: calc(8 / 16 * 100%);
-          }
-
-
-        }
-      }
-    }
-
-    @media (--m) {
-      .swiper {
-        &-container {
-          margin: 0 calc(-1 * var(--xr));
-        }
-
-        &-slide {
-          padding: 0 calc(var(--xr));
-
-          &.ss1, &.ss2 {
-            margin-bottom: calc(var(--xr) * 2);
-          }
-        }
-      }
-    }
-  }
-
   &_space {
     .text {
       margin-bottom: calc(var(--yr) * 3);
@@ -139,7 +51,7 @@
         li {
           padding-left: 0;
 
-          &:before {
+          &::before {
             content: none;
           }
         }
@@ -148,7 +60,6 @@
 
     @media (--s) {
       display: grid;
-
       grid-template-columns: repeat(12, 1fr);
       grid-gap: 0 var(--xr);
 
@@ -181,7 +92,6 @@
       }
     }
   }
-
 
   &_sis {
     figure {
@@ -217,7 +127,7 @@
       }
     }
 
-    @media(--m) {
+    @media (--m) {
       grid-gap: calc(var(--xr) * 2);
     }
   }
@@ -243,7 +153,7 @@
           bottom: 0;
         }
 
-        &:before {
+        &::before {
           display: block;
           content: '';
           width: 100%;
@@ -299,16 +209,14 @@
       background-size: cover;
       background-image: url('../images/index/community.jpg');
       position: relative;
-      /* margin: 0 calc(-0.5 * var(--xr)); */
       z-index: -1;
 
-      &:before {
+      &::before {
         display: block;
         content: '';
         width: 100%;
         position: relative;
         padding-top: calc(1 / 2 * 100%);
-
       }
     }
 
@@ -321,10 +229,96 @@
     }
 
     @media (--l) {
-      margin-top: calc(-88 * var(--yr));;
+      margin-top: calc(-88 * var(--yr));
 
       figure {
         margin: 0 calc(-3 * var(--xr));
+      }
+    }
+  }
+
+  &_swiper {
+    @media (width < 720px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .swiper {
+      &-slide {
+        padding-right: calc(var(--xr) / 2);
+        width: 80%;
+
+        &.ss1 .img {
+          background-image: url('../images/index/ss1.jpg');
+        }
+
+        &.ss2 .img {
+          background-image: url('../images/index/ss2.jpg');
+        }
+
+        &.ss3 .img {
+          background-image: url('../images/index/ss3.jpg');
+        }
+
+        &.ss4 .img {
+          background-image: url('../images/index/ss4.jpg');
+        }
+      }
+    }
+
+    @media (--s) {
+      .swiper {
+        &-container {
+          margin: 0 calc(-0.5 * var(--xr));
+        }
+
+        &-wrapper {
+          flex-wrap: wrap;
+        }
+
+        &-slide {
+          padding: 0 calc(var(--xr) / 2);
+
+          &.ss1,
+          &.ss2 {
+            margin-bottom: var(--xr);
+          }
+
+          &.ss1 {
+            width: calc(8 / 16 * 100%);
+          }
+
+          &.ss2 {
+            align-self: flex-end;
+            width: calc(6 / 16 * 100%);
+          }
+
+          &.ss3 {
+            width: calc(6 / 16 * 100%);
+            margin-left: calc(2 / 16 * 100%);
+          }
+
+          &.ss4 {
+            width: calc(8 / 16 * 100%);
+          }
+        }
+      }
+    }
+
+    @media (--m) {
+      .swiper {
+        &-container {
+          margin: 0 calc(-1 * var(--xr));
+        }
+
+        &-slide {
+          padding: 0 calc(var(--xr));
+
+          &.ss1,
+          &.ss2 {
+            margin-bottom: calc(var(--xr) * 2);
+          }
+        }
       }
     }
   }
