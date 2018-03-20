@@ -114,6 +114,31 @@ main.page.page_index
       | Бэкстейдж с промо съёмок, процесс создания маникюра, уроки
         и другое видео <a href="//www.youtube.com/channel/UCy6W5Izwkif_RyYOMU7rafQ">на нашем Youtube канале</a>.
 
+  .page_section.page_index_prices
+    .text
+      h2 Цены
+      p Изо дня в день и от сезона к сезону мы создаем nail art, подчеркиваем вашу внутреннюю и внешнюю красоту.
+
+    - %w(left right).each do |c|
+      div class=c
+        .prices
+          - @prices.each do |price|
+            - if (price.position == c) && (price["price_#{@city[:old_key]}"].presence)
+              .prices_row
+                .name
+                  = price.title
+
+                .price
+                  => price["price_#{@city[:old_key]}"]
+                  i ₽
+
+              - if price.description.presence
+                .prices_desc = price.description
+
+    .under
+      a.sign.ms_booking
+        | Записаться
+
   .page_section.page_index_works
     .insta
 

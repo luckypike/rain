@@ -188,13 +188,101 @@
             }
           }
         }
+      }
+    }
+  }
 
-        @media (--s) {
-          /* margin: 0 0 0 calc(-1 * var(--xr)); */
+  &_prices {
+    .text {
+      margin-bottom: calc(var(--yr) * 6);
+
+      @media (--s) {
+        margin-bottom: calc(var(--yr) * 12);
+      }
+
+      @media (--m) {
+        margin-bottom: calc(var(--yr) * 16);
+      }
+    }
+
+    .left {
+      margin-bottom: calc(var(--yr) * 4);
+    }
+
+    .prices {
+      &_row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: calc(var(--yr) * 4);
+
+        .name {
+          flex-grow: 1;
+          position: relative;
+          overflow: hidden;
+          padding-right: 1.2em;
+
+          &::after {
+            background-image: linear-gradient(to right, #bdbdbd 20%, rgba(255, 255, 255, 0) 0%);
+            background-position: bottom;
+            background-size: 10px 2px;
+            background-repeat: repeat-x;
+            content: '';
+            height: 2px;
+            position: absolute;
+            bottom: 0.3rem;
+            width: 100%;
+            margin-left: 0.3em;
+
+            @media (--m) {
+              bottom: 0.6em;
+            }
+          }
+        }
+
+        .price {
+          align-self: flex-end;
+          flex-shrink: 0;
+          width: 70px;
+          text-align: left;
+          margin-left: 0.3em;
+          white-space: nowrap;
+
+          i {
+            font-style: normal;
+          }
         }
       }
 
-      @media (--s) {
+      &_desc {
+        color: #727272;
+        margin-top: calc(var(--yr) * -2);
+
+        @media (--l) {
+          padding-right: 100px;
+        }
+      }
+    }
+
+    .under {
+      margin-top: calc(var(--yr) * 8);
+
+      a {
+        margin: auto;
+      }
+    }
+
+    @media (--m) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: calc(var(--xr) * 2);
+
+      .text {
+        padding-right: 50%;
+      }
+
+      .text,
+      .under {
+        grid-column: 1 / 3;
       }
     }
   }

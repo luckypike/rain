@@ -6,6 +6,7 @@ moscow:
   phone: '+7 926 042-58-85'
   yclients: '95580'
   video: 'fgeYJU9x8wY'
+  old_key: msk
 
 nizhny:
   title: 'Nizhny'
@@ -15,3 +16,4 @@ nizhny:
   phone: '+7 920 111-56-88'
   yclients: '58259'
   video: 'qkuyIJWJbk0'
+  old_key: nn
