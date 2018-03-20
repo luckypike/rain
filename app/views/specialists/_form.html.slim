@@ -14,6 +14,7 @@
       = f.input :photo, as: :file
       = f.input :service
       = f.input :yid
+      = f.input :weight
       = f.input :city, collection: @cities.map{ |i, city| [city[:title_ru], i] }
 
     .form-actions

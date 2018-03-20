@@ -31,8 +31,8 @@ header.header
       .header_menu_item.in
         | Работы
 
-      .header_menu_item.in
-        | Команда
+      .header_menu_item
+        = link_to 'Команда', [:team]
 
       .header_menu_item
         = link_to 'Вакансии', [:career]

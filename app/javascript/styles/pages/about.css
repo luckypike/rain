@@ -37,7 +37,7 @@
       }
     }
 
-    @media(--m) {
+    @media (--m) {
       grid-gap: calc(var(--xr) * 2);
     }
   }
@@ -48,7 +48,6 @@
         &:first-child {
           font-size: calc(var(--yr) * 5);
           line-height: calc(var(--yr) * 7);
-
           font-family: var(--ff_serif);
         }
 
@@ -126,14 +125,13 @@
       }
     }
 
-    @media(--m) {
+    @media (--m) {
       grid-gap: calc(var(--xr) * 2);
     }
   }
 
   &_roads {
     figure {
-
       &:first-child {
         margin-bottom: calc(var(--yr) * 6);
 

@@ -48,7 +48,7 @@
       grid-gap: var(--xr);
 
       .text {
-        grid-column: 1 / 10;
+        grid-column: 1 / 9;
         margin-bottom: 0;
       }
 

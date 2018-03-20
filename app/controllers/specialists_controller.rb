@@ -45,6 +45,6 @@ class SpecialistsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def specialist_params
-      params.require(:specialist).permit(:name, :photo, :service, :yid, :city, :remove_photo)
+      params.require(:specialist).permit(:name, :photo, :service, :yid, :weight, :city, :remove_photo)
     end
 end

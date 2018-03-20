@@ -8,11 +8,8 @@ main.page.page_specialists
       = link_to 'Добавить мастера', new_specialist_path, class: 'control_link'
       - @specialists.each do |specialist|
         .specialists_control_item
-          .specialist_title
-            = specialist.name
-          / .specialist_photo
-             - if specialist.photo.presence
-                = image_tag specialist.photo.preview.url
+          .specialist_title #{specialist.name} (#{specialist.yid})
+          
           .specialist_control_item_links
             = link_to 'Редактировать', edit_specialist_path(specialist), class: 'control_link'
             =< link_to 'Удалить', specialist, method: :delete, class: 'control_link'
