@@ -244,7 +244,7 @@ p {
 .sign {
   font-size: calc(var(--yr) * 3.25);
   line-height: calc(var(--yr) * 8);
-  box-shadow: 0 0 0 1px color(var(--base_color) alpha(-89%));
+  box-shadow: inset 0 0 0 1px color(var(--base_color) alpha(-89%));
   border: 0;
   cursor: pointer;
   display: block;
