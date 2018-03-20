@@ -9,7 +9,7 @@ $(function() {
   var _sw = $('.swiper-wrapper', _sc);
 
   if(_sc.length > 0) {
-    var index_swiper;
+    let index_swiper;
     _window.on('resize', function() {
       if(_sw.css('flex-wrap') == 'wrap') {
         if(index_swiper != undefined) {
@@ -26,6 +26,7 @@ $(function() {
       }
     });
   }
+  _window.trigger('resize');
 
   let _sml = $('.page_index_masters_list .masters_list');
 
