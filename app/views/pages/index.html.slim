@@ -78,8 +78,7 @@ main.page.page_index
               .masters_list_item.swiper-slide
                 figure.ar_4_5
                   .img
-                  / - if specialist.photo.present?
-                    = image_tag specialist.photo.medium
+                    = image_tag specialist.photo.variant(thumbnail: "400x500", quality: 80, interlace: :plane) if specialist.photo.attached?
 
                 .name
                   = specialist.name
@@ -87,8 +86,9 @@ main.page.page_index
                   span.services
                     = specialist.service
 
-                .book
-                  = link_to 'Записаться', '#', class: [:sign, :ms_booking]
+                - if specialist.yid.present?
+                  .book
+                    = link_to 'Записаться', '#', class: [:sign, :ms_booking], data: { url: "https://w81206.yclients.com/?o=m#{specialist.yid}c#{@cities[specialist.city][:yclients]}&st=service" }
 
 
   .page_section.page_index_sis.page_section_16

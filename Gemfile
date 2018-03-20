@@ -10,6 +10,8 @@ gem 'react-rails'
 
 gem 'slim-rails'
 
+gem 'devise', github: 'plataformatec/devise'
+
 gem 'simple_form'
 
 gem 'mini_magick'
@@ -17,6 +19,8 @@ gem 'mini_magick'
 gem 'rails-i18n'
 
 gem 'meta-tags'
+
+gem 'aws-sdk-s3', require: false
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

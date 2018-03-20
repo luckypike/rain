@@ -1,0 +1,20 @@
+.form
+  = simple_form_for(@specialist) do |f|
+    = f.error_notification
+
+    .form_inputs
+      = f.input :name
+      / - if @specialist.photo.presence
+      /   = image_tag @specialist.photo.preview.url
+      /   = f.label :remove_photo do
+      /     = f.check_box :remove_photo
+      /     | Удалить фото
+      / - else
+      /   = f.file_field :photo
+      = f.input :photo, as: :file
+      = f.input :service
+      = f.input :yid
+      = f.input :city, collection: @cities.map{ |i, city| [city[:title_ru], i] }
+
+    .form-actions
+      = f.button :submit, "Сохранить"

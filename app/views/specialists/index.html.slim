@@ -1,0 +1,18 @@
+main.page.page_specialists
+  .page_section.page_section_top.short
+    .placeholder
+
+  .page_section
+    .specialists_control
+      h1 Редактирование мастеров
+      = link_to 'Добавить мастера', new_specialist_path, class: 'control_link'
+      - @specialists.each do |specialist|
+        .specialists_control_item
+          .specialist_title
+            = specialist.name
+          / .specialist_photo
+             - if specialist.photo.presence
+                = image_tag specialist.photo.preview.url
+          .specialist_control_item_links
+            = link_to 'Редактировать', edit_specialist_path(specialist), class: 'control_link'
+            =< link_to 'Удалить', specialist, method: :delete, class: 'control_link'

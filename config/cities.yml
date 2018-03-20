@@ -4,7 +4,7 @@ moscow:
   title_in: 'в Москве'
   address: ['Духовской переулок', 'дом 17', 'строение 15']
   phone: '+7 926 042-58-85'
-  yclients: 'w81206'
+  yclients: '95580'
   video: 'fgeYJU9x8wY'
 
 nizhny:
@@ -13,5 +13,5 @@ nizhny:
   title_in: 'в Нижнем Новгороде'
   address: ['улица Новая', 'дом 28', '1 подъезд', '5 этаж']
   phone: '+7 920 111-56-88'
-  yclients: 'w81206'
+  yclients: '58259'
   video: 'qkuyIJWJbk0'

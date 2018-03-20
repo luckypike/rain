@@ -27,6 +27,14 @@ figure {
     background-size: cover;
     position: relative;
 
+    img {
+      display: block;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
     &::before {
       display: block;
       content: '';

@@ -1,0 +1,16 @@
+- set_meta_tags title: 'Войти'
+- set_meta_tags noindex: true
+
+main.page.page_login
+  .page_section.page_section_top.short
+    .placeholder
+
+  .page_section
+    .form
+      = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .form_inputs
+          = f.input :email, required: false, autofocus: true
+          = f.input :password, required: false
+
+        .form_actions
+          = f.button :submit, 'Войти'
