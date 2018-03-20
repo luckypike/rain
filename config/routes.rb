@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
     resources :specialists
     resources :prices
+
+    resources :works, only: [:index], constraints: lambda { |req| req.format == :json }
   end
 end

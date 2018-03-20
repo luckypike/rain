@@ -287,6 +287,37 @@
     }
   }
 
+  &_design {
+  }
+
+  &_works {
+    .works {
+      &_list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: calc(var(--yr) * 4) calc(var(--xr));
+
+        &_item {
+          a {
+            img {
+              display: block;
+              max-width: 100%;
+            }
+          }
+        }
+
+        @media (--s) {
+          /* grid-gap: calc(var(--yr) * 12) calc(var(--xr)); */
+        }
+
+        @media (--m) {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-gap: 0 calc(var(--xr) * 2);
+        }
+      }
+    }
+  }
+
   &_sis {
     figure {
       .img {

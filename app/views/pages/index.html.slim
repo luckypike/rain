@@ -139,9 +139,10 @@ main.page.page_index
       a.sign.ms_booking
         | Записаться
 
-  .page_section.page_index_works
-    .insta
+  .page_section.page_index_works.page_section_16
+    = react_component 'Works', { works_path: works_path(format: :json) }
 
+  .page_section.page_index_design
     .text
       h2 Работы
       p Мы&nbsp;верим в&nbsp;природную красоту, которую можно увидеть во&nbsp;всем и&nbsp;во&nbsp;всех. Мы&nbsp;работаем не&nbsp;только для того, чтобы сделать ваши руки ухоженными и&nbsp;красивыми, но&nbsp;и&nbsp;для того, чтобы вдохновить на&nbsp;поиски прекрасного, любить несовершенства, ценить каждую линию на&nbsp;теле и&nbsp;историю, которую она рассказывает.

@@ -16,6 +16,8 @@ gem 'simple_form'
 
 gem 'mini_magick'
 
+gem 'jbuilder'
+
 gem 'rails-i18n'
 
 gem 'meta-tags'
