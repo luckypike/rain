@@ -3,7 +3,8 @@ html
   head
     = display_meta_tags site: "RAIN #{@city[:title_ru]}", reverse: true, separator: '—', og: { \
       title: "RAIN — ногтевая студия",
-      description: "Заботливый маникюр и педикюр" \
+      image: asset_pack_url('images/og.jpg'),
+      description: :description \
     }
 
     = favicon_link_tag '/favicon.ico'
