@@ -13,6 +13,7 @@
   }
 
   &_burger {
+    cursor: pointer;
     padding: calc(var(--yr) * 3) calc(var(--xr));
     position: absolute;
     left: 0;
@@ -254,6 +255,17 @@
         svg {
           fill: var(--base_color);
         }
+
+        .city {
+          visibility: hidden;
+          color: var(--base_color);
+
+          .switch {
+            a {
+              color: var(--base_color);
+            }
+          }
+        }
       }
 
       &_burger {
@@ -266,6 +278,10 @@
       &_book {
         a.book {
           box-shadow: 0 0 0 1px color(var(--base_color) alpha(-70%));
+
+          .text {
+            color: var(--base_color);
+          }
 
           .icon {
             svg {
