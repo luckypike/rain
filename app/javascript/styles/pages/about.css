@@ -1,12 +1,24 @@
 .page_about {
   &_top {
-    background-image: url('../images/about/top.jpg');
+    &.nizhny {
+      background-image: url('../images/about/top_nizhny.jpg');
+    }
+
+    &.moscow {
+      background-image: url('../images/about/top_moscow.jpg');
+    }
   }
 
   &_tables {
     figure {
       .img {
-        background-image: url('../images/about/tables.jpg');
+        &.nizhny {
+          background-image: url('../images/about/tables_nizhny.jpg');
+        }
+
+        &.moscow {
+          background-image: url('../images/about/tables_moscow.jpg');
+        }
       }
     }
   }
@@ -14,7 +26,13 @@
   &_feel {
     figure {
       .img {
-        background-image: url('../images/about/feel.jpg');
+        &.nizhny {
+          background-image: url('../images/about/feel_nizhny.jpg');
+        }
+
+        &.moscow {
+          background-image: url('../images/about/feel_moscow.jpg');
+        }
       }
     }
 
@@ -72,7 +90,13 @@
         margin-bottom: calc(var(--yr) * 3);
 
         .img {
-          background-image: url('../images/about/two_images_1.jpg');
+          &.nizhny {
+            background-image: url('../images/about/two_images_1_nizhny.jpg');
+          }
+
+          &.moscow {
+            background-image: url('../images/about/two_images_1_moscow.jpg');
+          }
         }
       }
 
@@ -80,7 +104,13 @@
         margin-bottom: calc(var(--yr) * 3);
 
         .img {
-          background-image: url('../images/about/two_images_2.jpg');
+          &.nizhny {
+            background-image: url('../images/about/two_images_2_nizhny.jpg');
+          }
+
+          &.moscow {
+            background-image: url('../images/about/two_images_2_moscow.jpg');
+          }
         }
       }
     }
