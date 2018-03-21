@@ -7,6 +7,7 @@ moscow:
   yclients: '95580'
   video: 'fgeYJU9x8wY'
   old_key: msk
+  ymap: 'constructor%3Ad80183db04db64e3a7bc6521e6cdd0c65b4e2869c29b6bc8aa1d2f2c92a4feed'
 
 nizhny:
   title: 'Nizhny'
@@ -17,3 +18,4 @@ nizhny:
   yclients: '58259'
   video: 'qkuyIJWJbk0'
   old_key: nn
+  ymap: 'constructor%3Ab2a07d47fd7b83f2a69447af234d6679edd11c3d89c01ca07c93c68f63db4c2d'

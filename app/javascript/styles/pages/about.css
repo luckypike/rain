@@ -130,6 +130,22 @@
     }
   }
 
+  &_map {
+    figure {
+      .img {
+        margin-bottom: calc(var(--yr) * 3);
+
+        > ymaps {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+
   &_roads {
     figure {
       &:first-child {
@@ -142,6 +158,14 @@
 
       .img {
         margin-bottom: calc(var(--yr) * 3);
+
+        > ymaps {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+        }
       }
     }
 
