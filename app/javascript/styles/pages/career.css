@@ -128,4 +128,11 @@
       grid-gap: calc(var(--xr) * 2);
     }
   }
+
+  &_vacancies {
+    .vacancy {
+      border-top: 1px solid var(--base_color);
+      padding-top: calc(var(--yr) * 4);
+    }
+  }
 }

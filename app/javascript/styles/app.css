@@ -164,6 +164,23 @@ h2 {
   }
 }
 
+h3 {
+  font-size: calc(var(--yr) * 4);
+  line-height: calc(var(--yr) * 6);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  @media (--s) {
+    font-size: calc(var(--yr) * 5);
+    line-height: calc(var(--yr) * 6);
+  }
+
+  @media (--m) {
+    font-size: calc(var(--yr) * 6);
+    line-height: calc(var(--yr) * 8);
+  }
+}
+
 h1,
 h2,
 h3,
