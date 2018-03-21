@@ -9,6 +9,7 @@
     "eslint": "^4.19.0",
     "eslint-plugin-react": "^7.7.0",
     "jquery": "^3.3.1",
+    "js-cookie": "^2.2.0",
     "normalize.css": "^8.0.0",
     "parallax-js": "^3.1.0",
     "postcss-nested": "^3.0.0",

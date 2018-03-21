@@ -284,3 +284,77 @@ p {
     padding: var(--yr) 0;
   }
 }
+
+.geo_bg {
+  background: color(var(--light_color) alpha(-20%));
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  transition: opacity 0.3s, visibility 0.3s;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+
+  &.act {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .geo_sl {
+    background: #fff;
+    padding: calc(var(--yr) * 12) var(--xr);
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+
+    .geo_logo {
+      height: calc(var(--yr) * 8);
+      padding: calc(var(--yr)) 0;
+
+      svg {
+        height: 20px;
+        width: 150px;
+      }
+    }
+
+    .geo_q {
+      margin-bottom: calc(var(--yr) * 8);
+      margin-top: calc(var(--yr) * 4);
+    }
+
+    .geo_moscow {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      border: 1px solid rgba(0, 0, 0, 0.13);
+      border-radius: 2px;
+      padding: 7px 0;
+      display: inline-block;
+      text-align: center;
+      width: 180px;
+      transition: background 0.2s, color 0.2s;
+
+      &:hover {
+        background-color: #212121;
+        color: #fff;
+      }
+    }
+
+    .geo_or {
+      font-size: 0.75rem;
+      line-height: 1.5rem;
+      margin: calc(var(--yr) * 4) 0;
+    }
+
+    @media (--s) {
+      width: 400px;
+    }
+  }
+
+  @media (--s) {
+    background: rgba(255, 255, 255, 0.8);
+  }
+}
