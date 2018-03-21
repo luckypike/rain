@@ -108,7 +108,7 @@ main.page.page_index
     .video
       .video_ar
         - if Rails.env.production?
-          iframe src="https://www.youtube.com/embed/fgeYJU9x8wY" frameborder="0" allowfullscreen=true
+          iframe src="https://www.youtube.com/embed/#{@city[:video]}" frameborder="0" allowfullscreen=true
 
     .text
       | Бэкстейдж с промо съёмок, процесс создания маникюра, уроки
