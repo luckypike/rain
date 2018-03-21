@@ -20,6 +20,8 @@ gem 'jbuilder'
 
 gem 'rails-i18n'
 
+gem 'sitemap_generator'
+
 gem 'meta-tags'
 
 gem 'aws-sdk-s3', require: false
