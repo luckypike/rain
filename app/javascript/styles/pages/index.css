@@ -123,6 +123,12 @@
       margin-bottom: calc(var(--yr) * 16);
     }
 
+    .text {
+      @media (--s) {
+        padding-right: 50%;
+      }
+    }
+
     &_list {
       margin-top: 0;
       margin-bottom: 0;
@@ -406,6 +412,44 @@
         width: calc(2 / 12 * 100%);
       }
     }
+  }
+
+  &_design {
+    .text {
+      margin-bottom: calc(var(--yr) * 3);
+    }
+
+    .triangle {
+      > a {
+        margin: auto;
+        border-bottom: 0;
+        display: block;
+        width: 180px;
+        padding-top: 156px;
+        text-align: center;
+        background: url('../images/index/instagram_irina_rain.svg') no-repeat center top;
+
+        .pl {
+          display: inline-block;
+          margin-top: calc(var(--yr) * 4);
+          border-bottom: 1px solid color(var(--base_color) alpha(-80%));
+        }
+      }
+    }
+
+    @media (--s) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      .text {
+        margin-bottom: 0;
+      }
+
+      .triangle {
+        align-self: center;
+      }
+    }
+
   }
 
   &_works {
