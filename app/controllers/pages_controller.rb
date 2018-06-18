@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_action :set_specialists, only: [:index, :team]
 
   def index
-    @prices = Price.all
+    @prices = Price.all.order(:order)
   end
 
   def career
