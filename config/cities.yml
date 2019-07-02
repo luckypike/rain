@@ -13,9 +13,9 @@ nizhny:
   title: 'Nizhny'
   title_ru: 'Нижний Новгород'
   title_in: 'в Нижнем Новгороде'
-  address: ['улица Новая', 'дом 28', '1 подъезд', '5 этаж']
+  address: ['улица Варварская', 'дом 32', '4 этаж']
   phone: '+7 920 111-56-88'
   yclients: '58259'
   video: 'qkuyIJWJbk0'
   old_key: nn
-  ymap: 'constructor%3Ab2a07d47fd7b83f2a69447af234d6679edd11c3d89c01ca07c93c68f63db4c2d'
+  ymap: 'constructor%3Ad18e90c9828d604b3cc11fe348fc0f0372dc3c24c105d7327afa877e3df121c7'
