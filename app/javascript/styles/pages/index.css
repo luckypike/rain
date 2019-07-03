@@ -296,8 +296,8 @@
   &_design {
   }
 
-  &_works {
-    .works {
+  &_instagram {
+    .instagram {
       &_list {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -452,7 +452,7 @@
 
   }
 
-  &_works {
+  &_instagram {
     @media (--s) {
       .text {
         width: 50%;
