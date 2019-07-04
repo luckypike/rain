@@ -2,8 +2,10 @@
   "name": "rain",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^3.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@rails/webpacker": "^4.0.7",
     "axios": "^0.18.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-preset-react": "^6.24.1",
     "classnames": "^2.2.5",
     "eslint": "^4.19.0",
@@ -13,13 +15,13 @@
     "normalize.css": "^8.0.0",
     "parallax-js": "^3.1.0",
     "postcss-nested": "^3.0.0",
-    "prop-types": "^15.6.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react_ujs": "^2.4.4",
     "swiper": "^4.1.6"
   },
   "devDependencies": {
-    "webpack-dev-server": "2.11.2"
+    "webpack-dev-server": "^3.7.2"
   }
 }

@@ -1,6 +1,6 @@
 @import 'normalize.css/normalize';
 @import 'swiper/dist/css/swiper.css';
-@import './vars.css';
+/* @import './vars.css';   */
 @import './header.css';
 @import './pages/page.css';
 @import './pages/about.css';

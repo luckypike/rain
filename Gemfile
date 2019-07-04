@@ -5,7 +5,7 @@ gem 'rails', '~> 5.2.0'
 gem 'sqlite3'
 gem 'puma', '~> 3.11'
 
-gem 'webpacker', '~> 3'
+gem 'webpacker'
 gem 'react-rails'
 
 gem 'slim-rails'

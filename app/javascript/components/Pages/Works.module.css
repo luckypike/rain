@@ -1,0 +1,157 @@
+.root {
+
+}
+
+.top {
+  position: relative;
+  margin: 0;
+  color: #fff;
+  height: 400px;
+  background-color: grey;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(var(--yr) * 36);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    z-index: 0;
+  }
+
+  @media(--s) {
+    height: auto;
+  }
+}
+
+.placeholder {
+  display: none;
+  position: relative;
+
+  &::before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: 50%;
+    position: relative;
+    z-index: -1;
+  }
+
+  @media(--s) {
+    display: block;
+  }
+}
+
+.text {
+  position: absolute;
+  bottom: calc(var(--yr) * 9);
+  left: var(--xr);
+  right: var(--xr);
+  z-index: 2;
+
+  @media(--s) {
+    left: calc(var(--xr) * 2);
+    bottom: calc(var(--yr) * 12);
+  }
+
+  @media(--l) {
+    left: 0;
+    margin-left: calc(2 / 16 * 100%);
+    bottom: calc(var(--yr) * 24);
+  }
+}
+
+.button {
+  text-transform: uppercase;
+  text-decoration: none;
+  background: black;
+  text-align: center;
+  padding: var(--yr) 0;
+
+  & a {
+    display: block;
+    border-bottom: none;
+    color: white;
+    line-height: 32px;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+  }
+
+  @media(--s) {
+    display: none;
+  }
+}
+
+.description {
+  margin: 36px 20px;
+
+  @media(--s) {
+    margin: 36px calc(var(--xr) * 2);
+  }
+
+  @media (--l) {
+    margin: 36px calc(2 / 16 * 100%);
+  }
+}
+
+.images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: var(--xr);
+  margin: 0 20px;
+  margin-bottom: 36px;
+}
+
+.image {
+  position: relative;
+  background-color: grey;
+  grid-column: span 2;
+
+  &::before {
+    display: block;
+    content: '';
+    padding-top: calc(4 / 3 * 100%)
+  }
+
+  & img {
+    left: 0;
+    top: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+  }
+}
+
+.first {
+  & .image {
+    &:nth-child(1) {
+      grid-column: span 4;
+    }
+    &:nth-child(2) {
+      grid-column: 2 / span 3;
+    }
+  }
+}
+
+.second {
+  & .image {
+    &:nth-child(1) {
+      grid-column: span 4;
+    }
+    &:nth-child(2) {
+      grid-column: 1 / span 3;
+    }
+  }
+}
+
+.third {
+  & .image {
+    &:nth-child(5) {
+      grid-column: span 4;
+    }
+    &:nth-child(6) {
+      grid-column: 2 / span 3;
+    }
+  }
+}
