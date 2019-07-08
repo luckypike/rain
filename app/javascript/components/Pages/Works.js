@@ -5,6 +5,8 @@ import styles from './Works.module.css'
 
 class Works extends Component {
   render() {
+    const { city } = this.props
+
     return(
       <div className={styles.root}>
         <div className={styles.top}>
@@ -20,7 +22,12 @@ class Works extends Component {
         </div>
 
         <div className={styles.button}>
-          <a href="#">Записаться</a>
+          {city == "nizhny" &&
+            <a href="https://n81206.yclients.com/company:58259">Записаться</a>
+          }
+          {city == "moscow" &&
+            <a href="https://n81206.yclients.com/company:95580">Записаться</a>
+          }
         </div>
 
         <section className={styles.description}>
@@ -32,22 +39,23 @@ class Works extends Component {
         </section>
 
         <section className={classNames(styles.images, styles.first)}>
-          <a href="#" className={styles.image}>
+          <div className={styles.image}>
+            <a href="https://www.instagram.com/p/Bva6CkMnFsp/" target="_blank"></a>
+          </div>
 
-          </a>
+          <div className={styles.image}>
+            <a href="https://www.instagram.com/p/BuSztvOndV8/" target="_blank"></a>
+          </div>
 
-          <a href="#" className={styles.image}>
+          <div className={styles.image}>
+            <a href="https://www.instagram.com/p/BuX9ktEHmEg/" target="_blank"></a>
+          </div>
 
-          </a>
-
-          <a href="#" className={styles.image}>
-
-          </a>
-
-          <a href="#" className={styles.image}>
-
-          </a>
+          <div className={styles.image}>
+            <a href="https://www.instagram.com/p/BvI40tmno0v/" target="_blank"></a>
+          </div>
         </section>
+
         <section className={styles.description}>
           <p>
             Все примеры работ, которые мы выкладываем на публичных площадках, может повторить любой мастер студии.
@@ -57,21 +65,21 @@ class Works extends Component {
         </section>
 
         <section className={classNames(styles.images, styles.second)}>
-          <a href="#" className={styles.image}>
+          <div className={styles.image}>
+            <a href="https://www.instagram.com/p/Bw_VQD4nVhn/" target="_blank"></a>
+          </div>
 
-          </a>
+          <div className={styles.image}>
+            <a href="https://www.instagram.com/p/BvQm4hOHvgP/" target="_blank"></a>
+          </div>
 
-          <a href="#" className={styles.image}>
+          <div className={styles.image}>
+            <a href="https://www.instagram.com/p/Byrf4oui6WA/" target="_blank"></a>
+          </div>
 
-          </a>
-
-          <a href="#" className={styles.image}>
-
-          </a>
-
-          <a href="#" className={styles.image}>
-
-          </a>
+          <div className={styles.image}>
+            <a href="https://www.instagram.com/p/ByUTzXnisQN/" target="_blank"></a>
+          </div>
         </section>
 
         <section className={styles.description}>
@@ -81,37 +89,39 @@ class Works extends Component {
             Мы стремимся воплотить в работе наши ценности.
           </p>
         </section>
+
         <section className={classNames(styles.images, styles.third)}>
-          <a href="#" className={styles.image}>
+          <div className={styles.image}>
+            <a href="https://www.instagram.com/p/BuxxCyOH7tz/" target="_blank"></a>
+          </div>
 
-          </a>
+          <div className={styles.image}>
+            <a href="https://www.instagram.com/p/BwgdKG5HMGh/" target="_blank"></a>
+          </div>
 
-          <a href="#" className={styles.image}>
+          <div className={styles.image}>
+            <a href="https://www.instagram.com/p/BwL2fLzHmGl/" target="_blank"></a>
+          </div>
 
-          </a>
+          <div className={styles.image}>
+            <a href="https://www.instagram.com/p/Byo64Qri08I/" target="_blank"></a>
+          </div>
 
-          <a href="#" className={styles.image}>
+          <div className={styles.image}>
+            <a href="https://www.instagram.com/p/Busi4i9HUhp/" target="_blank"></a>
+          </div>
 
-          </a>
+          <div className={styles.image}>
+            <a href="https://www.instagram.com/p/BxRXSGPHfPG/" target="_blank"></a>
+          </div>
 
-          <a href="#" className={styles.image}>
+          <div className={styles.image}>
+            <a href="https://www.instagram.com/p/BxrGg45C5xK/" target="_blank"></a>
+          </div>
 
-          </a>
-          <a href="#" className={styles.image}>
-
-          </a>
-
-          <a href="#" className={styles.image}>
-
-          </a>
-
-          <a href="#" className={styles.image}>
-
-          </a>
-
-          <a href="#" className={styles.image}>
-
-          </a>
+          <div className={styles.image}>
+            <a href="https://www.instagram.com/p/BzAJLPkiEyN/" target="_blank"></a>
+          </div>
         </section>
       </div>
     )

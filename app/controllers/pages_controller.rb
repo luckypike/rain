@@ -14,6 +14,9 @@ class PagesController < ApplicationController
   def team
   end
 
+  def works
+  end
+
   private
   def set_specialists
     @specialists = Specialist.with_attached_photo.where(city: @city_key)

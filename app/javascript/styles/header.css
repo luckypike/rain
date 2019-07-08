@@ -14,7 +14,7 @@
 
   &_burger {
     cursor: pointer;
-    padding: calc(var(--yr) * 3) calc(var(--xr));
+    padding: calc(var(--yr) * 2) calc(var(--xr));
     position: absolute;
     left: 0;
     top: calc(var(--yr) * 3);
@@ -27,7 +27,7 @@
     }
 
     @media (--s) {
-      left: calc(var(--xr) / 2);
+      left: calc(var(--xr));
     }
   }
 
