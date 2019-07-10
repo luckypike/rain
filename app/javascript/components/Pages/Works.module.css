@@ -1,5 +1,7 @@
 .root {
-
+ @media(--l) {
+   padding: 0 calc(var(--xr) * 3);
+ }
 }
 
 .top {
@@ -7,21 +9,30 @@
   margin: 0;
   color: #fff;
   height: 400px;
-  background-color: grey;
+  width: auto;
 
-  /* &::after {
-    content: '';
+  & .video {
     position: absolute;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    height: calc(var(--yr) * 36);
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-    z-index: 0;
-  } */
+    overflow: hidden;
+    z-index: -1;
+
+    & video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 
   @media(--s) {
     height: auto;
+  }
+
+  @media(--l) {
+    margin: 0 calc(-1 * calc(var(--xr) * 3));
   }
 }
 
@@ -44,6 +55,7 @@
 }
 
 .text {
+  composes: at from '../Fonts.module.css';
   position: absolute;
   bottom: calc(var(--yr) * 9);
   left: var(--xr);
@@ -55,26 +67,28 @@
     bottom: calc(var(--yr) * 12);
   }
 
-  @media(--l) {
-    left: 0;
-    margin-left: calc(2 / 16 * 100%);
+  @media(--m) {
     bottom: calc(var(--yr) * 24);
+  }
+
+  @media(--l) {
+    margin: 0 calc(2 / 16 * 100%);
+    left: calc(var(--xr) * 2);
   }
 }
 
 .button {
+  composes: small from '../Fonts.module.css';
   text-transform: uppercase;
   text-decoration: none;
   background: black;
   text-align: center;
-  padding: var(--yr) 0;
+  padding: calc(var(--yr) * 2) 0;
 
   & a {
     display: block;
     border-bottom: none;
     color: white;
-    line-height: calc(var(--yr) * 8);
-    font-size: 13px;
     letter-spacing: 0.2em;
   }
 
@@ -84,6 +98,7 @@
 }
 
 .description {
+  composes: at from '../Fonts.module.css';
   margin: calc(var(--yr) * 9) var(--xr);
 
   @media(--s) {
@@ -91,6 +106,7 @@
   }
 
   @media (--l) {
+    width: calc(12 / 16 * 100%);
     margin: calc(var(--yr) * 24) calc(2 / 16 * 100%);
   }
 }
@@ -111,7 +127,7 @@
     grid-gap: calc(var(--xr) * 2);
     grid-row-gap: calc(var(--yr) * 24);
     grid-template-columns: repeat(16, 1fr);
-    margin: calc(var(--yr) * 24) calc(var(--xr) * 3);
+    margin: calc(var(--yr) * 24) 0;
   }
 }
 

@@ -3,6 +3,10 @@ import React, { Component } from 'react'
 import classNames from 'classnames'
 import styles from './Works.module.css'
 
+import fonts from '../Fonts.module.css'
+
+import works from '../../video/works.mp4'
+
 class Works extends Component {
   render() {
     const { city } = this.props
@@ -10,6 +14,11 @@ class Works extends Component {
     return(
       <div className={styles.root}>
         <div className={styles.top}>
+          <div className={styles.video}>
+            <video playsInline autoPlay loop muted>
+              <source src={works} type="video/mp4"></source>
+            </video>
+          </div>
           <div className={styles.placeholder}></div>
           <div className={styles.text}>
             <h1>

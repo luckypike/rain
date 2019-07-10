@@ -432,7 +432,7 @@
         .pl {
           display: inline-block;
           margin-top: calc(var(--yr) * 4);
-          border-bottom: 1px solid color(var(--base_color) alpha(-80%));
+          border-bottom: 1px solid color-mod(var(--base_color) alpha(-80%));
         }
       }
     }

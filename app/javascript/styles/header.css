@@ -121,7 +121,7 @@
       display: block;
       border-bottom: 0;
       height: 100%;
-      box-shadow: 0 0 0 1px color(var(--light_color) alpha(-70%));
+      box-shadow: 0 0 0 1px color-mod(var(--light_color) alpha(-70%));
       border-radius: 2px;
       width: 100%;
 
@@ -170,6 +170,7 @@
 
         .text {
           display: block;
+          text-align: center;
         }
       }
     }
@@ -277,7 +278,7 @@
 
       &_book {
         a.book {
-          box-shadow: 0 0 0 1px color(var(--base_color) alpha(-70%));
+          box-shadow: 0 0 0 1px color-mod(var(--base_color) alpha(-70%));
 
           .text {
             color: var(--base_color);

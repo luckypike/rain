@@ -8,9 +8,16 @@
 @import './pages/team.css';
 @import './pages/index.css';
 
-@font-face {
+/* @font-face {
   font-family: 'Century Gothic';
   src: url('./fonts/cg/subset-CenturyGothic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+@font-face {
+  font-family: 'Futura New';
+  src: url('./fonts/cg/subset-FuturaNewBook-Reg.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -81,25 +88,25 @@ figure {
     }
   }
 }
-
+  
 body {
-  font-family: 'Century Gothic', sans-serif;
-  font-size: calc(var(--yr) * 4);
-  line-height: calc(var(--yr) * 6);
+  font-family: 'Futura New', sans-serif;
+  font-size: calc(var(--yr) * calc(var(--fs) + 0.5));
+  line-height: calc(var(--yr) * calc(var(--lh) + 1));
 
   &.full_screen {
     overflow: hidden;
   }
 
   @media (--m) {
-    line-height: calc(var(--yr) * 8);
+    line-height: calc(var(--yr) * calc(var(--lh) + 3));
   }
 }
 
 a {
   text-decoration: none;
   color: var(--base_color);
-  border-bottom: 1px solid color(var(--base_color) alpha(-80%));
+  border-bottom: 1px solid color-mod(var(--base_color) alpha(-80%));
 }
 
 ul {
@@ -120,73 +127,6 @@ ul {
       width: 1.4rem;
     }
   }
-
-  @media (--m) {
-    margin: 0 0 calc(var(--yr) * 4);
-  }
-
-  &:last-child {
-    margin: 0;
-  }
-}
-
-h1 {
-  font-size: calc(var(--yr) * 6);
-  line-height: calc(var(--yr) * 9);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-
-  @media (--s) {
-    font-size: calc(var(--yr) * 8.5);
-    line-height: calc(var(--yr) * 10);
-  }
-
-  @media (--m) {
-    font-size: calc(var(--yr) * 11.25);
-    line-height: calc(var(--yr) * 12);
-  }
-}
-
-h2 {
-  font-size: calc(var(--yr) * 5);
-  line-height: calc(var(--yr) * 7);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-
-  @media (--s) {
-    font-size: calc(var(--yr) * 6);
-    line-height: calc(var(--yr) * 9);
-  }
-
-  @media (--m) {
-    font-size: calc(var(--yr) * 8.5);
-    line-height: calc(var(--yr) * 10);
-  }
-}
-
-h3 {
-  font-size: calc(var(--yr) * 4);
-  line-height: calc(var(--yr) * 6);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-
-  @media (--s) {
-    font-size: calc(var(--yr) * 5);
-    line-height: calc(var(--yr) * 6);
-  }
-
-  @media (--m) {
-    font-size: calc(var(--yr) * 6);
-    line-height: calc(var(--yr) * 8);
-  }
-}
-
-h1,
-h2,
-h3,
-p {
-  margin: 0 0 calc(var(--yr) * 3);
-  font-weight: normal;
 
   @media (--m) {
     margin: 0 0 calc(var(--yr) * 4);
@@ -288,7 +228,7 @@ p {
 }
 
 .geo_bg {
-  background: color(var(--light_color) alpha(-20%));
+  background: color-mod(var(--light_color) alpha(-20%));
   opacity: 0;
   visibility: hidden;
   position: fixed;
