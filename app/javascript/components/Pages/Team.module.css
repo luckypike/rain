@@ -1,0 +1,140 @@
+.root {
+
+}
+
+.top {
+  position: relative;
+  margin: 0;
+  color: #fff;
+  height: 400px;
+  background-image: url('../../images/team/top.jpg');
+  background-size: cover;
+  background-position: center;
+
+  @media(--s) {
+    height: auto;
+  }
+
+  @media(--l) {
+    margin: 0 calc(-1 * calc(var(--xr) * 3));
+  }
+}
+
+.placeholder {
+  display: none;
+  position: relative;
+
+  &::before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: 50%;
+    position: relative;
+    z-index: -1;
+  }
+
+  @media(--s) {
+    display: block;
+  }
+}
+
+.text {
+  composes: at from '../Fonts.module.css';
+  position: absolute;
+  bottom: calc(var(--yr) * 9);
+  left: var(--xr);
+  right: var(--xr);
+  z-index: 2;
+
+  @media(--s) {
+    left: calc(var(--xr) * 2);
+    bottom: calc(var(--yr) * 12);
+  }
+
+  @media(--m) {
+    bottom: calc(var(--yr) * 24);
+  }
+
+  @media(--l) {
+    margin: 0 calc(2 / 16 * 100%);
+    left: calc(var(--xr) * 2);
+  }
+}
+
+.description {
+  composes: at from '../Fonts.module.css';
+  margin: calc(var(--yr) * 9) var(--xr);
+
+  @media(--m) {
+    & .txt {
+      padding-right: 25%;
+      width: 75%;
+    }
+  }
+
+  @media(--s) {
+    margin: calc(var(--yr)* 12) calc(var(--xr) * 2);
+  }
+
+  @media (--l) {
+    width: calc(12 / 16 * 100%);
+    margin: calc(var(--yr) * 24) calc(2 / 16 * 100%);
+  }
+}
+
+.photo {
+  margin: calc(var(--yr) * 9) var(--xr);
+
+  @media(--s) {
+    margin: calc(var(--yr)* 12) calc(var(--xr) * 2);
+  }
+}
+
+.girls {
+  background-image: url('../../images/team/girls.jpg');
+  background-size: cover;
+  background-position: 50%;
+  background-color: #f1f1f1;
+
+  &::before {
+    width: 100%;
+    display: block;
+    content: "";
+    z-index: -1;
+    padding-top: calc(4 / 5 * 100%);
+
+    @media(--s) {
+      padding-top: calc(9 / 16 * 100%);
+    }
+  }
+}
+
+.team {
+  margin: calc(var(--yr) * 9) var(--xr);
+
+  @media(--s) {
+    margin: calc(var(--yr) * 9) calc(var(--xr) * 2);
+  }
+}
+
+.specialists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: calc(var(--yr) * 9) calc(var(--xr));
+}
+
+.specialist {
+  grid-column: span 1;
+  position: relative;
+  background-color: grey;
+
+  &:before {
+    display: block;
+    content: '';
+    padding-top: calc(5 / 4 * 100%);
+  }
+}
+
+.name {
+  composes: h2 from '../Fonts.module.css';
+}

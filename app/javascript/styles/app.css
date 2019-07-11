@@ -5,7 +5,7 @@
 @import './pages/page.css';
 @import './pages/about.css';
 @import './pages/career.css';
-@import './pages/team.css';
+/* @import './pages/team.css'; */
 @import './pages/index.css';
 
 /* @font-face {
@@ -88,7 +88,7 @@ figure {
     }
   }
 }
-  
+
 body {
   font-family: 'Futura New', sans-serif;
   font-size: calc(var(--yr) * calc(var(--fs) + 0.5));

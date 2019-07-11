@@ -1,38 +1,40 @@
 - set_meta_tags title: 'Команда', canonical: team_url(city: city), description: 'Команда пространства RAIN'
 
-main.page.page_team
-  .page_section.page_section_top.page_team_top
-    .placeholder
+= react_component 'Pages/Team', { city: @city_key, specialists: @specialists.map { |specialist| specialist.slice(:service, :name, :yid) } } 
 
-    .text
-      h1 Основа нашей магии
-      p Отточенное профессиональное мастерство
-
-  .page_section.page_section_intro.page_team_intro
-    | Мы создаем не форму, покрытие или дизайн. Мы создаем настроение, с которым девушки будут жить ближайшие несколько недель. Мы любим пробовать неизведанное, не просто следовать моде, а обновлять, изменять её, создавать работу, которая расходится сотнями копий.
-
-
-  .page_section.page_section_14.page_team_girls
-    figure.ar_16_9
-      .img
-
-  .page_section.page_team_feel
-    .text
-      h2 Искусство можно только чувствовать
-      p Мода, дизайн, архитектура, искусство, музыка и улица является вдохновляющим источником для нового. Идеи приходят с каждой из сторон. Они могут возникать из работы с командой. Мы видим больше, чем могли бы видеть работая в одиночку. В каждой работе есть такой момент. Это неописуемый восторг. Словно мы сотворили магию на секунду.
-
-  .page_section.page_team_specialists
-    .specialists_list
-      - @specialists.each do |specialist|
-        .specialists_list_item
-          .photo
-            figure.ar_4_5
-              .img
-                = image_tag specialist.photo.variant(thumbnail: "800x1000", quality: 80, interlace: :plane) if specialist.photo.attached?
-
-          .service
-            = specialist.service
-
-          .name
-            h2
-              = specialist.name
+/ main.page.page_team
+/   .page_section.page_section_top.page_team_top
+/     .placeholder
+/
+/     .text
+/       h1 Основа нашей магии
+/       p Отточенное профессиональное мастерство
+/
+/   .page_section.page_section_intro.page_team_intro
+/     | Мы создаем не форму, покрытие или дизайн. Мы создаем настроение, с которым девушки будут жить ближайшие несколько недель. Мы любим пробовать неизведанное, не просто следовать моде, а обновлять, изменять её, создавать работу, которая расходится сотнями копий.
+/
+/
+/   .page_section.page_section_14.page_team_girls
+/     figure.ar_16_9
+/       .img
+/
+/   .page_section.page_team_feel
+/     .text
+/       h2 Искусство можно только чувствовать
+/       p Мода, дизайн, архитектура, искусство, музыка и улица является вдохновляющим источником для нового. Идеи приходят с каждой из сторон. Они могут возникать из работы с командой. Мы видим больше, чем могли бы видеть работая в одиночку. В каждой работе есть такой момент. Это неописуемый восторг. Словно мы сотворили магию на секунду.
+/
+/   .page_section.page_team_specialists
+/     .specialists_list
+/       - @specialists.each do |specialist|
+/         .specialists_list_item
+/           .photo
+/             figure.ar_4_5
+/               .img
+/                 = image_tag specialist.photo.variant(thumbnail: "800x1000", quality: 80, interlace: :plane) if specialist.photo.attached?
+/
+/           .service
+/             = specialist.service
+/
+/           .name
+/             h2
+/               = specialist.name
