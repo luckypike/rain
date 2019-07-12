@@ -1,6 +1,6 @@
 - set_meta_tags title: 'Команда', canonical: team_url(city: city), description: 'Команда пространства RAIN'
 
-= react_component 'Pages/Team', { city: @city_key, specialists: @specialists.map { |specialist| specialist.slice(:service, :name, :yid) } } 
+= react_component 'Pages/Team', { city: @city_key, specialists: @specialists.map { |specialist| specialist.slice(:name, :service) } }
 
 / main.page.page_team
 /   .page_section.page_section_top.page_team_top

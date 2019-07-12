@@ -1,5 +1,7 @@
 .root {
-
+  @media(--l) {
+    padding: 0 calc(var(--xr) * 3);
+  }
 }
 
 .top {
@@ -17,6 +19,21 @@
 
   @media(--l) {
     margin: 0 calc(-1 * calc(var(--xr) * 3));
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(var(--yr) * 36);
+    background: linear-gradient(to top, color-mod(#000 alpha(-30%)), color-mod(#000 alpha(-100%)));
+    z-index: 0;
+
+    @media (--m) {
+      height: calc(var(--yr) * 72);
+    }
   }
 }
 
@@ -65,10 +82,9 @@
   composes: at from '../Fonts.module.css';
   margin: calc(var(--yr) * 9) var(--xr);
 
-  @media(--m) {
+  @media(--l) {
     & .txt {
       padding-right: 25%;
-      width: 75%;
     }
   }
 
@@ -86,7 +102,12 @@
   margin: calc(var(--yr) * 9) var(--xr);
 
   @media(--s) {
-    margin: calc(var(--yr)* 12) calc(var(--xr) * 2);
+    margin: calc(var(--yr) * 12) calc(var(--xr) * 2);
+  }
+
+  @media(--l) {
+    margin: calc(var(--yr) * 24) auto;
+    width: calc(14 / 16 * 100%);
   }
 }
 
@@ -113,7 +134,12 @@
   margin: calc(var(--yr) * 9) var(--xr);
 
   @media(--s) {
-    margin: calc(var(--yr) * 9) calc(var(--xr) * 2);
+    margin: calc(var(--yr) * 12) calc(var(--xr) * 2);
+  }
+
+  @media(--l) {
+    width: 75%;
+    margin: calc(var(--yr) * 24) auto;
   }
 }
 
@@ -121,12 +147,24 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: calc(var(--yr) * 9) calc(var(--xr));
+
+  @media(--s) {
+    grid-gap: calc(var(--yr) * 12) calc(var(--xr));
+  }
+  @media(--m) {
+    grid-gap: calc(var(--yr) * 12) 0;
+  }
 }
 
 .specialist {
   grid-column: span 1;
   position: relative;
-  background-color: grey;
+  background-color: #f1f1f1;
+  margin-bottom: calc(var(--yr) * 2);
+
+  @media(--s) {
+    margin-bottom: calc(var(--yr) * 4);
+  }
 
   &:before {
     display: block;
@@ -137,4 +175,18 @@
 
 .name {
   composes: h2 from '../Fonts.module.css';
+}
+
+.list {
+  @media(--m) {
+    &:nth-child(4n+1),
+    &:nth-child(4n+2) {
+      padding-right: calc(1 / 6 * 100%);
+    }
+
+    &:nth-child(4n+3),
+    &:nth-child(4n+4) {
+      padding-left: calc(1 / 6 * 100%);
+    }
+  }
 }

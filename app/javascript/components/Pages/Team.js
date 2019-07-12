@@ -5,7 +5,7 @@ import styles from './Team.module.css'
 
 class Team extends Component {
   render(){
-  const { city, specialists } = this.props
+  const { city, specialists, photo } = this.props
 
   console.log(specialists);
 
@@ -51,23 +51,13 @@ class Team extends Component {
 
         <section className={styles.team}>
           <div className={styles.specialists}>
-            <div>
-              <div className={styles.specialist}></div>
-              <div className={styles.service}>Nail Artist</div>
-              <div className={styles.name}>Яна</div>
-            </div>
-
-            <div>
-              <div className={styles.specialist}></div>
-              <div className={styles.service}>Nail Artist</div>
-              <div className={styles.name}>Вероника</div>
-            </div>
-
-            <div>
-              <div className={styles.specialist}></div>
-              <div className={styles.service}>CEO RAIN</div>
-              <div className={styles.name}>Ирина</div>
-            </div>
+            {specialists.map((specialist, _) =>
+              <div className={styles.list} key={_}>
+                <div className={styles.specialist}></div>
+                <div className={styles.service}>{specialist.service}</div>
+                <div className={styles.name}>{specialist.name}</div>
+              </div>
+            )}
           </div>
         </section>
       </div>
