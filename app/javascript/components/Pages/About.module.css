@@ -1,0 +1,324 @@
+.root {
+  @media(--l) {
+    padding: 0 calc(var(--xr) * 3);
+  }
+}
+
+.top {
+  position: relative;
+  margin: 0;
+  color: #fff;
+  height: 400px;
+  background-image: url('../../images/about/top_moscow.jpg');
+  background-size: cover;
+  background-position: center;
+
+  &.active {
+    background-image: url('../../images/about/top_nizhny.jpg');
+  }
+
+  @media(--s) {
+    height: auto;
+  }
+
+  @media(--l) {
+    margin: 0 calc(-1 * calc(var(--xr) * 3));
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(var(--yr) * 36);
+    background: linear-gradient(to top, color-mod(#000 alpha(-30%)), color-mod(#000 alpha(-100%)));
+    z-index: 0;
+
+    @media (--m) {
+      height: calc(var(--yr) * 72);
+    }
+  }
+}
+
+.placeholder {
+  display: none;
+  position: relative;
+
+  &::before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: 50%;
+    position: relative;
+    z-index: -1;
+  }
+
+  @media(--s) {
+    display: block;
+  }
+}
+
+.text {
+  composes: at from '../Fonts.module.css';
+  position: absolute;
+  bottom: calc(var(--yr) * 9);
+  left: var(--xr);
+  right: var(--xr);
+  z-index: 2;
+
+  @media(--s) {
+    left: calc(var(--xr) * 2);
+    bottom: calc(var(--yr) * 12);
+  }
+
+  @media(--m) {
+    bottom: calc(var(--yr) * 24);
+  }
+
+  @media(--l) {
+    margin: 0 calc(2 / 16 * 100%);
+    left: calc(var(--xr) * 2);
+  }
+}
+
+.description {
+  composes: at from '../Fonts.module.css';
+  margin: calc(var(--yr) * 9) var(--xr);
+
+  @media(--s) {
+    margin: calc(var(--yr)* 12) calc(var(--xr) * 2);
+  }
+
+  @media (--l) {
+    width: calc(12 / 16 * 100%);
+    margin: calc(var(--yr) * 24) calc(2 / 16 * 100%);
+  }
+}
+
+.photo {
+  margin: calc(var(--yr) * 9) var(--xr);
+
+  @media(--s) {
+    margin: calc(var(--yr) * 12) calc(var(--xr) * 2);
+  }
+
+  @media(--l) {
+    margin: calc(var(--yr) * 24) auto;
+    width: calc(14 / 16 * 100%);
+  }
+}
+
+.tables {
+  background-image: url('../../images/about/tables_moscow.jpg');
+  background-size: cover;
+  background-position: 50%;
+  background-color: #f1f1f1;
+
+  &.active {
+    background-image: url('../../images/about/tables_nizhny.jpg');
+  }
+
+  &::before {
+    width: 100%;
+    display: block;
+    content: "";
+    z-index: -1;
+    padding-top: calc(4 / 5 * 100%);
+
+    @media(--s) {
+      padding-top: calc(9 / 16 * 100%);
+    }
+  }
+}
+
+.senses {
+  margin: calc(var(--yr) * 9) calc(var(--xr));
+
+  @media(--s) {
+    margin: calc(var(--yr) * 12) calc(var(--xr) * 2);
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-gap: var(--xr);
+  }
+
+  @media(--l) {
+    grid-gap: 40px;
+    width: 75%;
+    margin: calc(var(--yr) * 24) auto;
+  }
+
+  & .txt {
+    margin-bottom: calc(var(--yr) * 9);
+
+    @media(--s) {
+      margin: 0;
+      grid-column: span 7;
+    }
+  }
+
+  & .feel {
+    background-image: url('../../images/about/feel_moscow.jpg');
+    background-size: cover;
+    background-position: 50%;
+    background-color: #f1f1f1;
+
+    &.active {
+      background-image: url('../../images/about/feel_nizhny.jpg');
+    }
+
+    &::before {
+      width: 100%;
+      display: block;
+      content: "";
+      z-index: -1;
+      padding-top: calc(5 / 4 * 100%);
+    }
+
+    @media(--s) {
+      grid-column: 8 / span 12;
+    }
+  }
+}
+
+.quote {
+  margin: calc(var(--yr) * 9) calc(var(--xr));
+  composes: at from '../Fonts.module.css';
+
+  @media(--s) {
+    margin: calc(var(--yr) * 12) calc(var(--xr) * 2);
+    padding-right: 25%;
+  }
+
+  & .txt {
+    font-family: var(--ff_serif);
+  }
+
+  & .author {
+    color: #727272;
+  }
+}
+
+.two_photos {
+  margin: calc(var(--yr) * 9) var(--xr);
+
+  @media(--s){
+    margin: calc(var(--yr) * 12) calc(var(--xr) * 2);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--xr);
+  }
+
+  & .first {
+    margin-bottom: calc(var(--yr) * 3);
+    background-image: url('../../images/about/two_images_1_moscow.jpg');
+    background-size: cover;
+    background-position: 50%;
+    background-color: #f1f1f1;
+
+    &.active {
+      background-image: url('../../images/about/two_images_1_nizhny.jpg');
+    }
+
+    &::before {
+      width: 100%;
+      display: block;
+      content: "";
+      z-index: -1;
+      padding-top: calc(4 / 5 * 100%);
+    }
+  }
+
+  & .second {
+    margin-bottom: calc(var(--yr) * 3);
+    background-image: url('../../images/about/two_images_2_moscow.jpg');
+    background-size: cover;
+    background-position: 50%;
+    background-color: #f1f1f1;
+
+    &.active {
+      background-image: url('../../images/about/two_images_2_nizhny.jpg');
+    }
+
+    &::before {
+      width: 100%;
+      display: block;
+      content: "";
+      z-index: -1;
+      padding-top: calc(4 / 5 * 100%);
+    }
+  }
+}
+
+.space {
+  margin: calc(var(--yr) * 9) var(--xr);
+
+  @media(--s) {
+    margin: calc(var(--yr) * 12) calc(var(--xr) * 2);
+  }
+
+  & .txt {
+    margin-bottom: calc(var(--yr) * 3);
+  }
+}
+
+.contacts {
+  composes: small from '../Fonts.module.css';
+}
+
+.roads {
+  margin: calc(var(--yr) * 9) var(--xr);
+
+  @media(--s) {
+    margin: calc(var(--yr) * 12) calc(var(--xr) * 2);
+  }
+
+  & .txt {
+    margin-bottom: calc(var(--yr) * 6);
+  }
+
+  & .road {
+    margin-bottom: calc(var(--yr) * 3);
+    background-image: url('../../images/about/roads.jpg');
+    background-size: cover;
+    background-position: 50%;
+    background-color: #f1f1f1;
+
+    &::before {
+      width: 100%;
+      display: block;
+      content: "";
+      z-index: -1;
+      padding-top: calc(4 / 5 * 100%);
+
+      @media(--s) {
+        padding-top: calc(9 / 16 * 100%);
+      }
+    }
+  }
+
+  & .map {
+    margin-bottom: calc(var(--yr) * 3);
+    position: relative;
+
+    & .ymap {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    &::before {
+      width: 100%;
+      display: block;
+      content: "";
+      z-index: -1;
+      padding-top: calc(4 / 5 * 100%);
+
+      @media(--s) {
+        padding-top: calc(9 / 16 * 100%);
+      }
+    }
+  }
+}

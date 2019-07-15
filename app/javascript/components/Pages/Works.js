@@ -30,14 +30,14 @@ class Works extends Component {
           </div>
         </div>
 
-        <div className={styles.button}>
+        {/*<div className={styles.button}>
           {city == "nizhny" &&
             <a href="https://n81206.yclients.com/company:58259">Записаться</a>
           }
           {city == "moscow" &&
             <a href="https://n81206.yclients.com/company:95580">Записаться</a>
           }
-        </div>
+        </div>*/}
 
         <section className={styles.description}>
           <p>
