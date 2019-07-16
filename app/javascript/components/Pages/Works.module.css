@@ -1,15 +1,10 @@
-.root {
- @media(--l) {
-   padding: 0 calc(var(--xr) * 3);
- }
-}
-
 .top {
   position: relative;
   margin: 0;
   color: #fff;
   height: 400px;
   width: auto;
+  margin: 0 calc(-1 * var(--xr));
 
   & .video {
     position: absolute;
@@ -29,6 +24,7 @@
 
   @media(--s) {
     height: auto;
+    margin: 0 calc(-1 * calc(var(--xr) * 2));
   }
 
   @media(--l) {
@@ -54,29 +50,6 @@
   }
 }
 
-.text {
-  composes: at from '../Fonts.module.css';
-  position: absolute;
-  bottom: calc(var(--yr) * 9);
-  left: var(--xr);
-  right: var(--xr);
-  z-index: 2;
-
-  @media(--s) {
-    left: calc(var(--xr) * 2);
-    bottom: calc(var(--yr) * 12);
-  }
-
-  @media(--m) {
-    bottom: calc(var(--yr) * 24);
-  }
-
-  @media(--l) {
-    margin: 0 calc(2 / 16 * 100%);
-    left: calc(var(--xr) * 2);
-  }
-}
-
 .button {
   composes: small from '../Fonts.module.css';
   text-transform: uppercase;
@@ -99,11 +72,6 @@
 
 .description {
   composes: at from '../Fonts.module.css';
-  margin: calc(var(--yr) * 9) var(--xr);
-
-  @media(--s) {
-    margin: calc(var(--yr)* 12) calc(var(--xr) * 2);
-  }
 
   @media (--l) {
     width: calc(12 / 16 * 100%);
@@ -116,18 +84,16 @@
   grid-template-columns: repeat(4, 1fr);
   grid-gap: var(--xr);
   grid-row-gap: calc(var(--yr) * 6);
-  margin: calc(var(--yr) * 9) var(--xr);
 
   @media(--s) {
     grid-template-columns: repeat(12, 1fr);
-    margin: calc(var(--yr)* 12) calc(var(--xr) * 2);
     grid-row-gap: calc(var(--yr)* 12);
   }
+  
   @media(--l) {
     grid-gap: calc(var(--xr) * 2);
     grid-row-gap: calc(var(--yr) * 24);
     grid-template-columns: repeat(16, 1fr);
-    margin: calc(var(--yr) * 24) 0;
   }
 }
 

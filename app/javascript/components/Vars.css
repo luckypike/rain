@@ -16,6 +16,7 @@
   --lh: 5;
 
   --ff_serif: 'Playfair Display', serif;
+  --fn_serif: 'Futura New', sans-serif;
 }
 
 @custom-media --s (min-width: 720px);

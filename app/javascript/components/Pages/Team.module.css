@@ -1,9 +1,3 @@
-.root {
-  @media(--l) {
-    padding: 0 calc(var(--xr) * 3);
-  }
-}
-
 .top {
   position: relative;
   margin: 0;
@@ -12,8 +6,10 @@
   background-image: url('../../images/team/top.jpg');
   background-size: cover;
   background-position: center;
+  margin: 0 calc(-1 * var(--xr));
 
   @media(--s) {
+    margin: 0 calc(-1 * calc(var(--xr) * 2));
     height: auto;
   }
 
@@ -55,56 +51,20 @@
   }
 }
 
-.text {
-  composes: at from '../Fonts.module.css';
-  position: absolute;
-  bottom: calc(var(--yr) * 9);
-  left: var(--xr);
-  right: var(--xr);
-  z-index: 2;
-
-  @media(--s) {
-    left: calc(var(--xr) * 2);
-    bottom: calc(var(--yr) * 12);
-  }
-
-  @media(--m) {
-    bottom: calc(var(--yr) * 24);
-  }
-
-  @media(--l) {
-    margin: 0 calc(2 / 16 * 100%);
-    left: calc(var(--xr) * 2);
-  }
-}
-
 .description {
   composes: at from '../Fonts.module.css';
-  margin: calc(var(--yr) * 9) var(--xr);
-
-  @media(--l) {
-    & .txt {
-      padding-right: 25%;
-    }
-  }
-
-  @media(--s) {
-    margin: calc(var(--yr)* 12) calc(var(--xr) * 2);
-  }
 
   @media (--l) {
     width: calc(12 / 16 * 100%);
     margin: calc(var(--yr) * 24) calc(2 / 16 * 100%);
+
+    & .txt {
+      padding-right: 25%;
+    }
   }
 }
 
 .photo {
-  margin: calc(var(--yr) * 9) var(--xr);
-
-  @media(--s) {
-    margin: calc(var(--yr) * 12) calc(var(--xr) * 2);
-  }
-
   @media(--l) {
     margin: calc(var(--yr) * 24) auto;
     width: calc(14 / 16 * 100%);
@@ -131,15 +91,10 @@
 }
 
 .team {
-  margin: calc(var(--yr) * 9) var(--xr);
-
-  @media(--s) {
-    margin: calc(var(--yr) * 12) calc(var(--xr) * 2);
-  }
-
   @media(--l) {
     width: 75%;
-    margin: calc(var(--yr) * 24) auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -151,7 +106,7 @@
   @media(--s) {
     grid-gap: calc(var(--yr) * 12) calc(var(--xr));
   }
-  @media(--m) {
+  @media(--l) {
     grid-gap: calc(var(--yr) * 12) 0;
   }
 }
@@ -161,6 +116,14 @@
   position: relative;
   background-color: #f1f1f1;
   margin-bottom: calc(var(--yr) * 2);
+
+  & img {
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 
   @media(--s) {
     margin-bottom: calc(var(--yr) * 4);
@@ -178,7 +141,7 @@
 }
 
 .list {
-  @media(--m) {
+  @media(--l) {
     &:nth-child(4n+1),
     &:nth-child(4n+2) {
       padding-right: calc(1 / 6 * 100%);

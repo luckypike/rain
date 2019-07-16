@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import classNames from 'classnames'
 import styles from './Works.module.css'
-
+import page from '../Page.module.css'
 import fonts from '../Fonts.module.css'
 
 import works from '../../video/works.mp4'
@@ -12,7 +12,7 @@ class Works extends Component {
     const { city } = this.props
 
     return(
-      <div className={styles.root}>
+      <div className={page.root}>
         <div className={styles.top}>
           <div className={styles.video}>
             <video playsInline autoPlay loop muted>
@@ -20,7 +20,7 @@ class Works extends Component {
             </video>
           </div>
           <div className={styles.placeholder}></div>
-          <div className={styles.text}>
+          <div className={page.text}>
             <h1>
               Восхитительный маникюр
             </h1>
@@ -39,7 +39,7 @@ class Works extends Component {
           }
         </div>*/}
 
-        <section className={styles.description}>
+        <section className={classNames(styles.description, page.section)}>
           <p>
             Мы любим делать геометричный дизайн, состоящий из простых фигур скомпонованных интересным образом.
             В большинстве случаев мы придумываем дизайн во время работы с гостьей.
@@ -47,7 +47,7 @@ class Works extends Component {
           </p>
         </section>
 
-        <section className={classNames(styles.images, styles.first)}>
+        <section className={classNames(styles.images, styles.first, page.section)}>
           <div className={styles.image}>
             <a href="https://www.instagram.com/p/Bva6CkMnFsp/" target="_blank"></a>
           </div>
@@ -65,7 +65,7 @@ class Works extends Component {
           </div>
         </section>
 
-        <section className={styles.description}>
+        <section className={classNames(styles.description, page.section)}>
           <p>
             Все примеры работ, которые мы выкладываем на публичных площадках, может повторить любой мастер студии.
             Это часть тестового задания в ходе испытательного срока. Мастерам необходимо развивать способности,
@@ -73,7 +73,7 @@ class Works extends Component {
           </p>
         </section>
 
-        <section className={classNames(styles.images, styles.second)}>
+        <section className={classNames(styles.images, styles.second, page.section)}>
           <div className={styles.image}>
             <a href="https://www.instagram.com/p/Bw_VQD4nVhn/" target="_blank"></a>
           </div>
@@ -91,7 +91,7 @@ class Works extends Component {
           </div>
         </section>
 
-        <section className={styles.description}>
+        <section className={classNames(styles.description, page.section)}>
           <p>
             На маникюр с покрытием и дизайном мастер тратит не более 2 часов.
             Мы привлекаем на работу людей с современным мышлением, отличным вкусом, желанием работать и вкладывать свою энергию.
@@ -99,7 +99,7 @@ class Works extends Component {
           </p>
         </section>
 
-        <section className={classNames(styles.images, styles.third)}>
+        <section className={classNames(styles.images, styles.third, page.section)}>
           <div className={styles.image}>
             <a href="https://www.instagram.com/p/BuxxCyOH7tz/" target="_blank"></a>
           </div>

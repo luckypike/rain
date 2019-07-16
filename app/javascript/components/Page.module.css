@@ -1,0 +1,45 @@
+.root {
+  padding: 0 var(--xr);
+
+  @media(--s) {
+    padding: 0 calc(var(--xr) * 2);
+  }
+  @media(--l) {
+    padding: 0 calc(var(--xr) * 3);
+  }
+}
+
+.section {
+  margin: calc(var(--yr) * 9) 0;
+
+  @media(--s) {
+    margin: calc(var(--yr) * 12) 0;
+  }
+
+  @media(--l) {
+    margin: calc(var(--yr) * 24) 0;
+  }
+}
+
+.text {
+  composes: at from './Fonts.module.css';
+  position: absolute;
+  bottom: calc(var(--yr) * 9);
+  left: var(--xr);
+  right: var(--xr);
+  z-index: 2;
+
+  @media(--s) {
+    left: calc(var(--xr) * 2);
+    bottom: calc(var(--yr) * 12);
+  }
+
+  @media(--m) {
+    bottom: calc(var(--yr) * 24);
+  }
+
+  @media(--l) {
+    margin: 0 calc(2 / 16 * 100%);
+    left: calc(var(--xr) * 2);
+  }
+}

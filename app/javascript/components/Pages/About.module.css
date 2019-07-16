@@ -1,9 +1,3 @@
-.root {
-  @media(--l) {
-    padding: 0 calc(var(--xr) * 3);
-  }
-}
-
 .top {
   position: relative;
   margin: 0;
@@ -12,12 +6,14 @@
   background-image: url('../../images/about/top_moscow.jpg');
   background-size: cover;
   background-position: center;
+  margin: 0 calc(-1 * var(--xr));
 
   &.active {
     background-image: url('../../images/about/top_nizhny.jpg');
   }
 
   @media(--s) {
+    margin: 0 calc(-1 * calc(var(--xr) * 2));
     height: auto;
   }
 
@@ -59,36 +55,8 @@
   }
 }
 
-.text {
-  composes: at from '../Fonts.module.css';
-  position: absolute;
-  bottom: calc(var(--yr) * 9);
-  left: var(--xr);
-  right: var(--xr);
-  z-index: 2;
-
-  @media(--s) {
-    left: calc(var(--xr) * 2);
-    bottom: calc(var(--yr) * 12);
-  }
-
-  @media(--m) {
-    bottom: calc(var(--yr) * 24);
-  }
-
-  @media(--l) {
-    margin: 0 calc(2 / 16 * 100%);
-    left: calc(var(--xr) * 2);
-  }
-}
-
 .description {
   composes: at from '../Fonts.module.css';
-  margin: calc(var(--yr) * 9) var(--xr);
-
-  @media(--s) {
-    margin: calc(var(--yr)* 12) calc(var(--xr) * 2);
-  }
 
   @media (--l) {
     width: calc(12 / 16 * 100%);
@@ -97,14 +65,9 @@
 }
 
 .photo {
-  margin: calc(var(--yr) * 9) var(--xr);
-
-  @media(--s) {
-    margin: calc(var(--yr) * 12) calc(var(--xr) * 2);
-  }
-
   @media(--l) {
-    margin: calc(var(--yr) * 24) auto;
+    margin-left: auto;
+    margin-right: auto;
     width: calc(14 / 16 * 100%);
   }
 }
@@ -133,19 +96,17 @@
 }
 
 .senses {
-  margin: calc(var(--yr) * 9) calc(var(--xr));
-
   @media(--s) {
-    margin: calc(var(--yr) * 12) calc(var(--xr) * 2);
     display: grid;
     grid-template-columns: repeat(12,1fr);
     grid-gap: var(--xr);
   }
 
   @media(--l) {
-    grid-gap: 40px;
+    grid-gap: calc(var(--xr) * 2);
     width: 75%;
-    margin: calc(var(--yr) * 24) auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   & .txt {
@@ -153,7 +114,7 @@
 
     @media(--s) {
       margin: 0;
-      grid-column: span 7;
+      grid-column: 1 / 7;
     }
   }
 
@@ -176,18 +137,22 @@
     }
 
     @media(--s) {
-      grid-column: 8 / span 12;
+      grid-column: 7 / 13;
     }
   }
 }
 
 .quote {
-  margin: calc(var(--yr) * 9) calc(var(--xr));
   composes: at from '../Fonts.module.css';
 
   @media(--s) {
-    margin: calc(var(--yr) * 12) calc(var(--xr) * 2);
     padding-right: 25%;
+  }
+
+  @media(--l) {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   & .txt {
@@ -195,18 +160,23 @@
   }
 
   & .author {
+    font-family: var(--fn_serif);
     color: #727272;
   }
 }
 
 .two_photos {
-  margin: calc(var(--yr) * 9) var(--xr);
-
-  @media(--s){
-    margin: calc(var(--yr) * 12) calc(var(--xr) * 2);
+  @media(--s) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: var(--xr);
+  }
+
+  @media(--l) {
+    grid-gap: calc(var(--xr) * 2);
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(14 / 16 * 100%);
   }
 
   & .first {
@@ -251,26 +221,66 @@
 }
 
 .space {
-  margin: calc(var(--yr) * 9) var(--xr);
-
   @media(--s) {
-    margin: calc(var(--yr) * 12) calc(var(--xr) * 2);
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-gap: var(--xr);
+  }
+
+  @media(--l) {
+    grid-gap: calc(var(--xr) * 2);
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
   }
 
   & .txt {
     margin-bottom: calc(var(--yr) * 3);
+
+    @media(--s) {
+      margin: 0;
+      grid-column: 1 / 10;
+    }
   }
 }
 
 .contacts {
   composes: small from '../Fonts.module.css';
+
+  @media(--s) {
+    grid-column: 10 / 13;
+  }
 }
 
 .roads {
-  margin: calc(var(--yr) * 9) var(--xr);
+  @media(--l) {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-  @media(--s) {
-    margin: calc(var(--yr) * 12) calc(var(--xr) * 2);
+  & .active {
+    @media(--s) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: var(--xr);
+
+      & .map {
+        &::before {
+          padding-top: calc(5 / 4 * 100%);
+        }
+      }
+    }
+
+    @media(--l) {
+      grid-gap: calc(var(--xr) * 2);
+    }
+
+    & .map {
+      &::before {
+        padding-top: calc(5 / 4 * 100%);
+      }
+    }
   }
 
   & .txt {
@@ -289,11 +299,7 @@
       display: block;
       content: "";
       z-index: -1;
-      padding-top: calc(4 / 5 * 100%);
-
-      @media(--s) {
-        padding-top: calc(9 / 16 * 100%);
-      }
+      padding-top: calc(5 / 4 * 100%);
     }
   }
 
