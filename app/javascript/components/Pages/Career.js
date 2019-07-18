@@ -8,12 +8,8 @@ import Parallax from 'parallax-js';
 
 class Career extends Component {
 
-  mount = React.createRef()
-
   componentDidMount() {
-    this.parallaxInstance = new Parallax(scene, {
-      relativeInput: true
-    })
+    this.parallaxInstance = new Parallax(scene)
   }
 
   render() {

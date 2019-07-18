@@ -1,0 +1,381 @@
+.top {
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  color: #fff;
+  height: 400px;
+  background-color: #212121;
+  background-image: url('../../images/index/top.jpg');
+  background-size: cover;
+  background-position: 50%;
+  margin: 0 calc(-1 * var(--xr));
+
+  @media(--s) {
+    margin: 0 calc(-1 * calc(var(--xr) * 2));
+    height: auto;
+  }
+
+  @media(--l) {
+    margin: 0 calc(-1 * calc(var(--xr) * 3));
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(var(--yr) * 36);
+    background: linear-gradient(to top, color-mod(#000 alpha(-30%)), color-mod(#000 alpha(-100%)));
+    z-index: 0;
+
+    @media (--m) {
+      height: calc(var(--yr) * 72);
+    }
+  }
+}
+
+.placeholder {
+  display: none;
+  position: relative;
+
+  &::before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: 50%;
+    position: relative;
+    z-index: -1;
+  }
+
+  @media(--s) {
+    display: block;
+  }
+}
+
+.ppl {
+  position: absolute;
+  height: 110%;
+  width: 110%;
+  left: -5%;
+  top: -5%;
+
+  & .l {
+    background-image: url('../../images/index/top_l.png');
+    z-index: 1;
+  }
+
+  & .r {
+    background-image: url('../../images/index/top_r.png');
+  }
+
+  & .l, .r {
+    background-position: center top;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0%;
+  }
+}
+
+.description {
+  composes: at from '../Fonts.module.css';
+
+  & .text {
+    margin-bottom: calc(var(--yr) * 3);
+  }
+}
+
+.contacts {
+  composes: small from '../Fonts.module.css';
+}
+
+.button {
+  box-shadow: inset 0 0 0 1px color-mod(var(--base_color) alpha(-89%));
+  border: 0;
+  cursor: pointer;
+  display: block;
+  border-radius: 2px;
+  padding: var(--yr) var(--xr);
+  width: 100%;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    background: var(--base_color);
+    box-shadow: 0 0 0 1px var(--base_color);
+    color: var(--light_color);
+  }
+}
+
+.slider {
+  margin: 0 calc(-1 * var(--xr));
+}
+
+.slides {
+
+}
+
+.slide {
+  background-color: #f1f1f1;
+  background-position: 50%;
+  background-size: cover;
+  position: relative;
+
+  &::before {
+    display: block;
+    content: "";
+    padding-top: calc(4 / 5 * 100%);
+  }
+
+  & img {
+    left: 0;
+    top: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+  }
+}
+
+.space {
+  & .text {
+    margin-bottom: calc(var(--yr) * 3);
+  }
+}
+
+.free {
+  composes: small from '../Fonts.module.css';
+  color: #727272;
+
+  & li {
+    padding-left: 0;
+  }
+
+  & li::before {
+    content: '';
+  }
+}
+
+.list {
+  width: 100%;
+  overflow: hidden;
+}
+
+.master {
+  background-position: 50%;
+  background-size: cover;
+  position: relative;
+
+  &::before {
+    display: block;
+    content: "";
+    padding-top: calc(5 / 4 * 100%);
+  }
+
+  & img {
+    left: 0;
+    top: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+  }
+
+  & .photo {
+    margin-bottom: calc(var(--yr) * 3);
+  }
+
+  & .book {
+    margin-top: calc(var(--yr) * 6);
+  }
+}
+
+.sis {
+  background-image: url('../../images/index/sis.jpg');
+  background-color: #f1f1f1;
+  background-position: 50%;
+  background-size: cover;
+  position: relative;
+
+  &::before {
+    display: block;
+    content: "";
+    padding-top: calc(4 / 5 * 100%);
+  }
+}
+
+.philosophy {
+  & .text {
+    margin-bottom: calc(var(--yr) * 9);
+  }
+
+  & .phil {
+    background-image: url('../../images/index/phil.jpg');
+    background-color: #f1f1f1;
+    background-position: 50%;
+    background-size: cover;
+    position: relative;
+
+    &::before {
+      display: block;
+      content: "";
+      padding-top: calc(5 / 4 * 100%);
+    }
+  }
+}
+
+.video {
+  margin-bottom: calc(var(--yr) * 3);
+  background-color: #f1f1f1;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  &::before {
+    display: block;
+    content: '';
+    width: 100%;
+    position: relative;
+    padding-top: calc(9 / 16 * 100%);
+    z-index: -1;
+  }
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  & .text {
+    color: var(--grey_color);
+  }
+
+  @media (--m) {
+    position: relative;
+
+    & .text {
+      position: absolute;
+      padding-right: calc(var(--xr) / 2);
+      left: calc(-1 * 2 / 12 * 100%);
+      top: 0;
+      width: calc(2 / 12 * 100%);
+    }
+  }
+}
+
+.prices {
+  & .text {
+    margin-bottom: calc(var(--yr) * 6);
+  }
+
+  & .left {
+    margin-bottom: calc(var(--yr) * 4);
+  }
+
+  & .prices_row {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & .title {
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+    padding-right: 1.2em;
+
+    &::after {
+      background-image: linear-gradient(to right, #bdbdbd 20%, rgba(255, 255, 255, 0) 0%);
+      background-position: bottom;
+      background-size: 10px 2px;
+      background-repeat: repeat-x;
+      content: '';
+      height: 2px;
+      position: absolute;
+      bottom: 0.3rem;
+      width: 100%;
+      margin-left: 0.3em;
+
+      @media (--m) {
+        bottom: 0.6em;
+      }
+    }
+  }
+
+  & .price {
+    align-self: flex-end;
+    flex-shrink: 0;
+    width: 70px;
+    text-align: left;
+    margin-left: 0.3em;
+    white-space: nowrap;
+
+    i {
+      font-style: normal;
+    }
+  }
+
+  & .desc {
+    color: #727272;
+    margin-top: calc(var(--yr) * -2);
+
+    @media (--l) {
+      padding-right: 100px;
+    }
+  }
+
+  & .under {
+    margin-top: 2rem;
+  }
+}
+
+.design {
+  & .text {
+    margin-bottom: calc(var(--yr) * 3);
+  }
+
+  & .triangle {
+    & a {
+      margin: auto;
+      border-bottom: 0;
+      display: block;
+      width: 180px;
+      padding-top: 156px;
+      text-align: center;
+      background: url('../../images/index/instagram_irina_rain.svg') no-repeat center top;
+    }
+
+    & .pl {
+      display: inline-block;
+      margin-top: calc(var(--yr) * 4);
+      border-bottom: 1px solid color-mod(var(--base_color) alpha(-80%));
+    }
+  }
+}
+
+.rain {
+  margin-top: -10%;
+  margin-left: calc(-1 * var(--xr));
+  margin-right: calc(-1 * var(--xr));
+  background-position: bottom;
+  background-size: cover;
+  background-image: url('../../images/index/community.jpg');
+  position: relative;
+  z-index: -1;
+
+  &::before {
+    display: block;
+    content: "";
+    width: 100%;
+    position: relative;
+    padding-top: calc(1 / 2 * 100%);
+  }
+}

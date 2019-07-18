@@ -1,163 +1,164 @@
 - set_meta_tags title: "RAIN — ногтевая студия. Заботливый маникюр и педикюр #{@city[:title_in]}.", site: nil, description: "Заботливый маникюр и педикюр #{@city[:title_in]}.", canonical: root_url(city: city), og: { title: "RAIN — ногтевая студия" }
 
-main.page.page_index
-  .page_section.page_section_top.page_index_top
-    .placeholder
-    .ppl
-      .l data-depth="0.3"
-      .r data-depth="0.4"
-
-  .page_section.page_section_intro.page_index_intro
-    .text
-      | Стильный маникюр и педикюр для прогрессивных людей. Бережное отношение к&nbsp;мелочам и&nbsp;деталям. Акцент на&nbsp;естественность, натуральность, элегантность и&nbsp;женственность. Пространство маникюрных встреч RAIN&nbsp;<em>#irinarain</em>
-
-    .contacts
-      p
-        = @city[:phone]
-
-      p 10:00 — 21:00
-      p
-        = @city[:address].join(', ')
-        br
-        = @city[:title_ru]
-
-      p
-        a href="#" class="sign ms_booking"
-          | Записаться
-
-
-  .page_section.page_section_16.page_index_swiper
-    .swiper-container
-      .swiper-wrapper
-        .swiper-slide.ss1
-          figure.ar_5_4
-            .img
-          / = cl_img '/IMG_0192_hk90x9.jpg', 1220, 976
-
-        .swiper-slide.ss2
-          figure.ar_5_4
-            .img
-          / = cl_img '/IMG_0386_wkcyja.jpg', 800, 640
-
-        .swiper-slide.ss3
-          figure.ar_5_4
-            .img
-          / = cl_img '/IMG_0336_a391p4.jpg', 800, 640
-
-        .swiper-slide.ss4
-          figure.ar_5_4
-            .img
-          / = cl_img '/IMG_4752_c7cwcr.jpg', 1220, 976
-
-
-  .page_section.page_index_space
-    .text
-      h2 Пространство
-      p RAIN&nbsp;&mdash; это пространство для современных, интеллигентных, уверенных, естественных, веселых и&nbsp;непринужденных девушек. Ценящих свободу самовыражения, свободу творчества, свободу быть собой. Которые привыкли к&nbsp;качественному обслуживанию по&nbsp;доступным ценам.
-
-    .free
-      ul
-        li Free WiFi
-        li Free Coffee
-        li Free Tea
-        li Free Candy Bar
-        li Free Community
-
-
-  .page_section.page_index_masters
-    .text
-      h2 Мастера
-      p Неподдельность — вот что мы олицетворяем. Это — неотъемлемая часть нашего характера.
-
-  - if @specialists.present?
-    .page_index_masters_list_wrapper
-      .page_index_masters_list.page_section
-        .masters_list.swiper-container
-          .swiper-wrapper
-            - @specialists.each do |specialist|
-              .masters_list_item.swiper-slide
-                figure.ar_4_5
-                  .img
-                    = image_tag specialist.photo.variant(thumbnail: "400x500", quality: 80, interlace: :plane) if specialist.photo.attached?
-
-                .name
-                  = specialist.name
-                  i |
-                  span.services
-                    = specialist.service
-
-                - if specialist.yid.present?
-                  .book
-                    = link_to 'Записаться', '#', class: [:sign, :ms_booking], data: { url: "https://w81206.yclients.com/?o=m#{specialist.yid}c#{@cities[specialist.city][:yclients]}&st=service" }
-
-
-  .page_section.page_index_sis.page_section_16
-    figure.ar_16_9
-      .img
-
-  .page_section.page_index_phil
-    .text
-      h2 Философия
-      p Мы&nbsp;поняли, что у&nbsp;нас есть только один способ отличаться от&nbsp;других, он&nbsp;заключен в&nbsp;людях, которых мы&nbsp;обслуживаем, и&nbsp;людях которые у&nbsp;нас работают. Мы&nbsp;хотим, чтобы вы&nbsp;чувствовали себя здесь как дома или в&nbsp;кругу близких друзей. Мы&nbsp;заботимся о&nbsp;наших сотрудниках также, как о&nbsp;гостях студии. Мы&nbsp;создаем сообщество, которое растет и&nbsp;развивается вместе с&nbsp;вами, и&nbsp;в&nbsp;котором есть место для каждой.
-
-    figure.ar_4_5
-      .img
-
-
-  .page_section.page_index_video
-    .video
-      .video_ar
-        - if Rails.env.production?
-          iframe src="https://www.youtube.com/embed/#{@city[:video]}" frameborder="0" allowfullscreen=true
-
-    .text
-      | Бэкстейдж с промо съёмок, процесс создания маникюра, уроки
-        и другое видео <a href="//www.youtube.com/channel/UCy6W5Izwkif_RyYOMU7rafQ">на нашем Youtube канале</a>.
-
-  .page_section.page_index_prices
-    .text
-      h2 Цены
-      p Изо дня в день и от сезона к сезону мы создаем nail art, подчеркиваем вашу внутреннюю и внешнюю красоту.
-
-    - %w(left right).each do |c|
-      div class=c
-        .prices
-          - @prices.each do |price|
-            - if (price.position == c) && (price["price_#{@city[:old_key]}"].presence)
-              .prices_row
-                .name
-                  = price.title
-
-                .price
-                  => price["price_#{@city[:old_key]}"]
-                  i ₽
-
-              - if price.description.presence
-                .prices_desc = price.description
-
-    .under
-      a.sign.ms_booking
-        | Записаться
-
-  .page_section.page_index_instagram.page_section_16
-    = react_component 'Instagram', { instagram_path: instagram_index_path(format: :json) }
-
-  .page_section.page_index_design
-    .text
-      h2 Дизайн
-      p Мы&nbsp;верим в&nbsp;природную красоту, которую можно увидеть во&nbsp;всем и&nbsp;во&nbsp;всех. Мы&nbsp;работаем не&nbsp;только для того, чтобы сделать ваши руки ухоженными и&nbsp;красивыми, но&nbsp;и&nbsp;для того, чтобы вдохновить на&nbsp;поиски прекрасного, любить несовершенства, ценить каждую линию на&nbsp;теле и&nbsp;историю, которую она рассказывает.
-
-    .triangle
-      = link_to '//instagram.com/irina_rain' do
-        .img_ar
-        .pl @irina_rain
-
-
-  .page_section.page_index_community
-    .text
-      h2 Сообщество
-
-      p Мне всегда хотелось создать место теплое и&nbsp;уютное, где я&nbsp;бы могла проводить большую часть своей жизни. Заниматься творчеством и&nbsp;знакомиться с&nbsp;удивительными людьми. Сейчас это &laquo;RAIN&raquo;. Возможно в&nbsp;будущем это пространство трансформируется в&nbsp;нечто иное, уникальное и&nbsp;запоминающееся.
-
-  .page_index_rain
-    figure
+= react_component 'Pages/Index', { city: @city_key, specialists: @specialists.map { |specialist| specialist.slice(:name, :service).merge({ photo: url_for(specialist.photo.variant(thumbnail: "800x1000", quality: 80, interlace: :plane)) }) }, prices: @prices.map { |price| price.slice(:title, :price_msk, :price_nn, :description, :position, :order) }, instagram_path: instagram_index_path(format: :json) }
+/ main.page.page_index
+/   .page_section.page_section_top.page_index_top
+/     .placeholder
+/     .ppl
+/       .l data-depth="0.3"
+/       .r data-depth="0.4"
+/
+/   .page_section.page_section_intro.page_index_intro
+/     .text
+/       | Стильный маникюр и педикюр для прогрессивных людей. Бережное отношение к&nbsp;мелочам и&nbsp;деталям. Акцент на&nbsp;естественность, натуральность, элегантность и&nbsp;женственность. Пространство маникюрных встреч RAIN&nbsp;<em>#irinarain</em>
+/
+/     .contacts
+/       p
+/         = @city[:phone]
+/
+/       p 10:00 — 21:00
+/       p
+/         = @city[:address].join(', ')
+/         br
+/         = @city[:title_ru]
+/
+/       p
+/         a href="#" class="sign ms_booking"
+/           | Записаться
+/
+/
+/   .page_section.page_section_16.page_index_swiper
+/     .swiper-container
+/       .swiper-wrapper
+/         .swiper-slide.ss1
+/           figure.ar_5_4
+/             .img
+/           / = cl_img '/IMG_0192_hk90x9.jpg', 1220, 976
+/
+/         .swiper-slide.ss2
+/           figure.ar_5_4
+/             .img
+/           / = cl_img '/IMG_0386_wkcyja.jpg', 800, 640
+/
+/         .swiper-slide.ss3
+/           figure.ar_5_4
+/             .img
+/           / = cl_img '/IMG_0336_a391p4.jpg', 800, 640
+/
+/         .swiper-slide.ss4
+/           figure.ar_5_4
+/             .img
+/           / = cl_img '/IMG_4752_c7cwcr.jpg', 1220, 976
+/
+/
+/   .page_section.page_index_space
+/     .text
+/       h2 Пространство
+/       p RAIN&nbsp;&mdash; это пространство для современных, интеллигентных, уверенных, естественных, веселых и&nbsp;непринужденных девушек. Ценящих свободу самовыражения, свободу творчества, свободу быть собой. Которые привыкли к&nbsp;качественному обслуживанию по&nbsp;доступным ценам.
+/
+/     .free
+/       ul
+/         li Free WiFi
+/         li Free Coffee
+/         li Free Tea
+/         li Free Candy Bar
+/         li Free Community
+/
+/
+/   .page_section.page_index_masters
+/     .text
+/       h2 Мастера
+/       p Неподдельность — вот что мы олицетворяем. Это — неотъемлемая часть нашего характера.
+/
+/   - if @specialists.present?
+/     .page_index_masters_list_wrapper
+/       .page_index_masters_list.page_section
+/         .masters_list.swiper-container
+/           .swiper-wrapper
+/             - @specialists.each do |specialist|
+/               .masters_list_item.swiper-slide
+/                 figure.ar_4_5
+/                   .img
+/                     = image_tag specialist.photo.variant(thumbnail: "400x500", quality: 80, interlace: :plane) if specialist.photo.attached?
+/
+/                 .name
+/                   = specialist.name
+/                   i |
+/                   span.services
+/                     = specialist.service
+/
+/                 - if specialist.yid.present?
+/                   .book
+/                     = link_to 'Записаться', '#', class: [:sign, :ms_booking], data: { url: "https://w81206.yclients.com/?o=m#{specialist.yid}c#{@cities[specialist.city][:yclients]}&st=service" }
+/
+/
+/   .page_section.page_index_sis.page_section_16
+/     figure.ar_16_9
+/       .img
+/
+/   .page_section.page_index_phil
+/     .text
+/       h2 Философия
+/       p Мы&nbsp;поняли, что у&nbsp;нас есть только один способ отличаться от&nbsp;других, он&nbsp;заключен в&nbsp;людях, которых мы&nbsp;обслуживаем, и&nbsp;людях которые у&nbsp;нас работают. Мы&nbsp;хотим, чтобы вы&nbsp;чувствовали себя здесь как дома или в&nbsp;кругу близких друзей. Мы&nbsp;заботимся о&nbsp;наших сотрудниках также, как о&nbsp;гостях студии. Мы&nbsp;создаем сообщество, которое растет и&nbsp;развивается вместе с&nbsp;вами, и&nbsp;в&nbsp;котором есть место для каждой.
+/
+/     figure.ar_4_5
+/       .img
+/
+/
+/   .page_section.page_index_video
+/     .video
+/       .video_ar
+/         - if Rails.env.production?
+/           iframe src="https://www.youtube.com/embed/#{@city[:video]}" frameborder="0" allowfullscreen=true
+/
+/     .text
+/       | Бэкстейдж с промо съёмок, процесс создания маникюра, уроки
+/         и другое видео <a href="//www.youtube.com/channel/UCy6W5Izwkif_RyYOMU7rafQ">на нашем Youtube канале</a>.
+/
+/   .page_section.page_index_prices
+/     .text
+/       h2 Цены
+/       p Изо дня в день и от сезона к сезону мы создаем nail art, подчеркиваем вашу внутреннюю и внешнюю красоту.
+/
+/     - %w(left right).each do |c|
+/       div class=c
+/         .prices
+/           - @prices.each do |price|
+/             - if (price.position == c) && (price["price_#{@city[:old_key]}"].presence)
+/               .prices_row
+/                 .name
+/                   = price.title
+/
+/                 .price
+/                   => price["price_#{@city[:old_key]}"]
+/                   i ₽
+/
+/               - if price.description.presence
+/                 .prices_desc = price.description
+/
+/     .under
+/       a.sign.ms_booking
+/         | Записаться
+/
+/   .page_section.page_index_instagram.page_section_16
+/     = react_component 'Instagram', { instagram_path: instagram_index_path(format: :json) }
+/
+/   .page_section.page_index_design
+/     .text
+/       h2 Дизайн
+/       p Мы&nbsp;верим в&nbsp;природную красоту, которую можно увидеть во&nbsp;всем и&nbsp;во&nbsp;всех. Мы&nbsp;работаем не&nbsp;только для того, чтобы сделать ваши руки ухоженными и&nbsp;красивыми, но&nbsp;и&nbsp;для того, чтобы вдохновить на&nbsp;поиски прекрасного, любить несовершенства, ценить каждую линию на&nbsp;теле и&nbsp;историю, которую она рассказывает.
+/
+/     .triangle
+/       = link_to '//instagram.com/irina_rain' do
+/         .img_ar
+/         .pl @irina_rain
+/
+/
+/   .page_section.page_index_community
+/     .text
+/       h2 Сообщество
+/
+/       p Мне всегда хотелось создать место теплое и&nbsp;уютное, где я&nbsp;бы могла проводить большую часть своей жизни. Заниматься творчеством и&nbsp;знакомиться с&nbsp;удивительными людьми. Сейчас это &laquo;RAIN&raquo;. Возможно в&nbsp;будущем это пространство трансформируется в&nbsp;нечто иное, уникальное и&nbsp;запоминающееся.
+/
+/   .page_index_rain
+/     figure

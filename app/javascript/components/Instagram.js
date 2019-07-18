@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import axios from 'axios';
 import classNames from 'classnames';
+import styles from './Instagram.module.css'
 
 class InstagramItem extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class InstagramItem extends React.Component {
     const instagram = this.props.instagram;
 
     return (
-      <div className={classNames('instagram_list_item', { 'active': this.state.visibility })}>
+      <div className={classNames(styles.instagram_list_item, { 'active': this.state.visibility })}>
         <a href={instagram.url} target="_blank" className="url">
           <img src={instagram.image} />
         </a>
@@ -60,7 +61,7 @@ class Instagram extends React.Component {
     }
 
     return (
-      <div className="instagram_list">
+      <div className={styles.instagram_list}>
         {instagram.map((insta, i) =>
           <InstagramItem key={i} instagram={insta} />
         )}

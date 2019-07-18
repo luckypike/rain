@@ -6,9 +6,7 @@ import page from '../Page.module.css'
 
 class Team extends Component {
   render(){
-  const { city, specialists, photo } = this.props
-
-  console.log(specialists);
+  const { city, specialists } = this.props
 
     return(
       <div className={page.root}>

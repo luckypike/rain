@@ -1,0 +1,259 @@
+import React, { Component } from 'react'
+
+import Instagram from '../Instagram'
+import classNames from 'classnames'
+import styles from './Index.module.css'
+import page from '../Page.module.css'
+import '@glidejs/glide/dist/css/glide.core'
+
+import Parallax from 'parallax-js'
+import Glide from '@glidejs/glide'
+
+import ss1 from '../../images/index/ss1.jpg'
+import ss2 from '../../images/index/ss2.jpg'
+import ss3 from '../../images/index/ss3.jpg'
+import ss4 from '../../images/index/ss4.jpg'
+
+class Index extends Component {
+
+  mount = React.createRef()
+  list = React.createRef()
+
+  componentDidMount() {
+    this.parallaxInstance = new Parallax(scene)
+    this.glide = new Glide(this.mount.current, {
+      type: 'carousel',
+      perView: 1.279
+    })
+    this.glide.mount()
+
+    this.master_glide = new Glide(this.list.current, {
+      type: 'carousel',
+      perView: 1.19,
+      gap: 20
+    })
+    this.master_glide.mount()
+    yWidget.init()
+  }
+
+  render() {
+    const { city, specialists, prices, instagram_path } = this.props
+
+    return(
+      <div className={page.root}>
+        <div className={styles.top}>
+          <div className={styles.placeholder}></div>
+          <div id="scene" className={styles.ppl}>
+            <div data-depth="0.3" className={styles.l}></div>
+            <div data-depth="0.4" className={styles.r}></div>
+          </div>
+        </div>
+
+        <section className={classNames(page.section, styles.description)}>
+          <div className={styles.text}>
+            Стильный маникюр и педикюр для прогрессивных людей. Бережное отношение к мелочам и деталям.
+            Акцент на естественность, натуральность, элегантность и женственность. Пространство маникюрных встреч RAIN <em>#irinarain</em>
+          </div>
+          <div className={styles.contacts}>
+            {city == "moscow" &&
+              <>
+                <p>+7 926 042-58-85</p>
+                <p>10:00 — 22:00</p>
+                <p>Духовской переулок, дом 17, строение 15 <br />Москва</p>
+                <p>
+                  <a className={classNames("ms_booking", styles.button)} href="#" data-url="https://n81206.yclients.com/company:95580">Записаться</a>
+                </p>
+              </>
+            }
+            {city == "nizhny" &&
+              <>
+                <p>+7 920 111-56-88</p>
+                <p>10:00 — 21:00</p>
+                <p>улица Варварская, дом 32, 4 этаж <br />Нижний Новгород</p>
+                <p>
+                  <a className={classNames("ms_booking", styles.button)} href="#" data-url="https://n81206.yclients.com/company:58259">Записаться</a>
+                </p>
+              </>
+            }
+          </div>
+        </section>
+
+        <section className={classNames(page.section, styles.slider)}>
+          <div className='glide' ref={this.mount}>
+            <div className="glide__track" data-glide-el="track">
+              <div className={classNames('glide__slides', styles.slides)}>
+                <div className={classNames('glide__slide', styles.slide)}>
+                  <img src={ss1} />
+                </div>
+                <div className={classNames('glide__slide', styles.slide)}>
+                  <img src={ss2} />
+                </div>
+                <div className={classNames('glide__slide', styles.slide)}>
+                  <img src={ss3} />
+                </div>
+                <div className={classNames('glide__slide', styles.slide)}>
+                  <img src={ss4} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className={classNames(page.section, styles.space)}>
+          <div className={styles.text}>
+            <h2>Пространство</h2>
+            <p>RAIN — это пространство для современных, интеллигентных, уверенных, естественных, веселых и непринужденных девушек.
+               Ценящих свободу самовыражения, свободу творчества, свободу быть собой. Которые привыкли к качественному обслуживанию по доступным ценам.</p>
+          </div>
+          <div className={styles.free}>
+            <ul>
+              <li>Free WiFi</li>
+              <li>Free Coffee</li>
+              <li>Free Tea</li>
+              <li>Free Candy Bar</li>
+              <li>Free Community</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className={page.section}>
+          <div className={styles.text}>
+            <h2>Мастера</h2>
+            <p>Неподдельность — вот что мы олицетворяем. Это — неотъемлемая часть нашего характера.</p>
+          </div>
+        </section>
+
+        <section className={classNames(page.section, styles.list)}>
+          <div className="glide" ref={this.list}>
+            <div className="glide__track" data-glide-el="track">
+              <div className={classNames('glide__slides', styles.masters)}>
+                {specialists.map((specialist, _) =>
+                  <div className={classNames('glide__slide', styles.master)} key={_} >
+                    <div>
+                      <div className={styles.photo}>
+                        <img src={specialist.photo} />
+                      </div>
+                      <div className={styles.name}>
+                        {specialist.name} | {specialist.service}
+                      </div>
+                      <div className={styles.book}>
+                        <a className={styles.button} href="#">Записаться</a>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className={page.section}>
+          <div className={styles.sis}></div>
+        </section>
+
+        <section className={classNames(page.section, styles.philosophy)}>
+          <div className={styles.text}>
+            <h2>Философия</h2>
+            <p>
+              Мы поняли, что у нас есть только один способ отличаться от других, он заключен в людях, которых мы обслуживаем, и людях которые у нас работают.
+              Мы хотим, чтобы вы чувствовали себя здесь как дома или в кругу близких друзей. Мы заботимся о наших сотрудниках также, как о гостях студии.
+              Мы создаем сообщество, которое растет и развивается вместе с вами, и в котором есть место для каждой.
+            </p>
+          </div>
+          <div className={styles.phil}></div>
+        </section>
+
+        <section className={classNames(page.section)}>
+          <div className={styles.video}>
+            {city == "moscow" &&
+              <iframe src="https://www.youtube.com/embed/fgeYJU9x8wY" frameBorder="0" allowFullScreen={true}></iframe>
+            }
+            {city == "nizhny" &&
+              <iframe src="https://www.youtube.com/embed/qkuyIJWJbk0" frameBorder="0" allowFullScreen={true}></iframe>
+            }
+          </div>
+
+          <div className={styles.text}>
+            Бэкстейдж с промо съёмок, процесс создания маникюра, уроки и другое видео <a href="//www.youtube.com/channel/UCy6W5Izwkif_RyYOMU7rafQ">на нашем Youtube канале</a>.
+          </div>
+        </section>
+
+        <section className={classNames(page.section, styles.prices)}>
+          <div className={styles.text}>
+            <h2>Цены</h2>
+            <p>Изо дня в день и от сезона к сезону мы создаем nail art, подчеркиваем вашу внутреннюю и внешнюю красоту.</p>
+          </div>
+          <div className={styles.left}>
+            {city == "moscow" &&
+              <>
+                {prices.filter(p => p.position == 'left').map((price,_) =>
+                  <>
+                    <div className={styles.prices_row}>
+                      <div className={styles.title}>{price.title}</div>
+                      <div className={styles.price}>{price.price_msk} <i>₽</i></div>
+                    </div>
+                    <div className={styles.desc}>{price.description}</div>
+                  </>
+                )}
+              </>
+            }
+          </div>
+          <div className={styles.right}>
+            {city == "moscow" &&
+              <>
+                {prices.filter(p => p.position == 'right').map((price,_) =>
+                  <>
+                    <div className={styles.prices_row}>
+                      <div className={styles.title}>{price.title}</div>
+                      <div className={styles.price}>{price.price_msk} <i>₽</i></div>
+                    </div>
+                    <div className={styles.desc}>{price.description}</div>
+                  </>
+                )}
+              </>
+            }
+          </div>
+          <div className={styles.under}>
+            {city == "moscow" &&
+              <a className={styles.button} href="https://n81206.yclients.com/company:95580">Записаться</a>
+            }
+          </div>
+        </section>
+
+        <section className={classNames(page.section, styles.instagram)}>
+          <Instagram instagram_path={instagram_path} />
+        </section>
+
+        <section className={classNames(page.section, styles.design)}>
+          <div className={styles.text}>
+            <h2>Дизайн</h2>
+            <p>
+              Мы верим в природную красоту, которую можно увидеть во всем и во всех. Мы работаем не только для того, чтобы сделать ваши руки ухоженными и красивыми,
+              но и для того, чтобы вдохновить на поиски прекрасного, любить несовершенства, ценить каждую линию на теле и историю, которую она рассказывает.
+            </p>
+          </div>
+          <div className={styles.triangle}>
+            <a href="https://www.instagram.com/irina_rain/">
+              <div className={styles.pl}>@irina_rain</div>
+            </a>
+          </div>
+        </section>
+
+        <section className={classNames(page.section, styles.community)}>
+          <div className={styles.text}>
+            <h2>Сообщество</h2>
+            <p>
+              Мне всегда хотелось создать место теплое и уютное, где я бы могла проводить большую часть своей жизни. Заниматься творчеством и знакомиться с удивительными людьми.
+              Сейчас это «RAIN». Возможно в будущем это пространство трансформируется в нечто иное, уникальное и запоминающееся.
+            </p>
+          </div>
+        </section>
+        <section className={page.section}>
+          <div className={styles.rain}></div>
+        </section>
+      </div>
+    )
+  }
+}
+
+export default Index
