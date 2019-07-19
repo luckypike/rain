@@ -1,34 +1,40 @@
 import React, { Component } from 'react'
 
+import Slider from '../Slider'
 import Price from '../Price'
 import Instagram from '../Instagram'
 import classNames from 'classnames'
 import styles from './Index.module.css'
 import page from '../Page.module.css'
 import button from '../Button.module.css'
-import '@glidejs/glide/dist/css/glide.core'
 
 import Parallax from 'parallax-js'
 import Glide from '@glidejs/glide'
 
 class Index extends Component {
 
-  mount = React.createRef()
   list = React.createRef()
 
   componentDidMount() {
     this.parallaxInstance = new Parallax(scene)
-    this.glide = new Glide(this.mount.current, {
-      type: 'carousel',
-      perView: 1.279
-    })
-    this.glide.mount()
 
     this.master_glide = new Glide(this.list.current, {
-      perView: 1.19,
-      gap: 20
+      perView: 4.45,
+      gap: 20,
+      breakpoints: {
+        760: {
+          perView: 1.19
+        },
+        1020: {
+          perView: 4.3
+        },
+        1430: {
+          perView: 5.65
+        }
+      }
     })
     this.master_glide.mount()
+
     yWidget.init()
   }
 
@@ -57,7 +63,7 @@ class Index extends Component {
                 <p>10:00 — 22:00</p>
                 <p>Духовской переулок, дом 17, строение 15 <br />Москва</p>
                 <p>
-                  <a className={classNames("ms_booking", button.sign_up)} href="#" data-url="https://n81206.yclients.com/company:95580">Записаться</a>
+                  <a className={classNames("ms_booking", button.sign_up, styles.button)} href="#" data-url="https://n81206.yclients.com/company:95580">Записаться</a>
                 </p>
               </>
             }
@@ -74,17 +80,8 @@ class Index extends Component {
           </div>
         </section>
 
-        <section className={classNames(page.section, styles.glide)}>
-          <div className='glide' ref={this.mount}>
-            <div className="glide__track" data-glide-el="track">
-              <div className={classNames('glide__slides', styles.slides)}>
-                <div className={classNames('glide__slide', styles.slide, styles.ss1)}></div>
-                <div className={classNames('glide__slide', styles.slide, styles.ss2)}></div>
-                <div className={classNames('glide__slide', styles.slide, styles.ss3)}></div>
-                <div className={classNames('glide__slide', styles.slide, styles.ss4)}></div>
-              </div>
-            </div>
-          </div>
+        <section className={classNames(page.section, styles.slider)}>
+          <Slider />
         </section>
 
         <section className={classNames(page.section, styles.space)}>
@@ -104,7 +101,7 @@ class Index extends Component {
           </div>
         </section>
 
-        <section className={page.section}>
+        <section className={classNames(page.section, styles.masters)}>
           <div className={styles.text}>
             <h2>Мастера</h2>
             <p>Неподдельность — вот что мы олицетворяем. Это — неотъемлемая часть нашего характера.</p>
@@ -114,19 +111,17 @@ class Index extends Component {
         <section className={classNames(page.section, styles.list)}>
           <div className="glide" ref={this.list}>
             <div className="glide__track" data-glide-el="track">
-              <div className={classNames('glide__slides', styles.masters)}>
+              <div className={classNames('glide__slides')}>
                 {specialists.map((specialist, _) =>
                   <div className={classNames('glide__slide', styles.master)} key={_} >
-                    <div>
-                      <div className={styles.photo}>
-                        <img src={specialist.photo} />
-                      </div>
-                      <div className={styles.name}>
-                        {specialist.name} | <span className={styles.service}>{specialist.service}</span>
-                      </div>
-                      <div className={styles.book}>
-                        <a className={classNames("ms_booking", button.sign_up)} href="#" data-url={`https://n81206.yclients.com/?o=m${specialist.yid}`}>Записаться</a>
-                      </div>
+                    <div className={styles.photo}>
+                      <img src={specialist.photo} />
+                    </div>
+                    <div className={styles.name}>
+                      {specialist.name} | <span className={styles.service}>{specialist.service}</span>
+                    </div>
+                    <div className={styles.book}>
+                      <a className={classNames("ms_booking", button.sign_up)} href="#" data-url={`https://n81206.yclients.com/?o=m${specialist.yid}`}>Записаться</a>
                     </div>
                   </div>
                 )}
@@ -151,7 +146,7 @@ class Index extends Component {
           <div className={styles.phil}></div>
         </section>
 
-        <section className={classNames(page.section)}>
+        <section className={classNames(page.section, styles.youtube)}>
           <div className={styles.video}>
             {city == "moscow" &&
               <iframe src="https://www.youtube.com/embed/fgeYJU9x8wY" frameBorder="0" allowFullScreen={true}></iframe>
@@ -161,7 +156,7 @@ class Index extends Component {
             }
           </div>
 
-          <div className={styles.text}>
+          <div className={styles.video_text}>
             Бэкстейдж с промо съёмок, процесс создания маникюра, уроки и другое видео <a href="//www.youtube.com/channel/UCy6W5Izwkif_RyYOMU7rafQ">на нашем Youtube канале</a>.
           </div>
         </section>

@@ -1,5 +1,22 @@
+.root {
+  @media(--l) {
+    width: calc(12 / 16 * 100%);
+    margin: calc(var(--yr) * 24) calc(2 / 16 * 100%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: calc(var(--xr) * 2);
+  }
+}
+
 .text {
-  margin-bottom: calc(var(--yr) * 6);
+  composes: section from './Page.module.css';
+
+  @media(--l) {
+    margin-top: 0;
+    margin-bottom: calc(var(--yr) * 16);
+    grid-column: 1 / 3;
+    padding-right: 50%;
+  }
 }
 
 .left {
@@ -7,9 +24,12 @@
 }
 
 .prices_row {
-  margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
+}
+
+.price_row {
+  margin-bottom: calc(var(--yr) * 4);
 }
 
 .title {
@@ -60,4 +80,8 @@
 
 .under {
   margin-top: 2rem;
+
+  @media(--l) {
+    grid-column: 1 / 3;
+  }
 }

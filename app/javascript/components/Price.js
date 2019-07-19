@@ -9,7 +9,7 @@ class Price extends Component {
     const { city, prices } = this.props
 
     return(
-      <div>
+      <div className={styles.root}>
         <div className={styles.text}>
           <h2>Цены</h2>
           <p>Изо дня в день и от сезона к сезону мы создаем nail art, подчеркиваем вашу внутреннюю и внешнюю красоту.</p>
@@ -18,26 +18,30 @@ class Price extends Component {
           {city == "moscow" &&
             <>
               {prices.filter(p => p.position == 'left').map((price,_) =>
-                <div key={_}>
-                  <div className={styles.prices_row} key={_}>
-                    <div className={styles.title}>{price.title}</div>
-                    <div className={styles.price}>{price.price_msk} <i>₽</i></div>
+                <>
+                  <div className={styles.price_row} key={_}>
+                    <div className={styles.prices_row}>
+                      <div className={styles.title}>{price.title}</div>
+                      <div className={styles.price}>{price.price_msk} <i>₽</i></div>
+                    </div>
                   </div>
                   <div className={styles.desc}>{price.description}</div>
-                </div>
+                </>
               )}
             </>
           }
           {city == "nizhny" &&
             <>
               {prices.filter(p => p.position == 'left').map((price,_) =>
-                <div key={_}>
-                  <div className={styles.prices_row} key={_}>
-                    <div className={styles.title}>{price.title}</div>
-                    <div className={styles.price}>{price.price_nn} <i>₽</i></div>
+                <>
+                  <div className={styles.price_row} key={_}>
+                    <div className={styles.prices_row}>
+                      <div className={styles.title}>{price.title}</div>
+                      <div className={styles.price}>{price.price_nn} <i>₽</i></div>
+                    </div>
                   </div>
                   <div className={styles.desc}>{price.description}</div>
-                </div>
+                </>
               )}
             </>
           }
@@ -46,26 +50,30 @@ class Price extends Component {
           {city == "moscow" &&
             <>
               {prices.filter(p => p.position == 'right').map((price,_) =>
-                <div key={_}>
-                  <div className={styles.prices_row} key={_}>
-                    <div className={styles.title}>{price.title}</div>
-                    <div className={styles.price}>{price.price_msk} <i>₽</i></div>
+                <>
+                  <div className={styles.price_row} key={_}>
+                    <div className={styles.prices_row}>
+                      <div className={styles.title}>{price.title}</div>
+                      <div className={styles.price}>{price.price_msk} <i>₽</i></div>
+                    </div>
                   </div>
                   <div className={styles.desc}>{price.description}</div>
-                </div>
+                </>
               )}
             </>
           }
           {city == "nizhny" &&
             <>
               {prices.filter(p => p.position == 'right').map((price,_) =>
-                <div key={_}>
-                  <div className={styles.prices_row} key={_}>
-                    <div className={styles.title}>{price.title}</div>
-                    <div className={styles.price}>{price.price_nn} <i>₽</i></div>
+                <>
+                  <div className={styles.price_row} key={_}>
+                    <div className={styles.prices_row}>
+                      <div className={styles.title}>{price.title}</div>
+                      <div className={styles.price}>{price.price_nn} <i>₽</i></div>
+                    </div>
                   </div>
                   <div className={styles.desc}>{price.description}</div>
-                </div>
+                </>
               )}
             </>
           }
