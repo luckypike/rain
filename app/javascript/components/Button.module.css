@@ -1,0 +1,20 @@
+.sign_up {
+  composes: small from './Fonts.module.css';
+  box-shadow: inset 0 0 0 1px color-mod(var(--base_color) alpha(-89%));
+  border: 0;
+  cursor: pointer;
+  display: block;
+  border-radius: 2px;
+  padding: calc(var(--yr) * 2) var(--xr);
+  width: 100%;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    background: var(--base_color);
+    box-shadow: 0 0 0 1px var(--base_color);
+    color: var(--light_color);
+  }
+}

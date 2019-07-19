@@ -1,18 +1,15 @@
 import React, { Component } from 'react'
 
+import Price from '../Price'
 import Instagram from '../Instagram'
 import classNames from 'classnames'
 import styles from './Index.module.css'
 import page from '../Page.module.css'
+import button from '../Button.module.css'
 import '@glidejs/glide/dist/css/glide.core'
 
 import Parallax from 'parallax-js'
 import Glide from '@glidejs/glide'
-
-import ss1 from '../../images/index/ss1.jpg'
-import ss2 from '../../images/index/ss2.jpg'
-import ss3 from '../../images/index/ss3.jpg'
-import ss4 from '../../images/index/ss4.jpg'
 
 class Index extends Component {
 
@@ -28,7 +25,6 @@ class Index extends Component {
     this.glide.mount()
 
     this.master_glide = new Glide(this.list.current, {
-      type: 'carousel',
       perView: 1.19,
       gap: 20
     })
@@ -61,7 +57,7 @@ class Index extends Component {
                 <p>10:00 — 22:00</p>
                 <p>Духовской переулок, дом 17, строение 15 <br />Москва</p>
                 <p>
-                  <a className={classNames("ms_booking", styles.button)} href="#" data-url="https://n81206.yclients.com/company:95580">Записаться</a>
+                  <a className={classNames("ms_booking", button.sign_up)} href="#" data-url="https://n81206.yclients.com/company:95580">Записаться</a>
                 </p>
               </>
             }
@@ -71,29 +67,21 @@ class Index extends Component {
                 <p>10:00 — 21:00</p>
                 <p>улица Варварская, дом 32, 4 этаж <br />Нижний Новгород</p>
                 <p>
-                  <a className={classNames("ms_booking", styles.button)} href="#" data-url="https://n81206.yclients.com/company:58259">Записаться</a>
+                  <a className={classNames("ms_booking", button.sign_up)} href="#" data-url="https://n81206.yclients.com/company:58259">Записаться</a>
                 </p>
               </>
             }
           </div>
         </section>
 
-        <section className={classNames(page.section, styles.slider)}>
+        <section className={classNames(page.section, styles.glide)}>
           <div className='glide' ref={this.mount}>
             <div className="glide__track" data-glide-el="track">
               <div className={classNames('glide__slides', styles.slides)}>
-                <div className={classNames('glide__slide', styles.slide)}>
-                  <img src={ss1} />
-                </div>
-                <div className={classNames('glide__slide', styles.slide)}>
-                  <img src={ss2} />
-                </div>
-                <div className={classNames('glide__slide', styles.slide)}>
-                  <img src={ss3} />
-                </div>
-                <div className={classNames('glide__slide', styles.slide)}>
-                  <img src={ss4} />
-                </div>
+                <div className={classNames('glide__slide', styles.slide, styles.ss1)}></div>
+                <div className={classNames('glide__slide', styles.slide, styles.ss2)}></div>
+                <div className={classNames('glide__slide', styles.slide, styles.ss3)}></div>
+                <div className={classNames('glide__slide', styles.slide, styles.ss4)}></div>
               </div>
             </div>
           </div>
@@ -134,10 +122,10 @@ class Index extends Component {
                         <img src={specialist.photo} />
                       </div>
                       <div className={styles.name}>
-                        {specialist.name} | {specialist.service}
+                        {specialist.name} | <span className={styles.service}>{specialist.service}</span>
                       </div>
                       <div className={styles.book}>
-                        <a className={styles.button} href="#">Записаться</a>
+                        <a className={classNames("ms_booking", button.sign_up)} href="#" data-url={`https://n81206.yclients.com/?o=m${specialist.yid}`}>Записаться</a>
                       </div>
                     </div>
                   </div>
@@ -178,46 +166,8 @@ class Index extends Component {
           </div>
         </section>
 
-        <section className={classNames(page.section, styles.prices)}>
-          <div className={styles.text}>
-            <h2>Цены</h2>
-            <p>Изо дня в день и от сезона к сезону мы создаем nail art, подчеркиваем вашу внутреннюю и внешнюю красоту.</p>
-          </div>
-          <div className={styles.left}>
-            {city == "moscow" &&
-              <>
-                {prices.filter(p => p.position == 'left').map((price,_) =>
-                  <>
-                    <div className={styles.prices_row}>
-                      <div className={styles.title}>{price.title}</div>
-                      <div className={styles.price}>{price.price_msk} <i>₽</i></div>
-                    </div>
-                    <div className={styles.desc}>{price.description}</div>
-                  </>
-                )}
-              </>
-            }
-          </div>
-          <div className={styles.right}>
-            {city == "moscow" &&
-              <>
-                {prices.filter(p => p.position == 'right').map((price,_) =>
-                  <>
-                    <div className={styles.prices_row}>
-                      <div className={styles.title}>{price.title}</div>
-                      <div className={styles.price}>{price.price_msk} <i>₽</i></div>
-                    </div>
-                    <div className={styles.desc}>{price.description}</div>
-                  </>
-                )}
-              </>
-            }
-          </div>
-          <div className={styles.under}>
-            {city == "moscow" &&
-              <a className={styles.button} href="https://n81206.yclients.com/company:95580">Записаться</a>
-            }
-          </div>
+        <section className={page.section}>
+          <Price city={city} prices={prices} />
         </section>
 
         <section className={classNames(page.section, styles.instagram)}>
