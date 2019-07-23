@@ -1,0 +1,65 @@
+.root {
+  padding: calc(var(--yr) * 9) var(--xr);
+
+  @media(--s) {
+    padding: calc(var(--yr) * 12) calc(var(--xr) * 2);
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media(--l) {
+    padding: 0 calc(var(--xr) * 2) calc(var(--yr) * 24) calc(var(--xr) * 2) ;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.socials {
+  composes: small from './Fonts.module.css';
+  margin-bottom: calc(var(--yr) * 7);
+  display: flex;
+  flex-wrap: wrap;
+
+  @media(--s) {
+    width: calc(9 / 12 * 100%);
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.socials_item {
+  width: 50%;
+  margin-bottom: calc(var(--yr) * 2);
+
+  & a {
+    border-bottom: 0;
+  }
+
+  @media(--s) {
+    margin-left: var(--xr);
+    width: auto;
+  }
+}
+
+.book {
+  display: none;
+
+  @media(--s) {
+    display: block;
+    margin-bottom: calc(var(--yr) * 9);
+    order: -1;
+    width: calc(3 / 12 * 100%);
+  }
+
+  & .button {
+    margin: 0;
+  }
+}
+
+.l_ike {
+  text-align: right;
+
+  @media(--s) {
+    margin-left: auto;
+  }
+}

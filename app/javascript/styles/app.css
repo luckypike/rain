@@ -1,19 +1,11 @@
 @import 'normalize.css/normalize';
 @import 'swiper/dist/css/swiper.css';
-/* @import './vars.css';   */
+@import '@glidejs/glide/dist/css/glide.core';
 @import './header.css';
 @import './pages/page.css';
 @import './pages/about.css';
 @import './pages/career.css';
-/* @import './pages/team.css'; */
 @import './pages/index.css';
-
-/* @font-face {
-  font-family: 'Century Gothic';
-  src: url('./fonts/cg/subset-CenturyGothic.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-} */
 
 @font-face {
   font-family: 'Futura New';

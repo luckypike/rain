@@ -21,7 +21,9 @@
     "react-dom": "^16.8.6",
     "react-yandex-maps": "^4.0.1",
     "react_ujs": "^2.4.4",
-    "swiper": "^4.1.6"
+    "svg-react-loader": "^0.4.6",
+    "swiper": "^4.1.6",
+    "universal-cookie": "^4.0.2"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.7.2"

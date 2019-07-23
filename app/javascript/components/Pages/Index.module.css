@@ -76,7 +76,7 @@
     height: 100%;
     width: 100%;
     left: 0;
-    top: 0%;
+    top: 0;
   }
 }
 
@@ -93,10 +93,6 @@
     grid-gap: calc(var(--xr) * 2);
     width: calc(12 / 16 * 100%);
     margin: calc(var(--yr) * 24) calc(2 / 16 * 100%);
-
-    & .button {
-      margin: 0;
-    }
   }
 
   & .text {
@@ -111,6 +107,10 @@
 
 .contacts {
   composes: small from '../Fonts.module.css';
+
+  & .button {
+    margin-left: 0;
+  }
 
   @media(--s) {
     grid-column: 10 / 13;
@@ -198,7 +198,6 @@
     display: block;
     content: "";
     padding-top: 125%;
-
   }
 
   & img {
@@ -215,6 +214,10 @@
 
   & .service {
     color: #727272;
+  }
+
+  & .button {
+    margin-left: 0;
   }
 }
 
@@ -238,12 +241,6 @@
     @media(--s) {
       padding-top: calc(9 / 16 * 100%);
     }
-  }
-
-  @media(--l) {
-    margin-left: auto;
-    margin-right: auto;
-    width: calc(14 / 16 * 100%);
   }
 }
 
@@ -419,8 +416,12 @@
     margin-right: calc(-1 * calc(var(--xr) * 2));
   }
 
+  @media(--m) {
+    margin-top: -20%;
+  }
+
   @media(--l) {
-    margin-top: -26.667%;
+    margin-top: calc(-88 * var(--yr));
     margin-left: calc(-1 * calc(var(--xr) * 3));
     margin-right: calc(-1 * calc(var(--xr) * 3));
   }

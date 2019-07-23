@@ -1,36 +1,36 @@
-footer.page_section.footer
-  .socials
-    .socials_item
-      = link_to 'Instagram', '//instagram.com/irina_rain', target: '_blank'
-
-    .socials_item
-      = link_to 'Facebook', '//fb.com/rainnailbar', target: '_blank'
-      a href=""
-
-    .socials_item
-      = link_to 'Vkontakte', '//vk.com/irina.rain', target: '_blank'
-
-    .socials_item
-      = link_to 'Pinterest', '//pinterest.com/irina_rain', target: '_blank'
-
-    .socials_item
-      = link_to 'YouTube', '//youtube.com/channel/UCAqvSQ0oo9v-6jPQKu_vSGQ', target: '_blank'
-
-  .book
-    a href="#" class="sign ms_booking" Записаться
-
-  .l_ike
-    = link_to 'L..IKE', '//luckypike.com'
-
-.geo_bg
-  .geo_sl
-    .geo_logo
-      = inline_svg 'logo.svg'
-    .geo_q Выберите маникюрное пространство
-    = link_to 'в Москве', root_path(city: nil), class: [:geo_moscow, :geo_ct], data: { geo: :moscow }
-    .geo_or или
-    = link_to 'в Нижнем Новгороде', root_path(city: :nizhny), class: [:geo_nizhny, :geo_ct], data: { geo: :nizhny }
-
-= javascript_include_tag '//w81206.yclients.com/widgetJS'
-
-== render '/shared/c'
+/ footer.page_section.footer
+/   .socials
+/     .socials_item
+/       = link_to 'Instagram', '//instagram.com/irina_rain', target: '_blank'
+/
+/     .socials_item
+/       = link_to 'Facebook', '//fb.com/rainnailbar', target: '_blank'
+/       a href=""
+/
+/     .socials_item
+/       = link_to 'Vkontakte', '//vk.com/irina.rain', target: '_blank'
+/
+/     .socials_item
+/       = link_to 'Pinterest', '//pinterest.com/irina_rain', target: '_blank'
+/
+/     .socials_item
+/       = link_to 'YouTube', '//youtube.com/channel/UCAqvSQ0oo9v-6jPQKu_vSGQ', target: '_blank'
+/
+/   .book
+/     = link_to 'Записаться', '#', class: [:sign, :ms_booking], data: { url: "https://w81206.yclients.com/company:#{@cities[:yclients]}" }
+/
+/   .l_ike
+/     = link_to 'L..IKE', '//luckypike.com'
+/
+/ .geo_bg
+/   .geo_sl
+/     .geo_logo
+/       = inline_svg 'logo.svg'
+/     .geo_q Выберите маникюрное пространство
+/     = link_to 'в Москве', root_path(city: nil), class: [:geo_moscow, :geo_ct], data: { geo: :moscow }
+/     .geo_or или
+/     = link_to 'в Нижнем Новгороде', root_path(city: :nizhny), class: [:geo_nizhny, :geo_ct], data: { geo: :nizhny }
+/
+/ = javascript_include_tag '//w81206.yclients.com/widgetJS'
+/
+/ == render '/shared/c'

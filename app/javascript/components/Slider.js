@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import classNames from 'classnames'
 import Glide from '@glidejs/glide'
-import '@glidejs/glide/dist/css/glide.core'
 
 import styles from './Slider.module.css'
 
@@ -29,7 +28,7 @@ export default function Slider () {
     }
 
     if (window) {
-      window.addEventListener('resize', e => _onResize)
+      window.addEventListener('resize', _onResize)
       _onResize()
     }
   }, [])

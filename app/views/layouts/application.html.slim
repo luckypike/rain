@@ -13,11 +13,14 @@ html
     = tag('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' })
 
   body
-    == render 'shared/header'
+    = react_component 'Header' , { city: @city_key, q: @city, a: @cities}
     = yield
 
     = stylesheet_pack_tag 'app'
     = javascript_pack_tag 'app'
     = stylesheet_link_tag '//fonts.googleapis.com/css?family=Playfair+Display&amp;subset=cyrillic'
 
-    == render 'shared/footer'
+    = react_component 'Footer' , { city: @city_key }
+
+    = javascript_include_tag '//w81206.yclients.com/widgetJS'
+    == render '/shared/c'

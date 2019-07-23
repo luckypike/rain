@@ -73,7 +73,7 @@ class Index extends Component {
                 <p>10:00 — 21:00</p>
                 <p>улица Варварская, дом 32, 4 этаж <br />Нижний Новгород</p>
                 <p>
-                  <a className={classNames("ms_booking", button.sign_up)} href="#" data-url="https://n81206.yclients.com/company:58259">Записаться</a>
+                  <a className={classNames("ms_booking", button.sign_up, styles.button)} href="#" data-url="https://n81206.yclients.com/company:58259">Записаться</a>
                 </p>
               </>
             }
@@ -121,7 +121,7 @@ class Index extends Component {
                       {specialist.name} | <span className={styles.service}>{specialist.service}</span>
                     </div>
                     <div className={styles.book}>
-                      <a className={classNames("ms_booking", button.sign_up)} href="#" data-url={`https://n81206.yclients.com/?o=m${specialist.yid}`}>Записаться</a>
+                      <a className={classNames("ms_booking", button.sign_up, styles.button)} href="#" data-url={`https://n81206.yclients.com/?o=m${specialist.yid}`}>Записаться</a>
                     </div>
                   </div>
                 )}
