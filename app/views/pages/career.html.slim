@@ -1,3 +1,3 @@
-- set_meta_tags canonical: career_url(city: city), description: 'Все вакансии пространства RAIN'
+- set_meta_tags title: "Вакансии #{@city[:title_in]}", canonical: career_url(city: city), description: 'Все вакансии пространства RAIN'
 
 = react_component 'Pages/Career', { city: @city_key }

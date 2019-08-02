@@ -1,11 +1,5 @@
 @import 'normalize.css/normalize';
-@import 'swiper/dist/css/swiper.css';
 @import '@glidejs/glide/dist/css/glide.core';
-@import './header.css';
-@import './pages/page.css';
-@import './pages/about.css';
-@import './pages/career.css';
-@import './pages/index.css';
 
 @font-face {
   font-family: 'Futura New';
@@ -18,77 +12,10 @@
   box-sizing: border-box;
 }
 
-figure {
-  margin: 0;
-
-  .img {
-    background-color: #f1f1f1;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-
-    img {
-      display: block;
-      width: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-
-    &::before {
-      display: block;
-      content: '';
-      width: 100%;
-      position: relative;
-      z-index: -1;
-    }
-  }
-
-  &.ar_16_9 {
-    .img {
-      &::before {
-        padding-top: calc(4 / 5 * 100%);
-
-        @media (--s) {
-          padding-top: calc(9 / 16 * 100%);
-        }
-      }
-    }
-  }
-
-  &.ar_4_5 {
-    .img {
-      &::before {
-        padding-top: calc(5 / 4 * 100%);
-      }
-    }
-  }
-
-  &.ar_3_2 {
-    .img {
-      &::before {
-        padding-top: calc(2 / 3 * 100%);
-      }
-    }
-  }
-
-  &.ar_5_4 {
-    .img {
-      &::before {
-        padding-top: calc(4 / 5 * 100%);
-      }
-    }
-  }
-}
-
 body {
   font-family: 'Futura New', sans-serif;
   font-size: calc(var(--yr) * calc(var(--fs) + 0.5));
   line-height: calc(var(--yr) * calc(var(--lh) + 1));
-
-  &.full_screen {
-    overflow: hidden;
-  }
 
   @media (--m) {
     line-height: calc(var(--yr) * calc(var(--lh) + 3));
@@ -96,6 +23,7 @@ body {
 }
 
 a {
+  cursor: pointer;
   text-decoration: none;
   color: var(--base_color);
   border-bottom: 1px solid color-mod(var(--base_color) alpha(-80%));
@@ -126,169 +54,5 @@ ul {
 
   &:last-child {
     margin: 0;
-  }
-}
-
-.footer {
-  font-size: calc(var(--yr) * 3.25);
-
-  .socials {
-    margin-bottom: calc(var(--yr) * 7);
-    display: flex;
-    flex-wrap: wrap;
-
-    &_item {
-      width: 50%;
-      margin-bottom: calc(var(--yr) * 2);
-
-      a {
-        border-bottom: 0;
-      }
-    }
-  }
-
-  .book {
-    margin-bottom: calc(var(--yr) * 9);
-  }
-
-  .l_ike {
-    text-align: right;
-  }
-
-  @media (--s) {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 calc(var(--xr) / 2);
-
-    .book {
-      width: calc(3 / 12 * 100%);
-      order: -1;
-    }
-
-    .socials {
-      width: calc(9 / 12 * 100%);
-      justify-content: flex-end;
-      align-items: center;
-
-      &_item {
-        width: auto;
-        margin-left: var(--xr);
-      }
-    }
-
-    .l_ike {
-      margin-left: auto;
-    }
-  }
-
-  @media (--m) {
-    padding: 0 var(--xr);
-  }
-
-  @media (--l) {
-    padding: 0 calc(var(--xr) * 2);
-  }
-}
-
-.sign {
-  font-size: calc(var(--yr) * 3.25);
-  line-height: calc(var(--yr) * 8);
-  box-shadow: inset 0 0 0 1px color-mod(var(--base_color) alpha(-89%));
-  border: 0;
-  cursor: pointer;
-  display: block;
-  border-radius: 2px;
-  padding: var(--yr) var(--xr);
-  width: 100%;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-align: center;
-  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-  display: none;
-
-  &:hover {
-    background: var(--base_color);
-    box-shadow: 0 0 0 1px var(--base_color);
-    color: var(--light_color);
-  }
-
-  @media (--s) {
-    display: block;
-    width: 140px;
-    padding: var(--yr) 0;
-  }
-}
-
-.geo_bg {
-  background: color-mod(var(--light_color) alpha(-20%));
-  opacity: 0;
-  visibility: hidden;
-  position: fixed;
-  transition: opacity 0.3s, visibility 0.3s;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 10;
-
-  &.act {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .geo_sl {
-    background: #fff;
-    padding: calc(var(--yr) * 12) var(--xr);
-    position: absolute;
-    text-align: center;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-
-    .geo_logo {
-      height: calc(var(--yr) * 8);
-      padding: calc(var(--yr)) 0;
-
-      svg {
-        height: 20px;
-        width: 150px;
-      }
-    }
-
-    .geo_q {
-      margin-bottom: calc(var(--yr) * 8);
-      margin-top: calc(var(--yr) * 4);
-    }
-
-    .geo_moscow {
-      font-size: 1.5rem;
-      line-height: 2.5rem;
-      border: 1px solid rgba(0, 0, 0, 0.13);
-      border-radius: 2px;
-      padding: 7px 0;
-      display: inline-block;
-      text-align: center;
-      width: 180px;
-      transition: background 0.2s, color 0.2s;
-
-      &:hover {
-        background-color: #212121;
-        color: #fff;
-      }
-    }
-
-    .geo_or {
-      font-size: 0.75rem;
-      line-height: 1.5rem;
-      margin: calc(var(--yr) * 4) 0;
-    }
-
-    @media (--s) {
-      width: 400px;
-    }
-  }
-
-  @media (--s) {
-    background: rgba(255, 255, 255, 0.8);
   }
 }

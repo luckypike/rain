@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
+import Cookies from 'universal-cookie'
 
 import button from './Button.module.css'
 import styles from './Header.module.css'
 import Logo from '!svg-react-loader?!../images/logo.svg'
 
 class Header extends Component {
+  cookies = new Cookies()
   state = {
     toggle: false,
-    cities: false
+    cities: false,
   }
 
   handleToggle = () => {
@@ -21,6 +23,27 @@ class Header extends Component {
     this.setState(prevState => ({
       cities: !prevState.cities
     }))
+  }
+
+  handleMoscow = () => {
+    this.cookies.set('geo', 'moscow', { path: '/'})
+    window.location.href = '/'
+  }
+
+  handleNizhny = () => {
+    this.cookies.set('geo', 'nizhny', { path: '/'})
+    window.location.href = '/nizhny'
+  }
+
+  componentDidMount = () => {
+    const path = window.location.pathname
+
+    if (this.cookies.get('geo') == 'nizhny' && path == '/') {
+      window.location.href = '/nizhny'
+    }
+    if (this.cookies.get('geo') == 'moscow' && path == '/nizhny') {
+      window.location.href = '/'
+    }
   }
 
   render() {
@@ -53,10 +76,10 @@ class Header extends Component {
               </div>
               <div className={classNames(styles.switch, {[styles.active]: cities})}>
                 {city == "moscow" &&
-                  <a href="/nizhny">nizhny</a>
+                  <a onClick={this.handleNizhny}>nizhny</a>
                 }
                 {city == "nizhny" &&
-                  <a href="/">moscow</a>
+                  <a onClick={this.handleMoscow}>moscow</a>
                 }
               </div>
             </div>

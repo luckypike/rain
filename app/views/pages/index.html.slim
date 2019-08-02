@@ -1,3 +1,11 @@
 - set_meta_tags title: "RAIN — ногтевая студия. Заботливый маникюр и педикюр #{@city[:title_in]}.", site: nil, description: "Заботливый маникюр и педикюр #{@city[:title_in]}.", canonical: root_url(city: city), og: { title: "RAIN — ногтевая студия" }
 
-= react_component 'Pages/Index', { city: @city_key, specialists: @specialists.map { |specialist| specialist.slice(:name, :service, :yid, :city, :weight).merge({ photo: url_for(specialist.photo.variant(thumbnail: "800x1000", quality: 80, interlace: :plane)) }) }, prices: @prices.map { |price| price.slice(:title, :price_msk, :price_nn, :description, :position, :order) }, instagram_path: instagram_index_path(format: :json) }
+= react_component( \
+  'Pages/Index',
+  { \
+    city: @city_key,
+    specialists: @specialists.map { |specialist| specialist.slice(:name, :service, :yid, :city, :weight).merge({ photo: url_for(specialist.photo.variant(thumbnail: "800x1000", quality: 80, interlace: :plane)) }) },
+    prices: @prices.map { |price| price.slice(:title, :price_msk, :price_nn, :description, :position, :order) },
+    instagram_path: instagram_index_path(format: :json) \
+  } \
+)

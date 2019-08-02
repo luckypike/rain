@@ -8,9 +8,6 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import '../styles/app.css';
-import './legacy/common.js';
-import './legacy/swipers.js';
-
 import '../images/og.jpg';
 
 var componentRequireContext = require.context("components", true)
