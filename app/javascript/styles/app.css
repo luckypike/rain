@@ -1,5 +1,6 @@
 @import 'normalize.css/normalize';
 @import '@glidejs/glide/dist/css/glide.core';
+@import './admin.css';
 
 @font-face {
   font-family: 'Futura New';

@@ -1,4 +1,4 @@
-main#prices.page.page_index
+main.page.page_prices
   .prices_control
     h1 Редактирование цен
     = link_to 'Добавить услугу', new_price_path, class: 'control_link'
@@ -19,4 +19,3 @@ main#prices.page.page_index
         .price_control_item_links
           = link_to 'Редактировать', edit_price_path(price), class: 'control_link'
           =< link_to 'Удалить', price_path(price), method: :delete, class: 'control_link'
-

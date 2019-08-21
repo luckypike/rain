@@ -1,0 +1,9 @@
+.page_specialists,
+.page_prices,
+.page_login {
+  margin-top: calc(var(--yr) * 18);
+
+  @media(--l) {
+    margin: calc(var(--yr) * 32);
+  }
+}
