@@ -1,3 +1,3 @@
 - set_meta_tags title: 'Команда', canonical: team_url(city: city), description: 'Команда пространства RAIN'
 
-= react_component 'Pages/Team', { city: @city_key, specialists: @specialists.map { |specialist| specialist.slice(:name, :service).merge({ photo: url_for(specialist.photo.variant(thumbnail: "800x1000", quality: 80, interlace: :plane)) }) } }
+= react_component 'Pages/Team', { city: @city_key, specialists: @specialists.map { |specialist| specialist.slice(:name, :service).merge({ photo: url_for(specialist.photo.variant(thumbnail: "800x1000", quality: 80, interlace: :plane)) }) } }, { prerender: true }

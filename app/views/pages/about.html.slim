@@ -1,3 +1,3 @@
 - set_meta_tags title: 'Пространство', canonical: about_url(city: city), description: 'Приходи. Твоя очередь хорошо себя чувствовать'
 
-= react_component 'Pages/About', { city: @city_key }
+= react_component 'Pages/About', { city: @city_key }, { prerender: true }

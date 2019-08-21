@@ -13,15 +13,15 @@ html
     = tag('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' })
 
   body
-    = react_component 'Geo' unless cookies[:geo]
-    = react_component 'Header', { city: @city_key }
+    = react_component 'Geo', {}, { prerender: true } unless cookies[:geo]
+    = react_component 'Header', { city: @city_key }, { prerender: true }
     = yield
 
     = stylesheet_pack_tag 'app'
     = javascript_pack_tag 'app'
     = stylesheet_link_tag '//fonts.googleapis.com/css?family=Playfair+Display&amp;subset=cyrillic'
 
-    = react_component 'Footer', { city: @city_key }
+    = react_component 'Footer', { city: @city_key }, { prerender: true }
 
     = javascript_include_tag '//w81206.yclients.com/widgetJS'
     == render '/shared/c'
