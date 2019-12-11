@@ -148,12 +148,7 @@ class Index extends Component {
 
         <section className={classNames(page.section, styles.youtube)}>
           <div className={styles.video}>
-            {city == "moscow" &&
-              <iframe src="https://www.youtube.com/embed/fgeYJU9x8wY" frameBorder="0" allowFullScreen={true}></iframe>
-            }
-            {city == "nizhny" &&
-              <iframe src="https://www.youtube.com/embed/qkuyIJWJbk0" frameBorder="0" allowFullScreen={true}></iframe>
-            }
+              <iframe src="https://www.youtube.com/embed/KlSZp-dTnQk" frameBorder="0" allowFullScreen={true}></iframe>
           </div>
 
           <div className={styles.video_text}>
