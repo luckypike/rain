@@ -56,8 +56,11 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
+    ast (2.4.0)
     aws-eventstream (1.0.3)
     aws-partitions (1.238.0)
     aws-sdk-core (3.76.0)
@@ -118,6 +121,10 @@ GEM
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
     jmespath (1.4.0)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.7.0)
+      launchy (~> 2.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -145,6 +152,10 @@ GEM
     nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    parallel (1.19.1)
+    parser (2.7.1.2)
+      ast (~> 2.4.0)
+    public_suffix (4.0.4)
     puma (4.3.0)
       nio4r (~> 2.0)
     rack (2.0.7)
@@ -181,6 +192,7 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.20.3, < 2.0)
+    rainbow (3.0.0)
     rake (13.0.1)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
@@ -194,6 +206,19 @@ GEM
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rexml (3.2.4)
+    rubocop (0.83.0)
+      parallel (~> 1.10)
+      parser (>= 2.7.0.1)
+      rainbow (>= 2.2.2, < 4.0)
+      rexml
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 2.0)
+    rubocop-rails (2.5.2)
+      activesupport
+      rack (>= 1.1)
+      rubocop (>= 0.72.0)
+    ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
     simple_form (5.0.1)
       actionpack (>= 5.0)
@@ -228,6 +253,7 @@ GEM
     tilt (2.0.10)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    unicode-display_width (1.7.0)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (4.0.1)
@@ -249,28 +275,31 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk-s3
-  bootsnap (>= 1.1.0)
+  bootsnap
   byebug
+  capistrano
   capistrano-passenger
   capistrano-rails
   capistrano-rbenv
   devise
   jbuilder
-  listen (>= 3.0.5, < 3.2)
+  letter_opener
+  listen
   meta-tags
   mini_magick
   puma
-  rails (~> 6.0.0)
+  rails (~> 6.0)
   rails-i18n
   react-rails
+  rubocop-rails
   simple_form
   sitemap_generator
   slim-rails
   spring
-  spring-watcher-listen (~> 2.0.0)
+  spring-watcher-listen
   sqlite3
-  web-console (>= 3.3.0)
+  web-console
   webpacker
 
 BUNDLED WITH
-   1.17.3
+   2.1.4
