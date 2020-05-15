@@ -178,11 +178,11 @@ export default function Index ({ city, specialists, prices, instagram }) {
         />
       </section>
 
-      <section className={classNames(page.section, styles.instagram)}>
+      {/* <section className={classNames(page.section, styles.instagram)}>
         <Instagram
           instagram_path={instagram}
         />
-      </section>
+      </section> */}
 
       <section className={classNames(page.section, styles.design)}>
         <div className={styles.text}>
