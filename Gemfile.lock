@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/fast-jsonapi/fast_jsonapi.git
+  revision: ac34aa22f7882f54cb7cab352489930c012e1e1b
+  specs:
+    fast_jsonapi (1.7.1)
+      activesupport (>= 4.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -282,6 +289,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rbenv
   devise
+  fast_jsonapi!
   jbuilder
   letter_opener
   listen

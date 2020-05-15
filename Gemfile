@@ -29,6 +29,8 @@ gem 'aws-sdk-s3', require: false
 
 gem 'bootsnap', require: false
 
+gem 'fast_jsonapi', github: 'fast-jsonapi/fast_jsonapi'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
