@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import classNames from 'classnames'
 import Glide from '@glidejs/glide'
 
 import styles from './Slider.module.css'
 
 export default function Slider () {
-  const mount = React.createRef()
-  const slides = React.createRef()
+  const mount = useRef()
+  const slides = useRef()
   let glide = null
 
   useEffect(() => {

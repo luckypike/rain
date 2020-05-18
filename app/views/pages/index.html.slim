@@ -5,12 +5,11 @@
   { \
     city: @city_key,
     specialists: [],
-    prices: @prices.map { |price| price.slice(:title, :price_msk, :price_nn, :description, :position, :order) },
+    prices: PriceSerializer.new(@prices).serializable_hash,
     instagram: instagram_index_path(format: :json) \
   }, { \
     prerender: true \
   } \
 )
-
 
 / @specialists.map { |specialist| specialist.slice(:name, :service, :yid, :city, :weight).merge({ photo: url_for(specialist.photo.variant(thumbnail: "800x1000", quality: 80, interlace: :plane)) }) },

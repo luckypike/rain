@@ -8,6 +8,7 @@ import classNames from 'classnames'
 import styles from './Index.module.css'
 import page from '../Page.module.css'
 import button from '../Button.module.css'
+import { deserialize } from 'jsonapi-deserializer'
 
 import Parallax from 'parallax-js'
 import Glide from '@glidejs/glide'
@@ -15,11 +16,12 @@ import Glide from '@glidejs/glide'
 Index.propTypes = {
   city: PropTypes.string,
   specialists: PropTypes.array,
-  prices: PropTypes.array,
+  prices: PropTypes.object,
   instagram: PropTypes.string
 }
 
-export default function Index ({ city, specialists, prices, instagram }) {
+export default function Index ({ city, specialists, prices: data, instagram }) {
+  const prices = deserialize(data)
   const list = useRef()
   const scene = useRef()
 
@@ -178,11 +180,11 @@ export default function Index ({ city, specialists, prices, instagram }) {
         />
       </section>
 
-      {/* <section className={classNames(page.section, styles.instagram)}>
+      <section className={classNames(page.section, styles.instagram)}>
         <Instagram
           instagram_path={instagram}
         />
-      </section> */}
+      </section>
 
       <section className={classNames(page.section, styles.design)}>
         <div className={styles.text}>
