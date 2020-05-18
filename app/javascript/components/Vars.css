@@ -1,22 +1,37 @@
 :root {
-  --xr: 1.25rem;
-  --yr: 0.25rem;
-
-  --base_color: #212121;
-  --light_color: #ffffff;
-
-  --grey_color: #727272;
-  --light_grey_color: #c1c1c1;
+  --ff_serif: 'Playfair Display', serif;
+  --fn_serif: 'Futura New', sans-serif;
 
   --fw_light: 300;
   --fw_normal: 400;
   --fw_bold: 600;
 
+  --xr: 1.25rem;
+  --yr: 0.25rem;
+
+  --base_color: #212121;
+  --light_color: #ffffff;
+  --grey_color: #727272;
+  --light_grey_color: #c1c1c1;
+
   --fs: 3.5;
   --lh: 5;
 
-  --ff_serif: 'Playfair Display', serif;
-  --fn_serif: 'Futura New', sans-serif;
+  --s1: 1;
+  --s2: 2;
+  --s3: 3;
+  --s4: 6;
+  --s5: 8;
+  --s6: 12;
+
+  @media (--s) {
+    --s1: 2;
+    --s2: 3;
+    --s3: 6;
+    --s4: 8;
+    --s5: 12;
+    --s6: 18;
+  }
 }
 
 @custom-media --s (min-width: 720px);
