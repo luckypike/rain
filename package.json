@@ -22,7 +22,6 @@
     "react-yandex-maps": "^4.0.1",
     "react_ujs": "^2.6.1",
     "svg-react-loader": "^0.4.6",
-    "swiper": "^5.2.0",
     "universal-cookie": "^4.0.2",
     "webpack": "^4.43.0"
   },
