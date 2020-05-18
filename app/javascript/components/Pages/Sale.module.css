@@ -1,0 +1,54 @@
+.top {
+  margin-top: calc(var(--yr) * 18);
+
+  @media (--l) {
+    height: calc(var(--yr) * 32);
+  }
+}
+
+.title {
+  margin-bottom: calc(var(--yr) * var(--s1));
+}
+
+.desc {
+  margin-bottom: calc(var(--yr) * var(--s5));
+}
+
+.packages {
+  margin-bottom: calc(var(--yr) * var(--s4));
+}
+
+.tabs {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: calc(var(--yr) * var(--s2));
+  grid-column-gap: calc(var(--yr) * 2.5);
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid rgba(20, 20, 20, 0.14);
+    bottom: 0;
+  }
+
+  & h2 {
+    text-transform: none;
+    letter-spacing: normal;
+  }
+}
+
+.tab {
+  padding-bottom: calc(var(--yr) * var(--s1));
+
+  &.active {
+    border-bottom: 1px solid #141414;
+    width: fit-content;
+  }
+}
+
+.masters {
+  height: 36px;
+  margin-bottom: calc(var(--yr) * var(--s2));
+}
