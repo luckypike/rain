@@ -88,6 +88,14 @@ class Header extends Component {
           <div className={styles.header_menu}>
             <div className={styles.header_menu_item}>
               {city == "moscow" &&
+                <a href="/sale">Акции</a>
+              }
+              {city == "nizhny" &&
+                <a href="/nizhny/sale">Акции</a>
+              }
+            </div>
+            <div className={styles.header_menu_item}>
+              {city == "moscow" &&
                 <a href="/about">Пространство</a>
               }
               {city == "nizhny" &&
