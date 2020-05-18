@@ -14,7 +14,7 @@ html
 
   body
     = react_component 'Geo', {}, { prerender: true } unless cookies[:geo]
-    = react_component 'Header', { city: @city_key }, { prerender: true }
+    = react_component 'Header', { city: @city_key, sale: current_page?(controller: :pages, action: :sale), }, { prerender: true }
     = yield
 
     = stylesheet_pack_tag 'app'

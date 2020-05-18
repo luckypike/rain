@@ -198,6 +198,54 @@
   }
 }
 
+.sale {
+  margin-bottom: calc(var(--yr) * var(--s5));
+
+  & .header_burger {
+    & svg {
+      fill: #141414;
+    }
+  }
+
+  & .city {
+    color: #141414;
+
+    & svg {
+      fill: #141414;
+    }
+  }
+
+  & .switch {
+    & a {
+      color: #141414;
+    }
+  }
+
+  & .header_logo {
+    & a {
+      & svg {
+        fill: #141414;
+      }
+    }
+  }
+
+  & .button {
+    box-shadow: 0 0 0 1px color-mod(#141414 alpha(-70%));
+  }
+
+  & .header_book {
+    & .text {
+      color: #141414;
+    }
+
+    & .icon {
+      & svg {
+        fill: #141414;
+      }
+    }
+  }
+}
+
 .toggled {
   bottom: 0;
   position: fixed;

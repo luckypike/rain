@@ -1,5 +1,6 @@
 .top {
   margin-top: calc(var(--yr) * 18);
+  padding-top: calc(var(--yr) * var(--s5));
 
   @media (--l) {
     height: calc(var(--yr) * 32);
