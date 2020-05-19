@@ -1,5 +1,20 @@
+.slides {
+  display: flex;
+
+  @media (--l) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: calc(var(--xr) * 2.5);
+    margin-bottom: calc(var(--yr) * var(--s5));
+  }
+}
+
 .slide {
   margin-bottom: calc(var(--yr) * var(--s1));
+
+  @media (--l) {
+    margin-bottom: 0;
+  }
 }
 
 .cover1 {
@@ -23,6 +38,10 @@
     content: '';
     display: block;
     padding-top: calc(5 / 4 * 100%);
+
+    @media (--l) {
+      padding-top: calc(16 / 9 * 100%);
+    }
   }
 
   &::after {
@@ -45,6 +64,11 @@
   left: calc(var(--xr));
   right: calc(var(--xr));
   top: 0;
+
+  @media (--s) {
+    left: calc(var(--xr) * 2);
+    right: calc(var(--xr) * 2);
+  }
 }
 
 .sale {
@@ -57,11 +81,16 @@
 
 .season {
   margin-bottom: calc(var(--yr) * var(--s1));
+
+  & h3 {
+    margin: 0;
+  }
 }
 
 .manicure {
   margin-bottom: calc(var(--yr) * var(--s5));
   font-size: calc(var(--yr) * 3.25);
+  line-height: calc(var(--yr) * 6);
 }
 
 .visit {
@@ -102,6 +131,10 @@
 .buttons {
   display: flex;
   position: relative;
+
+  @media (--l) {
+    display: none;
+  }
 }
 
 .button {

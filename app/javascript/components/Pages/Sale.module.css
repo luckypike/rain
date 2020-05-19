@@ -1,9 +1,16 @@
+.section {
+  @media (--l) {
+    width: calc(12 / 16 * 100%);
+    margin: 0 auto;
+  }
+}
+
 .top {
   margin-top: calc(var(--yr) * 18);
   padding-top: calc(var(--yr) * var(--s5));
 
   @media (--l) {
-    height: calc(var(--yr) * 32);
+    margin-top: calc(var(--yr) * 32);
   }
 }
 
@@ -13,10 +20,20 @@
 
 .desc {
   margin-bottom: calc(var(--yr) * var(--s5));
+
+  & h3 {
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: normal;
+  }
 }
 
-.packages {
+.text {
   margin-bottom: calc(var(--yr) * var(--s4));
+
+  @media (--l) {
+    width: calc(8 / 12 * 100%);
+  }
 }
 
 .tabs {

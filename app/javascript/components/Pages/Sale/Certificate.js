@@ -48,7 +48,7 @@ export default function Certificate () {
               <div className={classNames(styles.card, styles.cover1)}>
                 <div className={styles.group}>
                   <div className={styles.title}>
-                    Сертификат
+                    <h3>Сертификат</h3>
                   </div>
 
                   <div className={styles.price}>
@@ -66,7 +66,7 @@ export default function Certificate () {
               <div className={classNames(styles.card, styles.cover2)}>
                 <div className={styles.group}>
                   <div className={styles.title}>
-                    Сертификат
+                    <h3>Сертификат</h3>
                   </div>
 
                   <div className={styles.price}>
@@ -84,7 +84,7 @@ export default function Certificate () {
               <div className={classNames(styles.card, styles.cover3)}>
                 <div className={styles.group}>
                   <div className={styles.title}>
-                    Сертификат
+                    <h3>Сертификат</h3>
                   </div>
 
                   <div className={styles.price}>

@@ -1,5 +1,20 @@
+.slides {
+  display: flex;
+
+  @media (--l) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: calc(var(--xr) * 2.5);
+    margin-bottom: calc(var(--yr) * var(--s5));
+  }
+}
+
 .slide {
   margin-bottom: calc(var(--yr) * var(--s1));
+
+  @media (--l) {
+    margin-bottom: 0;
+  }
 }
 
 .cover1 {
@@ -45,6 +60,17 @@
   left: calc(var(--xr));
   right: calc(var(--xr));
   top: 0;
+
+  @media (--s) {
+    left: calc(var(--xr) * 2);
+    right: calc(var(--xr) * 2);
+  }
+}
+
+.title {
+  & h3 {
+    margin: 0;
+  }
 }
 
 .price {
@@ -67,6 +93,10 @@
 .buttons {
   display: flex;
   position: relative;
+
+  @media (--l) {
+    display: none;
+  }
 }
 
 .button {

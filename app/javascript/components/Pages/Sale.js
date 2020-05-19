@@ -12,7 +12,7 @@ export default function Sale () {
 
   return (
     <div className={page.root}>
-      <section className={classNames(page.section, styles.top)}>
+      <section className={classNames(page.section, styles.top, styles.section)}>
         <div className={styles.title}>
           <h1>
             Акции
@@ -20,18 +20,20 @@ export default function Sale () {
         </div>
 
         <div className={styles.desc}>
-          Дарите глубокие впечатления от качественного обслуживания и маникюра, способного рассказать историю.
+          <h3>
+            Дарите глубокие впечатления от качественного обслуживания и маникюра, способного рассказать историю.
+          </h3>
         </div>
       </section>
 
-      <section className={page.section}>
+      <section className={classNames(page.section, styles.section)}>
         <div className={styles.title}>
           <h2>
             Абонименты
           </h2>
         </div>
 
-        <div className={styles.packages}>
+        <div className={styles.text}>
           Пакеты по 2, 3 и 5 визитов к разным категориям мастеров. Чем больше визитов в пакете, тем выше процент скидки. Если вы выбираете подарок, то рекомендуем купить сертификат на фиксированную сумму.
         </div>
 
@@ -56,24 +58,24 @@ export default function Sale () {
         <Subscription />
       </section>
 
-      <section className={page.section}>
+      <section className={classNames(page.section, styles.section)}>
         <div className={styles.title}>
           <h1>
             Сертификаты
           </h1>
         </div>
 
-        <div className={styles.desc}>
+        <div className={styles.text}>
           В отличие от абонемента не привязан к услуге и категории мастера, его можно потратить на любые услуги или товары студии. Допускается многократное списание. Сертификат действителен для одного человека.
         </div>
 
         <Certificate />
       </section>
 
-      <section className={page.section}>
-        <p>
+      <section className={classNames(page.section, styles.section)}>
+        <div className={styles.text}>
           Электронный сертификат приходит на электронную почту сразу после оплаты. Просто перешлите его тому, кому вы хотите сделать подарок.
-        </p>
+        </div>
       </section>
     </div>
   )

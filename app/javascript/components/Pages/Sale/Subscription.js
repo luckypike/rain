@@ -60,7 +60,7 @@ export default function Subscription () {
                   </div>
 
                   <div className={styles.visit}>
-                    <h1>2 визита</h1>
+                    <h2>2 визита</h2>
                   </div>
 
                   <div className={styles.price}>
@@ -90,7 +90,7 @@ export default function Subscription () {
                   </div>
 
                   <div className={styles.visit}>
-                    <h1>3 визита</h1>
+                    <h2>3 визита</h2>
                   </div>
 
                   <div className={styles.price}>
@@ -120,7 +120,7 @@ export default function Subscription () {
                   </div>
 
                   <div className={styles.visit}>
-                    <h1>5 визитов</h1>
+                    <h2>5 визитов</h2>
                   </div>
 
                   <div className={styles.price}>
