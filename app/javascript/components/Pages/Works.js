@@ -3,10 +3,9 @@ import classNames from 'classnames'
 
 import styles from './Works.module.css'
 import page from '../Page.module.css'
-import fonts from '../Fonts.module.css'
 import works from '../../video/works.mp4'
 
-export default function Works ({ city }) {
+export default function Works () {
   return (
     <div className={page.root}>
       <div className={styles.top}>
@@ -36,19 +35,19 @@ export default function Works ({ city }) {
 
       <section className={classNames(styles.images, styles.first, page.section)}>
         <div className={styles.image}>
-          <a href="https://www.instagram.com/p/B3qxKtzI6y5/" target="_blank"></a>
+          <a href="https://www.instagram.com/p/B3qxKtzI6y5/" target="_blank" rel="noreferrer"></a>
         </div>
 
         <div className={styles.image}>
-          <a href="https://www.instagram.com/p/B1TIIZWCWAO/" target="_blank"></a>
+          <a href="https://www.instagram.com/p/B1TIIZWCWAO/" target="_blank" rel="noreferrer"></a>
         </div>
 
         <div className={styles.image}>
-          <a href="https://www.instagram.com/p/B4g2AT-qWye/" target="_blank"></a>
+          <a href="https://www.instagram.com/p/B4g2AT-qWye/" target="_blank" rel="noreferrer"></a>
         </div>
 
         <div className={styles.image}>
-          <a href="https://www.instagram.com/p/B2gFKFnCyQY/" target="_blank"></a>
+          <a href="https://www.instagram.com/p/B2gFKFnCyQY/" target="_blank" rel="noreferrer"></a>
         </div>
       </section>
 
@@ -62,19 +61,19 @@ export default function Works ({ city }) {
 
       <section className={classNames(styles.images, styles.second, page.section)}>
         <div className={styles.image}>
-          <a href="https://www.instagram.com/p/B23Rdo-iwcZ/" target="_blank"></a>
+          <a href="https://www.instagram.com/p/B23Rdo-iwcZ/" target="_blank" rel="noreferrer"></a>
         </div>
 
         <div className={styles.image}>
-          <a href="https://www.instagram.com/p/B44AHxUKVm_/" target="_blank"></a>
+          <a href="https://www.instagram.com/p/B44AHxUKVm_/" target="_blank" rel="noreferrer"></a>
         </div>
 
         <div className={styles.image}>
-          <a href="https://www.instagram.com/p/B0Ace9pitGn/" target="_blank"></a>
+          <a href="https://www.instagram.com/p/B0Ace9pitGn/" target="_blank" rel="noreferrer"></a>
         </div>
 
         <div className={styles.image}>
-          <a href="https://www.instagram.com/p/Bz2LAilieN-/" target="_blank"></a>
+          <a href="https://www.instagram.com/p/Bz2LAilieN-/" target="_blank" rel="noreferrer"></a>
         </div>
       </section>
 
@@ -88,35 +87,35 @@ export default function Works ({ city }) {
 
       <section className={classNames(styles.images, styles.third, page.section)}>
         <div className={styles.image}>
-          <a href="https://www.instagram.com/p/B4rNHQZo0_m/" target="_blank"></a>
+          <a href="https://www.instagram.com/p/B4rNHQZo0_m/" target="_blank" rel="noreferrer"></a>
         </div>
 
         <div className={styles.image}>
-          <a href="https://www.instagram.com/p/B2Yh_7AiU8A/" target="_blank"></a>
+          <a href="https://www.instagram.com/p/B2Yh_7AiU8A/" target="_blank" rel="noreferrer"></a>
         </div>
 
         <div className={styles.image}>
-          <a href="https://www.instagram.com/p/Bva6CkMnFsp/" target="_blank"></a>
+          <a href="https://www.instagram.com/p/Bva6CkMnFsp/" target="_blank" rel="noreferrer"></a>
         </div>
 
         <div className={styles.image}>
-          <a href="https://www.instagram.com/p/B5HfdAlqegX/" target="_blank"></a>
+          <a href="https://www.instagram.com/p/B5HfdAlqegX/" target="_blank" rel="noreferrer"></a>
         </div>
 
         <div className={styles.image}>
-          <a href="https://www.instagram.com/p/B5ZijSZqchU/" target="_blank"></a>
+          <a href="https://www.instagram.com/p/B5ZijSZqchU/" target="_blank" rel="noreferrer"></a>
         </div>
 
         <div className={styles.image}>
-          <a href="https://www.instagram.com/p/B4l_tEOqCcA/" target="_blank"></a>
+          <a href="https://www.instagram.com/p/B4l_tEOqCcA/" target="_blank" rel="noreferrer"></a>
         </div>
 
         <div className={styles.image}>
-          <a href="https://www.instagram.com/p/B5wqZfjqKr3/" target="_blank"></a>
+          <a href="https://www.instagram.com/p/B5wqZfjqKr3/" target="_blank" rel="noreferrer"></a>
         </div>
 
         <div className={styles.image}>
-          <a href="https://www.instagram.com/p/B4ZOZzpCTGv/" target="_blank"></a>
+          <a href="https://www.instagram.com/p/B4ZOZzpCTGv/" target="_blank" rel="noreferrer"></a>
         </div>
       </section>
     </div>
