@@ -36,12 +36,25 @@
   }
 }
 
+.tab {
+  padding-bottom: calc(var(--yr) * var(--s1));
+
+  &.active {
+    border-bottom: 1px solid #141414;
+    width: fit-content;
+  }
+}
+
 .tabs {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   margin-bottom: calc(var(--yr) * var(--s2));
-  grid-column-gap: calc(var(--yr) * 2.5);
+
+  & .tab {
+    &:first-child {
+      margin-right: 40px;
+    }
+  }
 
   &::before {
     content: '';
@@ -57,16 +70,11 @@
   }
 }
 
-.tab {
-  padding-bottom: calc(var(--yr) * var(--s1));
-
-  &.active {
-    border-bottom: 1px solid #141414;
-    width: fit-content;
-  }
+.specialists {
+  margin-bottom: calc(var(--yr) * var(--s2));
 }
 
-.masters {
-  height: 36px;
-  margin-bottom: calc(var(--yr) * var(--s2));
+.active1,
+.active2 {
+  display: flex;
 }

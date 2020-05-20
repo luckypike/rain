@@ -91,7 +91,8 @@
 }
 
 .buttons {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   position: relative;
 
   @media (--l) {
@@ -101,12 +102,22 @@
 
 .button {
   cursor: pointer;
-
-  &:not(:last-child) {
-    margin-right: calc(var(--yr) * 11.25);
-  }
+  justify-self: center;
 
   &.active {
+    display: none;
+  }
+}
+
+.swipe {
+  position: absolute;
+  display: block;
+  left: 50%;
+  height: 27px;
+  width: 25.5px;
+  transform: translateX(-50%);
+
+  @media (--l) {
     display: none;
   }
 }

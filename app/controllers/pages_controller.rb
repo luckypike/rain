@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :set_specialists, only: %i[index team]
+  before_action :set_specialists, only: %i[index team sale]
 
   def index
     @prices = Price.all.order(:order)

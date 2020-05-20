@@ -1,0 +1,14 @@
+.names {
+  display: flex;
+  align-items: center;
+  font-size: calc(var(--yr) * 3.25);
+  line-height: calc(var(--yr) * 6);
+
+  &:last-child {
+    & .name {
+      & .comma {
+        display: none;
+      }
+    }
+  }
+}

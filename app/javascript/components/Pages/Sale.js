@@ -1,14 +1,31 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
+import PropTypes from 'prop-types'
 
 import Subscription from './Sale/Subscription'
 import Certificate from './Sale/Certificate'
+import Photos from './Sale/Photos'
+import Names from './Sale/Names'
 
 import styles from './Sale.module.css'
 import page from '../Page.module.css'
 
-export default function Sale () {
-  const [tab, setTab] = useState(0)
+Sale.propTypes = {
+  city: PropTypes.string,
+  specialists: PropTypes.array
+}
+
+export default function Sale ({ city, specialists }) {
+  const [active, setActive] = useState(0)
+
+  const openTab = e => setActive(+e.target.dataset.index)
+
+  const tabs = [
+    { title: 'Топ-мастер' },
+    { title: 'Мастер' }
+  ]
+
+  console.log(specialists.filter(s => s.service !== 'Мастер маникюра и педикюра'))
 
   return (
     <div className={page.root}>
@@ -37,22 +54,45 @@ export default function Sale () {
           Пакеты по 2, 3 и 5 визитов к разным категориям мастеров. Чем больше визитов в пакете, тем выше процент скидки. Если вы выбираете подарок, то рекомендуем купить сертификат на фиксированную сумму.
         </div>
 
-        <div className={styles.tabs}>
-          <div className={classNames(styles.tab, { [styles.active]: tab === 0 })} onClick={() => setTab(0)}>
-            <h2>
-              Топ–мастер
-            </h2>
+        <div className={styles.specialists}>
+          <div className={styles.tabs}>
+            {tabs.map((tab, i) =>
+              <div
+                key={i}
+                className={classNames(styles.tab, { [styles.active]: active === i })}
+                data-index={i}
+                onClick={openTab}
+              >
+                {tab.title}
+              </div>
+            )}
           </div>
 
-          <div className={classNames(styles.tab, { [styles.active]: tab === 1 })} onClick={() => setTab(1)}>
-            <h2>
-              Мастер
-            </h2>
-          </div>
-        </div>
+          {active === 0 &&
+            <div className={styles.active1}>
+              <>
+                {specialists.filter(s => s.service !== 'Мастер маникюра и педикюра').map((specialist, i) =>
+                  <Photos key={i} specialist={specialist} />
+                )}
+              </>
+              <>
+                {specialists.filter(s => s.service !== 'Мастер маникюра и педикюра').map((specialist, i) =>
+                  <Names key={i} specialist={specialist} />
+                )}
+              </>
+            </div>
+          }
 
-        <div className={styles.masters}>
-          Ирина, Вероника
+          {active === 1 &&
+            <div className={styles.active2}>
+              {specialists.filter(s => s.service === 'Мастер маникюра и педикюра').map((specialist, i) =>
+                <Photos key={i} specialist={specialist} />
+              )}
+              {specialists.filter(s => s.service === 'Мастер маникюра и педикюра').map((specialist, i) =>
+                <Names key={i} specialist={specialist} />
+              )}
+            </div>
+          }
         </div>
 
         <Subscription />

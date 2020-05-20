@@ -1,3 +1,11 @@
 - set_meta_tags title: 'Акции'
 
-= react_component 'Pages/Sale', { city: @city_key }, { prerender: true }
+= react_component( \
+  'Pages/Sale',
+  { \
+    city: @city_key,
+    specialists: @specialists.map { |specialist| specialist.slice(:id, :name, :service).merge({ photo: url_for(specialist.photo.variant(thumbnail: "800x1000", quality: 80, interlace: :plane)) }) }  \
+  }, { \
+    prerender: true \
+  } \
+)
