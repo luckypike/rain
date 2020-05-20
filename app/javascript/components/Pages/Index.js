@@ -124,23 +124,29 @@ export default function Index ({ city, specialists, prices: data, instagram }) {
       <section className={classNames(page.section, styles.list)}>
         <div className="glide" ref={list}>
           <div className="glide__track" data-glide-el="track">
-            <div className={classNames('glide__slides')}>
-              {specialists.map((specialist, _) =>
-                <div className={classNames('glide__slide', styles.master)} key={_} >
-                  <div className={styles.photo}>
-                    <img src={specialist.photo} />
-                  </div>
+            {specialists &&
+              <div className={classNames('glide__slides')}>
+                {specialists.map((specialist, _) =>
+                  <div className={classNames('glide__slide', styles.master)} key={_} >
+                    {specialist.photo &&
+                      <div className={styles.photo}>
+                        <img src={specialist.photo} />
+                      </div>
+                    }
 
-                  <div className={styles.name}>
-                    {specialist.name} | <span className={styles.service}>{specialist.service}</span>
-                  </div>
+                    {specialist.name && specialist.service &&
+                      <div className={styles.name}>
+                        {specialist.name} | <span className={styles.service}>{specialist.service}</span>
+                      </div>
+                    }
 
-                  <div className={styles.book}>
-                    <a className={classNames('ms_booking', button.sign_up, styles.button)} href="#" data-url={`https://n81206.yclients.com/?o=m${specialist.yid}`}>Записаться</a>
+                    <div className={styles.book}>
+                      <a className={classNames('ms_booking', button.sign_up, styles.button)} href="#" data-url={`https://n81206.yclients.com/?o=m${specialist.yid}`}>Записаться</a>
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
+                )}
+              </div>
+            }
           </div>
         </div>
       </section>

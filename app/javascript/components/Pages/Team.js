@@ -7,7 +7,7 @@ import page from '../Page.module.css'
 
 Team.propTypes = {
   city: PropTypes.string,
-  specialists: PropTypes.array
+  specialists: PropTypes.object
 }
 
 export default function Team ({ city, specialists }) {
@@ -55,23 +55,31 @@ export default function Team ({ city, specialists }) {
       </section>
 
       <section className={classNames(styles.team, page.section)}>
-        <div className={styles.specialists}>
-          {specialists.map((specialist, _) =>
-            <div className={styles.list} key={_}>
-              <div className={styles.specialist}>
-                <img src={specialist.photo} />
-              </div>
+        {specialists &&
+          <div className={styles.specialists}>
+            {specialists.map((specialist, _) =>
+              <div className={styles.list} key={_}>
+                {specialist.photo &&
+                  <div className={styles.specialist}>
+                    <img src={specialist.photo} />
+                  </div>
+                }
 
-              <div className={styles.service}>
-                {specialist.service}
-              </div>
+                {specialist.service &&
+                  <div className={styles.service}>
+                    {specialist.service}
+                  </div>
+                }
 
-              <div className={styles.name}>
-                {specialist.name}
+                {specialist.name &&
+                  <div className={styles.name}>
+                    {specialist.name}
+                  </div>
+                }
               </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
+        }
       </section>
     </div>
   )
