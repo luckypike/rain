@@ -1,0 +1,42 @@
+.top {
+  composes: top from '../Pages/Sale.module.css';
+}
+
+.section {
+  composes: section from '../Pages/Sale.module.css';
+}
+
+.title {
+  margin-bottom: calc(var(--yr) * var(--s1));
+}
+
+.desc {
+  composes: at from '../Fonts.module.css';
+  margin-bottom: calc(var(--yr) * var(--s4));
+
+  @media (--l) {
+    width: calc(8 / 12 * 100%);
+  }
+}
+
+.order {
+  display: block;
+
+  @media (--l) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: calc(var(--yr) * 10);
+  }
+}
+
+.form {
+  @media (--l) {
+    grid-column: span 4;
+  }
+}
+
+.w {
+  @media (--l) {
+    grid-column: 7 / 13;
+  }
+}

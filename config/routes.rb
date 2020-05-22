@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     resources :specialists
     resources :prices
 
+    get 'orders', to: 'orders#index'
+    post 'orders', to: 'orders#create'
+
     resources :instagram, only: [:index], constraints: lambda { |req| req.format == :json }
   end
 end
