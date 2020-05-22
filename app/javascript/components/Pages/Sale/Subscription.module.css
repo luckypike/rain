@@ -114,7 +114,7 @@
   @media (--l) {
     font-size: calc(var(--yr) * 8.5);
     line-height: calc(var(--yr) * 10);
-    white-space: nowrap;
+    letter-spacing: normal;
   }
 }
 
