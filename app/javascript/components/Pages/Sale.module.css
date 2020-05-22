@@ -19,12 +19,10 @@
 }
 
 .desc {
-  margin-bottom: calc(var(--yr) * var(--s5));
+  composes: at from '../Fonts.module.css';
 
-  & h3 {
-    text-transform: none;
-    letter-spacing: normal;
-    font-weight: normal;
+  @media (--l) {
+    margin-bottom: calc(var(--yr) * var(--s4));
   }
 }
 
@@ -37,6 +35,7 @@
 }
 
 .tab {
+  composes: at from '../Fonts.module.css';
   padding-bottom: calc(var(--yr) * var(--s1));
 
   &.active {

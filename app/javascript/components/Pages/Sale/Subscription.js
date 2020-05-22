@@ -1,12 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react'
 import classNames from 'classnames'
 import Glide from '@glidejs/glide'
+import PropTypes from 'prop-types'
 
 import styles from './Subscription.module.css'
 
 import Swipe from '!svg-react-loader!../../../images/sale/swipe.svg'
 
-export default function Subscription () {
+Subscription.propTypes = {
+  city: PropTypes.string
+}
+
+export default function Subscription ({ city }) {
   const [active, setActive] = useState(0)
   const mount = useRef()
   const slides = useRef()
@@ -46,14 +51,14 @@ export default function Subscription () {
       <div className={classNames('glide__track')} data-glide-el="track">
         <div className={classNames('glide__slides', styles.slides)} ref={slides}>
           <div className={classNames('glide__slide', styles.slide)}>
-            <div className={classNames(styles.card, styles.cover1)}>
+            <div className={classNames(styles.card, styles.cover1, { [styles.cover1nn]: city === 'nizhny' })}>
               <div className={styles.group}>
                 <div className={styles.sale}>
-                  <h1>-10%</h1>
+                  -10%
                 </div>
 
                 <div className={styles.season}>
-                  <h3>Абонемент на маникюр с покрытием к&nbsp;Топ&#8209;мастеру</h3>
+                  Абонемент на маникюр с покрытием к&nbsp;Топ&#8209;мастеру
                 </div>
 
                 <div className={styles.manicure}>
@@ -61,11 +66,23 @@ export default function Subscription () {
                 </div>
 
                 <div className={styles.visit}>
-                  <h2>2 визита</h2>
+                  2 визита
                 </div>
 
                 <div className={styles.price}>
-                  <h2>4680 ₽</h2><span className={styles.origin}>5200 ₽</span>
+                  {city === 'moscow' &&
+                    <>
+                      <span className={styles.discount}>4680 ₽</span>
+                      <span className={styles.origin}>5200 ₽</span>
+                    </>
+                  }
+
+                  {city === 'nizhny' &&
+                    <>
+                      <span className={styles.discount}>3960 ₽</span>
+                      <span className={styles.origin}>4400 ₽</span>
+                    </>
+                  }
                 </div>
               </div>
             </div>
@@ -78,14 +95,14 @@ export default function Subscription () {
           </div>
 
           <div className={classNames('glide__slide', styles.slide)}>
-            <div className={classNames(styles.card, styles.cover2)}>
+            <div className={classNames(styles.card, styles.cover2, { [styles.cover2nn]: city === 'nizhny' })}>
               <div className={styles.group}>
                 <div className={styles.sale}>
-                  <h1>-15%</h1>
+                  -15%
                 </div>
 
                 <div className={styles.season}>
-                  <h3>Абонемент на маникюр с покрытием к&nbsp;Топ&#8209;мастеру</h3>
+                  Абонемент на маникюр с покрытием к&nbsp;Топ&#8209;мастеру
                 </div>
 
                 <div className={styles.manicure}>
@@ -93,11 +110,23 @@ export default function Subscription () {
                 </div>
 
                 <div className={styles.visit}>
-                  <h2>3 визита</h2>
+                  3 визита
                 </div>
 
                 <div className={styles.price}>
-                  <h2>6630 ₽</h2><span className={styles.origin}>7800 ₽</span>
+                  {city === 'moscow' &&
+                    <>
+                      <span className={styles.discount}>6630 ₽</span>
+                      <span className={styles.origin}>7800 ₽</span>
+                    </>
+                  }
+
+                  {city === 'nizhny' &&
+                    <>
+                      <span className={styles.discount}>5610 ₽</span>
+                      <span className={styles.origin}>6600 ₽</span>
+                    </>
+                  }
                 </div>
               </div>
             </div>
@@ -110,14 +139,14 @@ export default function Subscription () {
           </div>
 
           <div className={classNames('glide__slide', styles.slide)}>
-            <div className={classNames(styles.card, styles.cover3)}>
+            <div className={classNames(styles.card, styles.cover3, { [styles.cover3nn]: city === 'nizhny' })}>
               <div className={styles.group}>
                 <div className={styles.sale}>
-                  <h1>-20%</h1>
+                  -20%
                 </div>
 
                 <div className={styles.season}>
-                  <h3>Абонемент на маникюр с покрытием к&nbsp;Топ&#8209;мастеру</h3>
+                  Абонемент на маникюр с покрытием к&nbsp;Топ&#8209;мастеру
                 </div>
 
                 <div className={styles.manicure}>
@@ -125,11 +154,23 @@ export default function Subscription () {
                 </div>
 
                 <div className={styles.visit}>
-                  <h2>5 визитов</h2>
+                  5 визитов
                 </div>
 
                 <div className={styles.price}>
-                  <h2>10400 ₽</h2><span className={styles.origin}>13000 ₽</span>
+                  {city === 'moscow' &&
+                    <>
+                      <span className={styles.discount}>10400 ₽</span>
+                      <span className={styles.origin}>13000 ₽</span>
+                    </>
+                  }
+
+                  {city === 'nizhny' &&
+                    <>
+                      <span className={styles.discount}>8800 ₽</span>
+                      <span className={styles.origin}>11000 ₽</span>
+                    </>
+                  }
                 </div>
               </div>
             </div>

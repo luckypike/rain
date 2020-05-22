@@ -25,8 +25,6 @@ export default function Sale ({ city, specialists }) {
     { title: 'Мастер' }
   ]
 
-  console.log(specialists.filter(s => s.service !== 'Мастер маникюра и педикюра'))
-
   return (
     <div className={page.root}>
       <section className={classNames(page.section, styles.top, styles.section)}>
@@ -37,9 +35,7 @@ export default function Sale ({ city, specialists }) {
         </div>
 
         <div className={styles.desc}>
-          <h3>
-            Дарите глубокие впечатления от качественного обслуживания и маникюра, способного рассказать историю.
-          </h3>
+          Дарите глубокие впечатления от качественного обслуживания и маникюра, способного рассказать историю.
         </div>
       </section>
 
@@ -95,7 +91,7 @@ export default function Sale ({ city, specialists }) {
           }
         </div>
 
-        <Subscription />
+        <Subscription city={city} />
       </section>
 
       <section className={classNames(page.section, styles.section)}>

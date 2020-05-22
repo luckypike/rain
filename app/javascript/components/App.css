@@ -1,7 +1,14 @@
 @font-face {
   font-family: 'Futura New';
-  src: url('../fonts/cg/subset-FuturaNewBook-Reg.woff') format('woff');
+  src: url('../fonts/fn/subset-FuturaNewBook-Reg.woff') format('woff');
   font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura New';
+  src: url('../fonts/fn/subset-FuturaNewExtraBold-Reg.woff') format('woff');
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -11,11 +18,11 @@
 
 body {
   font-family: 'Futura New', sans-serif;
-  font-size: calc(var(--yr) * calc(var(--fs) + 0.5));
-  line-height: calc(var(--yr) * calc(var(--lh) + 1));
+  font-size: calc(var(--yr) * 4);
+  line-height: calc(var(--yr) * 6);
 
   @media (--m) {
-    line-height: calc(var(--yr) * calc(var(--lh) + 3));
+    line-height: calc(var(--yr) * 8);
   }
 }
 

@@ -18,15 +18,15 @@
 }
 
 .cover1 {
-  background: url('../../../images/index/ss1.jpg') no-repeat center;
+  background: url('../../../images/sale/s1.jpg') no-repeat center;
 }
 
 .cover2 {
-  background: url('../../../images/index/phil.jpg') no-repeat center;
+  background: url('../../../images/sale/s2.jpg') no-repeat center;
 }
 
 .cover3 {
-  background: url('../../../images/index/ss3.jpg') no-repeat center;
+  background: url('../../../images/sale/s3.jpg') no-repeat center;
 }
 
 .card {
@@ -70,6 +70,7 @@
 .title {
   & h3 {
     margin: 0;
+    font-weight: normal;
   }
 }
 
@@ -87,6 +88,7 @@
 
   & h3 {
     margin: 0;
+    font-weight: normal;
   }
 }
 
