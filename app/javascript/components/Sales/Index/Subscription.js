@@ -8,10 +8,11 @@ import styles from './Subscription.module.css'
 import Swipe from '!svg-react-loader!../../../images/sale/swipe.svg'
 
 Subscription.propTypes = {
-  city: PropTypes.string
+  city: PropTypes.string,
+  sales: PropTypes.array
 }
 
-export default function Subscription ({ city }) {
+export default function Subscription ({ city, sales }) {
   const [active, setActive] = useState(0)
   const mount = useRef()
   const slides = useRef()
@@ -50,152 +51,60 @@ export default function Subscription ({ city }) {
     <div className={classNames('glide', styles.slider)} ref={mount}>
       <div className={classNames('glide__track')} data-glide-el="track">
         <div className={classNames('glide__slides', styles.slides)} ref={slides}>
-          <div className={classNames('glide__slide', styles.slide)}>
-            <div className={classNames(styles.card, styles.cover1, { [styles.cover1nn]: city === 'nizhny' })}>
-              <div className={styles.group}>
-                <div className={styles.sale}>
-                  -10%
-                </div>
+          {sales.map((sale, i) =>
+            <div className={classNames('glide__slide', styles.slide)} key={i}>
+              <div className={classNames(styles.card, { [styles.cover1]: i === 0, [styles.cover2]: i === 1, [styles.cover3]: i === 2, [styles.cover1nn]: city === 'nizhny' })}>
+                <div className={styles.group}>
+                  <div className={styles.sale}>
+                    -10%
+                  </div>
 
-                <div className={styles.season}>
-                  Абонемент на маникюр с покрытием к&nbsp;Топ&#8209;мастеру
-                </div>
+                  <div className={styles.season}>
+                    {sale.state} на маникюр с покрытием к&nbsp;Топ&#8209;мастеру
+                  </div>
 
-                <div className={styles.manicure}>
-                  Маникюр и однотонное покрытие гелями Luxio у топ-мастера.
-                </div>
+                  <div className={styles.manicure}>
+                    Маникюр и однотонное покрытие гелями Luxio у топ-мастера.
+                  </div>
 
-                <div className={styles.visit}>
-                  2 визита
-                </div>
+                  <div className={styles.visit}>
+                    {sale.quantity} визита
+                  </div>
 
-                <div className={styles.price}>
-                  {city === 'moscow' &&
-                    <>
-                      <span className={styles.discount}>4680 ₽</span>
-                      <span className={styles.origin}>5200 ₽</span>
-                    </>
-                  }
+                  <div className={styles.price}>
+                    {city === 'moscow' &&
+                      <>
+                        <span className={styles.discount}>{sale.price_sale_msk} ₽</span>
+                        <span className={styles.origin}>{sale.price_origin_msk} ₽</span>
+                      </>
+                    }
 
-                  {city === 'nizhny' &&
-                    <>
-                      <span className={styles.discount}>3960 ₽</span>
-                      <span className={styles.origin}>4400 ₽</span>
-                    </>
-                  }
-                </div>
-              </div>
-            </div>
-
-            <div className={styles.pay}>
-              <a href="/sales">
-                <h3>Купить</h3>
-              </a>
-            </div>
-          </div>
-
-          <div className={classNames('glide__slide', styles.slide)}>
-            <div className={classNames(styles.card, styles.cover2, { [styles.cover2nn]: city === 'nizhny' })}>
-              <div className={styles.group}>
-                <div className={styles.sale}>
-                  -15%
-                </div>
-
-                <div className={styles.season}>
-                  Абонемент на маникюр с покрытием к&nbsp;Топ&#8209;мастеру
-                </div>
-
-                <div className={styles.manicure}>
-                  Маникюр и однотонное покрытие гелями Luxio у топ-мастера.
-                </div>
-
-                <div className={styles.visit}>
-                  3 визита
-                </div>
-
-                <div className={styles.price}>
-                  {city === 'moscow' &&
-                    <>
-                      <span className={styles.discount}>6630 ₽</span>
-                      <span className={styles.origin}>7800 ₽</span>
-                    </>
-                  }
-
-                  {city === 'nizhny' &&
-                    <>
-                      <span className={styles.discount}>5610 ₽</span>
-                      <span className={styles.origin}>6600 ₽</span>
-                    </>
-                  }
+                    {city === 'nizhny' &&
+                      <>
+                        <span className={styles.discount}>{sale.price_sale_nn} ₽</span>
+                        <span className={styles.origin}>{sale.price_origin_nn} ₽</span>
+                      </>
+                    }
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className={styles.pay}>
-              <a href="/sales">
-                <h3>Купить</h3>
-              </a>
-            </div>
-          </div>
-
-          <div className={classNames('glide__slide', styles.slide)}>
-            <div className={classNames(styles.card, styles.cover3, { [styles.cover3nn]: city === 'nizhny' })}>
-              <div className={styles.group}>
-                <div className={styles.sale}>
-                  -20%
-                </div>
-
-                <div className={styles.season}>
-                  Абонемент на маникюр с покрытием к&nbsp;Топ&#8209;мастеру
-                </div>
-
-                <div className={styles.manicure}>
-                  Маникюр и однотонное покрытие гелями Luxio у топ-мастера.
-                </div>
-
-                <div className={styles.visit}>
-                  5 визитов
-                </div>
-
-                <div className={styles.price}>
-                  {city === 'moscow' &&
-                    <>
-                      <span className={styles.discount}>10400 ₽</span>
-                      <span className={styles.origin}>13000 ₽</span>
-                    </>
-                  }
-
-                  {city === 'nizhny' &&
-                    <>
-                      <span className={styles.discount}>8800 ₽</span>
-                      <span className={styles.origin}>11000 ₽</span>
-                    </>
-                  }
-                </div>
+              <div className={styles.pay}>
+                <a href={`/sales/${sale.id}`}>
+                  <h3>Купить</h3>
+                </a>
               </div>
             </div>
-
-            <div className={styles.pay}>
-              <a href="/sales">
-                <h3>Купить</h3>
-              </a>
-            </div>
-          </div>
+          )}
         </div>
       </div>
 
       <div className={styles.buttons} data-glide-el="controls[nav]">
-        <div className={classNames(styles.button, { [styles.active]: active === 0 })} data-glide-dir="=0">
-          2 визита
-        </div>
-
-        <div className={classNames(styles.button, { [styles.active]: active === 1 })} data-glide-dir="=1">
-          3 визита
-        </div>
-
-        <div className={classNames(styles.button, { [styles.active]: active === 2 })} data-glide-dir="=2">
-          5  визитов
-        </div>
+        {sales.map((sale, i) =>
+          <div key={i} className={classNames(styles.button, { [styles.active]: active === i })} data-glide-dir={`=${i}`}>
+            {sale.quantity} визитов
+          </div>
+        )}
 
         <div className={styles.swipe}>
           <Swipe />

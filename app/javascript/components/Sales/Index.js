@@ -12,10 +12,11 @@ import page from '../Page.module.css'
 
 Index.propTypes = {
   city: PropTypes.string,
-  specialists: PropTypes.array
+  specialists: PropTypes.array,
+  sales: PropTypes.array
 }
 
-export default function Index ({ city, specialists }) {
+export default function Index ({ city, specialists, sales }) {
   const [active, setActive] = useState(0)
 
   const openTab = e => setActive(+e.target.dataset.index)
@@ -91,7 +92,7 @@ export default function Index ({ city, specialists }) {
           }
         </div>
 
-        <Subscription city={city} />
+        <Subscription city={city} sales={sales.map(i => i).filter(s => s.state === 'Абонимент')} />
       </section>
 
       <section className={classNames(page.section, styles.section)}>
@@ -105,7 +106,7 @@ export default function Index ({ city, specialists }) {
           В отличие от абонемента не привязан к услуге и категории мастера, его можно потратить на любые услуги или товары студии. Допускается многократное списание. Сертификат действителен для одного человека.
         </div>
 
-        <Certificate />
+        <Certificate sales={sales.map(i => i).filter(s => s.state === 'Сертификат')} />
       </section>
 
       <section className={classNames(page.section, styles.section)}>

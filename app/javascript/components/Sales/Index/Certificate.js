@@ -1,12 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react'
 import classNames from 'classnames'
+import PropTypes from 'prop-types'
 import Glide from '@glidejs/glide'
 
 import styles from './Certificate.module.css'
 
 import Swipe from '!svg-react-loader!../../../images/sale/swipe.svg'
 
-export default function Certificate () {
+Certificate.propTypes = {
+  city: PropTypes.string,
+  sales: PropTypes.array
+}
+
+export default function Certificate ({ city, sales }) {
   const [active, setActive] = useState(0)
   const mount = useRef()
   const slides = useRef()
@@ -45,80 +51,36 @@ export default function Certificate () {
     <div className={classNames('glide', styles.slider)} ref={mount}>
       <div className={classNames('glide__track')} data-glide-el="track">
         <div className={classNames('glide__slides', styles.slides)} ref={slides}>
-          <div className={classNames('glide__slide', styles.slide)}>
-            <div className={classNames(styles.card, styles.cover1)}>
-              <div className={styles.group}>
-                <div className={styles.title}>
-                  <h3>Сертификат</h3>
-                </div>
+          {sales.map((sale, i) =>
+            <div className={classNames('glide__slide', styles.slide)} key={i}>
+              <div className={classNames(styles.card, { [styles.cover1]: i === 0, [styles.cover2]: i === 1, [styles.cover3]: i === 2 })}>
+                <div className={styles.group}>
+                  <div className={styles.title}>
+                    <h3>{sale.state}</h3>
+                  </div>
 
-                <div className={styles.price}>
-                  <h1>3000 ₽</h1>
-                </div>
-              </div>
-            </div>
-
-            <div className={styles.pay}>
-              <a href="/sales">
-                <h3>Купить</h3>
-              </a>
-            </div>
-          </div>
-
-          <div className={classNames('glide__slide', styles.slide)}>
-            <div className={classNames(styles.card, styles.cover2)}>
-              <div className={styles.group}>
-                <div className={styles.title}>
-                  <h3>Сертификат</h3>
-                </div>
-
-                <div className={styles.price}>
-                  <h1>5000 ₽</h1>
+                  <div className={styles.price}>
+                    <h1>{sale.price_sale_msk} ₽</h1>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className={styles.pay}>
-              <a href="/sales">
-                <h3>Купить</h3>
-              </a>
-            </div>
-          </div>
-
-          <div className={classNames('glide__slide', styles.slide)}>
-            <div className={classNames(styles.card, styles.cover3)}>
-              <div className={styles.group}>
-                <div className={styles.title}>
-                  <h3>Сертификат</h3>
-                </div>
-
-                <div className={styles.price}>
-                  <h1>7000 ₽</h1>
-                </div>
+              <div className={styles.pay}>
+                <a href={`/sales/${sale.id}`}>
+                  <h3>Купить</h3>
+                </a>
               </div>
             </div>
-
-            <div className={styles.pay}>
-              <a href="/sales">
-                <h3>Купить</h3>
-              </a>
-            </div>
-          </div>
+          )}
         </div>
       </div>
 
       <div className={styles.buttons} data-glide-el="controls[nav]">
-        <div className={classNames(styles.button, { [styles.active]: active === 0 })} data-glide-dir="=0">
-          3000 ₽
-        </div>
-
-        <div className={classNames(styles.button, { [styles.active]: active === 1 })} data-glide-dir="=1">
-          5000 ₽
-        </div>
-
-        <div className={classNames(styles.button, { [styles.active]: active === 2 })} data-glide-dir="=2">
-          7000 ₽
-        </div>
+        {sales.map((sale, i) =>
+          <div key={i} className={classNames(styles.button, { [styles.active]: active === i })} data-glide-dir={`=${i}`}>
+            {sale.price_sale_msk}
+          </div>
+        )}
 
         <div className={styles.swipe}>
           <Swipe />

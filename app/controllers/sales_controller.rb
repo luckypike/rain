@@ -6,7 +6,12 @@ class SalesController < ApplicationController
     @sales = Sale.all
   end
 
-  def show; end
+  def show
+    respond_to do |format|
+      format.html { render :index }
+      format.json
+    end
+  end
 
   private
 
