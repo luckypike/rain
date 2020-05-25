@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     resources :specialists
     resources :prices
 
-    get 'sales', to: 'sales#show'
+    resources :sales, only: %i[index show]
+
     post 'orders', to: 'orders#create'
 
     resources :instagram, only: [:index], constraints: lambda { |req| req.format == :json }

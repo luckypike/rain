@@ -2,20 +2,20 @@ import React, { useState } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
-import Subscription from './Sale/Subscription'
-import Certificate from './Sale/Certificate'
-import Photos from './Sale/Photos'
-import Names from './Sale/Names'
+import Subscription from './Index/Subscription'
+import Certificate from './Index/Certificate'
+import Photos from './Index/Photos'
+import Names from './Index/Names'
 
-import styles from './Sale.module.css'
+import styles from './Index.module.css'
 import page from '../Page.module.css'
 
-Sale.propTypes = {
+Index.propTypes = {
   city: PropTypes.string,
   specialists: PropTypes.array
 }
 
-export default function Sale ({ city, specialists }) {
+export default function Index ({ city, specialists }) {
   const [active, setActive] = useState(0)
 
   const openTab = e => setActive(+e.target.dataset.index)

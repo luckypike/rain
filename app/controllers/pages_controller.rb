@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :set_specialists, only: %i[index team sale]
+  before_action :set_specialists, only: %i[index team]
 
   def index
     @prices = Price.all.order(:order)
@@ -12,8 +12,6 @@ class PagesController < ApplicationController
   def team; end
 
   def works; end
-
-  def sale; end
 
   private
 

@@ -1,5 +1,6 @@
 .section {
   @media (--l) {
+    max-width: 95rem;
     width: calc(12 / 16 * 100%);
     margin: 0 auto;
   }
