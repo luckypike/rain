@@ -4,6 +4,7 @@
   'Sales/Index',
   { \
     city: @city_key,
+    sales: @sales,
     specialists: @specialists.map { |specialist| specialist.slice(:id, :name, :service).merge({ photo: url_for(specialist.photo.variant(thumbnail: "800x1000", quality: 80, interlace: :plane)) }) }  \
   }, { \
     prerender: true \

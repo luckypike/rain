@@ -2,7 +2,9 @@ class SalesController < ApplicationController
   before_action :set_specialists, only: %i[index show]
   before_action :set_sale, only: %i[show]
 
-  def index; end
+  def index
+    @sales = Sale.all
+  end
 
   def show; end
 

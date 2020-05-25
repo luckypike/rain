@@ -1,9 +1,9 @@
 .top {
-  composes: top from '../Pages/Sale.module.css';
+  composes: top from '../Sales/Index.module.css';
 }
 
 .section {
-  composes: section from '../Pages/Sale.module.css';
+  composes: section from '../Sales/Index.module.css';
   margin-bottom: calc(var(--yr) * var(--s5));
 }
 
