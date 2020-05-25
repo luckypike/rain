@@ -2,13 +2,14 @@ import React from 'react'
 import classNames from 'classnames'
 import axios from 'axios'
 
-import { Errors, useForm } from './Form'
+import { Errors, useForm } from '../Form'
 
-import styles from './Index.module.css'
+import styles from './Show.module.css'
 import page from '../Page.module.css'
-import form from './Form.module.css'
+import fonts from '../Fonts.module.css'
+import form from '../Form.module.css'
 
-export default function Index () {
+export default function Show () {
   const {
     values,
     setSaved,
@@ -101,11 +102,27 @@ export default function Index () {
 
                 <Errors errors={errors.email} />
               </div>
-
-              <div>
-                <input type="submit" value={pending ? 'Отправляем...' : 'Отправить'} />
-              </div>
             </form>
+          </div>
+
+          <div className={styles.pay}>
+            <div className={styles.root}>
+              <div className={styles.type}>
+                <div className={styles.text}>
+                  Абонимент на маникюр с покрытием к топ&#8209;мастеру на 5 визитов
+                </div>
+
+                <div className={styles.price}>
+                  10400 ₽
+                </div>
+              </div>
+
+              <form onSubmit={onSubmit(handleSubmit)}>
+                <div className={fonts.h3}>
+                  <input className={styles.button} type="submit" value={pending ? 'Оплата...' : 'Оплатить'} />
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>

@@ -88,7 +88,7 @@ export default function Subscription ({ city }) {
             </div>
 
             <div className={styles.pay}>
-              <a href="/orders">
+              <a href="/sales">
                 <h3>Купить</h3>
               </a>
             </div>
@@ -132,7 +132,7 @@ export default function Subscription ({ city }) {
             </div>
 
             <div className={styles.pay}>
-              <a href="/orders">
+              <a href="/sales">
                 <h3>Купить</h3>
               </a>
             </div>
@@ -176,7 +176,7 @@ export default function Subscription ({ city }) {
             </div>
 
             <div className={styles.pay}>
-              <a href="/orders">
+              <a href="/sales">
                 <h3>Купить</h3>
               </a>
             </div>

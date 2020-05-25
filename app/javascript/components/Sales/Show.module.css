@@ -1,0 +1,96 @@
+.top {
+  composes: top from '../Pages/Sale.module.css';
+}
+
+.section {
+  composes: section from '../Pages/Sale.module.css';
+  margin-bottom: calc(var(--yr) * var(--s5));
+}
+
+.title {
+  margin-bottom: calc(var(--yr) * var(--s1));
+}
+
+.desc {
+  composes: at from '../Fonts.module.css';
+  margin-bottom: calc(var(--yr) * var(--s4));
+
+  @media (--l) {
+    width: calc(8 / 12 * 100%);
+  }
+}
+
+.order {
+  display: block;
+
+  @media (--l) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: calc(var(--yr) * 10);
+  }
+}
+
+.form {
+  @media (--l) {
+    grid-column: span 4;
+  }
+}
+
+.pay {
+  background-color: #fafafa;
+
+  @media (--l) {
+    grid-column: 7 / 13;
+  }
+}
+
+.type {
+  display: block;
+  margin-bottom: calc(var(--yr) * var(--s2));
+
+  @media (--l) {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-column-gap: calc(var(--yr) * 10);
+  }
+}
+
+.text {
+  margin-bottom: calc(var(--yr) * var(--s1));
+
+  @media (--l) {
+    margin-bottom: 0;
+  }
+}
+
+.root {
+  padding: calc(var(--yr) * var(--s4)) var(--xr);
+
+  @media (--m) {
+    padding: calc(var(--yr) * var(--s4)) calc(var(--xr) * 2);
+  }
+}
+
+.price {
+  composes: h3 from '../Fonts.module.css';
+  margin: 0;
+  font-weight: normal;
+  letter-spacing: normal;
+}
+
+.button {
+  background-color: #141414;
+  margin: 0;
+  text-align: center;
+  font-weight: normal;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  color: #fff;
+  padding: calc(var(--yr) * 4) 0;
+  min-width: 100%;
+
+  @media (--s) {
+    min-width: 17.5rem;
+  }
+}
