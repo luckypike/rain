@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2020_05_25_154208) do
     t.string "price_sale_nn"
     t.string "price_origin_msk"
     t.string "price_origin_nn"
-    t.integer "quantity"
+    t.string "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

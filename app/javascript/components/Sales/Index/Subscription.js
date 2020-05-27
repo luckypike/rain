@@ -70,7 +70,7 @@ export default function Subscription ({ city, sales }) {
 
                 <div className={styles.info}>
                   <div className={styles.visit}>
-                    {sale.quantity} визита
+                    {sale.quantity}
                   </div>
 
                   <div className={styles.price}>
@@ -104,7 +104,7 @@ export default function Subscription ({ city, sales }) {
       <div className={styles.buttons} data-glide-el="controls[nav]">
         {sales.map((sale, i) =>
           <div key={i} className={classNames(styles.button, { [styles.active]: active === i })} data-glide-dir={`=${i}`}>
-            {sale.quantity} визитов
+            {sale.quantity}
           </div>
         )}
 

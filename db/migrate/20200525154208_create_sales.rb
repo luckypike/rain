@@ -6,7 +6,7 @@ class CreateSales < ActiveRecord::Migration[6.0]
       t.string :price_sale_nn
       t.string :price_origin_msk
       t.string :price_origin_nn
-      t.integer :quantity
+      t.string :quantity
 
       t.timestamps
     end
