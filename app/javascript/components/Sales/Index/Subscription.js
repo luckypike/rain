@@ -66,7 +66,9 @@ export default function Subscription ({ city, sales }) {
                   <div className={styles.manicure}>
                     Маникюр и однотонное покрытие гелями Luxio у топ-мастера.
                   </div>
+                </div>
 
+                <div className={styles.info}>
                   <div className={styles.visit}>
                     {sale.quantity} визита
                   </div>

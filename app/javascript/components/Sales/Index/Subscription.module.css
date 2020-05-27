@@ -71,11 +71,10 @@
 .group {
   z-index: 1;
   color: #fff;
-  padding: calc(var(--yr) * var(--s2)) 0;
   position: absolute;
   left: calc(var(--xr));
   right: calc(var(--xr));
-  top: 0;
+  top: calc(var(--yr) * var(--s2));
 
   @media (--s) {
     left: calc(var(--xr) * 2);
@@ -101,6 +100,18 @@
 .manicure {
   margin-bottom: calc(var(--yr) * var(--s5));
   composes: small from '../../Fonts.module.css';
+}
+
+.info {
+  position: absolute;
+  bottom: calc(var(--yr) * var(--s2));
+  left: var(--xr);
+  color: #fff;
+  z-index: 1;
+
+  @media (--s) {
+    left: calc(var(--xr) * 2);
+  }
 }
 
 .visit {
