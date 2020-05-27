@@ -14,7 +14,7 @@ html
 
   body
     = react_component 'Geo', {}, { prerender: true } unless cookies[:geo]
-    = react_component 'Header', { city: @city_key, sale: current_page?(controller: :sales, action: :index) || current_page?(controller: :sales, action: :show)  }, { prerender: true }
+    = react_component 'Header', { city: @city_key, sale: params[:controller] === 'sales' && %w(index show).include?(params[:action]) }, { prerender: true }
     = yield
 
     = stylesheet_pack_tag 'app'
