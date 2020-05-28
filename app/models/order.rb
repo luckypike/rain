@@ -7,7 +7,7 @@ class Order < ApplicationRecord
       password: 'live_4Q-vfaQXnjFoAn_ez7I-zq635EmLXktIJae8_ljsz7o'
     }
 
-    HTTParty.post(
+    response = HTTParty.post(
       'https://payment.yandex.net/api/v3/payments',
       basic_auth: auth,
       headers: {
@@ -26,5 +26,9 @@ class Order < ApplicationRecord
         }
       }.to_json
     )
+
+    return nil unless response
+
+    response.parsed_response['confirmation']['confirmation_url']
   end
 end

@@ -33,9 +33,10 @@ export default function Show ({ city, sale }) {
       { order: values },
       { cancelToken: cancelToken.current.token }
     ).then(res => {
-      setSaved(true)
+      console.log(window.location = res.headers.location)
     }).catch(error => {
       setErrors(error.response.data)
+      setSaved(false)
     })
   }
 

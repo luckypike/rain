@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
     sleep 2
 
     if @order.save
-      @order.create_payment
+      render json: @order, status: :ok, location: @order.create_payment
     else
       render json: @order.errors, status: :unprocessable_entity
     end
