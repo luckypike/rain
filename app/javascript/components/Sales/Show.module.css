@@ -94,3 +94,15 @@
     min-width: 17.5rem;
   }
 }
+
+.email,
+.name,
+.surname {
+  & input {
+    padding: calc(var(--yr) * 6) calc(var(--yr) * 4) calc(var(--yr) * 3);
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+}

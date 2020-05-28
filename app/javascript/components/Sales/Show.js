@@ -11,10 +11,11 @@ import fonts from '../Fonts.module.css'
 import form from '../Form.module.css'
 
 Show.propTypes = {
-  sale: PropTypes.object
+  sale: PropTypes.object,
+  city: PropTypes.string
 }
 
-export default function Show ({ sale }) {
+export default function Show ({ city, sale }) {
   const {
     values,
     setSaved,
@@ -53,28 +54,33 @@ export default function Show ({ sale }) {
           <div className={styles.form}>
             <form onSubmit={onSubmit(handleSubmit)}>
               <div className={styles.name}>
-                <div className={form.input}>
+                <div className={classNames(form.input, styles.name)}>
                   <input
                     type="text"
                     name="name"
-                    placeholder="Имя *"
                     onChange={handleInputChange}
                     required
                   />
+                  <div className={form.label}>
+                    Имя
+                  </div>
                 </div>
 
                 <Errors errors={errors.name} />
               </div>
 
               <div className={styles.surname}>
-                <div className={form.input}>
+                <div className={classNames(form.input, styles.surname)}>
                   <input
                     type="text"
                     name="surname"
-                    placeholder="Фамилия *"
                     onChange={handleInputChange}
                     required
                   />
+
+                  <div className={form.label}>
+                    Фамилия
+                  </div>
                 </div>
 
                 <Errors errors={errors.surname} />
@@ -95,14 +101,16 @@ export default function Show ({ sale }) {
               </div>
 
               <div className={styles.email}>
-                <div className={form.input}>
+                <div className={classNames(form.input, styles.email)}>
                   <input
                     type="text"
                     name="email"
-                    placeholder="Почта *"
                     onChange={handleInputChange}
                     required
                   />
+                  <div className={form.label}>
+                    Почта
+                  </div>
                 </div>
 
                 <Errors errors={errors.email} />
@@ -114,17 +122,42 @@ export default function Show ({ sale }) {
             <div className={styles.root}>
               <div className={styles.type}>
                 <div className={styles.text}>
-                  Абонимент на маникюр с покрытием к топ&#8209;мастеру на 5 визитов
+                  {sale.state === 'Абонимент' &&
+                    <>
+                      {sale.state} на маникюр с покрытием к топ&#8209;мастеру на {sale.quantity}
+                    </>
+                  }
+
+                  {sale.state === 'Сертификат' &&
+                    <>
+                      {sale.state}
+                    </>
+                  }
                 </div>
 
                 <div className={styles.price}>
-                  10400 ₽
+                  {city === 'moscow' &&
+                    <>
+                      {sale.price_sale_msk} ₽
+                    </>
+                  }
+
+                  {city === 'nizhny' &&
+                      <>
+                        {sale.price_sale_nn} ₽
+                      </>
+                  }
                 </div>
               </div>
 
               <form onSubmit={onSubmit(handleSubmit)}>
                 <div className={fonts.h3}>
-                  <input className={styles.button} type="submit" value={pending ? 'Оплата...' : 'Оплатить'} />
+                  <input
+                    className={classNames(styles.button, { [styles.disabled]: values.name === '' || values.surname === '' || values.phone === '' || values.email === '' })}
+                    type="submit"
+                    value={pending ? 'Оплата...' : 'Оплатить'}
+                    disabled={pending || values.name === '' || values.surname === '' || values.phone === '' || values.email === ''}
+                  />
                 </div>
               </form>
             </div>

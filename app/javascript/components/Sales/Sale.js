@@ -16,7 +16,7 @@ export default function Sale ({ city, specialists, sales, sale }) {
   return (
     <Router>
       <Index path={city === 'moscow' ? 'sales' : 'nizhny/sales'} city={city} specialists={specialists} sales={sales} />
-      <Show path={city === 'moscow' ? 'sales/:id' : 'nizhny/sales/:id'} sale={sale} />
+      <Show path={city === 'moscow' ? 'sales/:id' : 'nizhny/sales/:id'} city={city} sale={sale} />
     </Router>
   )
 }
