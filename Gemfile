@@ -31,6 +31,8 @@ gem 'aws-sdk-s3', require: false
 
 gem 'bootsnap', require: false
 
+gem 'httparty'
+
 gem 'fast_jsonapi', github: 'fast-jsonapi/fast_jsonapi'
 
 group :development, :test do

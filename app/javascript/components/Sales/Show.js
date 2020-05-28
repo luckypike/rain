@@ -1,6 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import axios from 'axios'
+import PropTypes from 'prop-types'
 
 import { Errors, useForm } from '../Form'
 
@@ -9,7 +10,11 @@ import page from '../Page.module.css'
 import fonts from '../Fonts.module.css'
 import form from '../Form.module.css'
 
-export default function Show () {
+Show.propTypes = {
+  sale: PropTypes.object
+}
+
+export default function Show ({ sale }) {
   const {
     values,
     setSaved,
@@ -19,12 +24,12 @@ export default function Show () {
     setErrors,
     onSubmit,
     cancelToken
-  } = useForm({ name: '', surname: '', phone: '', email: '' })
+  } = useForm({ name: '', surname: '', phone: '', email: '', sale_id: sale.id })
 
   const handleSubmit = async e => {
     await axios.post(
       '/orders',
-      { orders: values },
+      { order: values },
       { cancelToken: cancelToken.current.token }
     ).then(res => {
       setSaved(true)

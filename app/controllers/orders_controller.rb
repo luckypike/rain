@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
     sleep 2
 
     if @order.save
-      head :created
+      @order.create_payment
     else
       render json: @order.errors, status: :unprocessable_entity
     end
@@ -16,6 +16,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:orders).permit(:name, :surname, :phone, :email)
+    params.require(:order).permit(:sale_id, :name, :surname, :phone, :email)
   end
 end
