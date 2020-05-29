@@ -29,7 +29,7 @@ export default function Show ({ city, sale, locale }) {
     setErrors,
     onSubmit,
     cancelToken
-  } = useForm({ name: '', surname: '', phone: '', email: '', sale_id: sale.id })
+  } = useForm({ name: '', surname: '', phone: '', email: '', sale_id: sale.id, city: city })
 
   const handleSubmit = async e => {
     await axios.post(
