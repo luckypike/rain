@@ -3,8 +3,8 @@ class Order < ApplicationRecord
 
   def create_payment
     auth = {
-      username: '687091',
-      password: 'live_4Q-vfaQXnjFoAn_ez7I-zq635EmLXktIJae8_ljsz7o'
+      username: '710076',
+      password: 'test_ttrd29_NJ0k2GEYzS4t-9ht9RdXOOBnoIWUotIQ1dDc'
     }
 
     response = HTTParty.post(
@@ -22,13 +22,13 @@ class Order < ApplicationRecord
         "capture": true,
         "confirmation": {
           "type": 'redirect',
-          "return_url": 'https://www.merchant-website.com/return_url'
+          "return_url": 'https://irinarain.com/team'
         }
       }.to_json
     )
 
     return nil unless response
 
-    response.parsed_response['confirmation']['confirmation_url']
+    response.parsed_response
   end
 end

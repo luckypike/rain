@@ -7,7 +7,10 @@ class OrdersController < ApplicationController
     sleep 2
 
     if @order.save
-      render json: @order, status: :ok, location: @order.create_payment
+      @order.create_payment
+      @order.update(payment_id: @order.create_payment['id'])
+      @order.save
+      render json: @order, status: :ok, location: @order.create_payment['confirmation']['confirmation_url']
     else
       render json: @order.errors, status: :unprocessable_entity
     end
