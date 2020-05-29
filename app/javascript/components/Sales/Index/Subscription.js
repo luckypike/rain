@@ -57,10 +57,18 @@ export default function Subscription ({ city, sales, locale }) {
         <div className={classNames('glide__slides', styles.slides)} ref={slides}>
           {sales.map((sale, i) =>
             <div className={classNames('glide__slide', styles.slide)} key={i}>
-              <div className={classNames(styles.card, { [styles.cover1]: i === 0, [styles.cover2]: i === 1, [styles.cover3]: i === 2, [styles.cover1nn]: city === 'nizhny' })}>
+              <div className={classNames(styles.card, {
+                [styles.cover1]: i === 0,
+                [styles.cover2]: i === 1,
+                [styles.cover3]: i === 2,
+                [styles.cover1nn]: city === 'nizhny' && i === 0,
+                [styles.cover2nn]: city === 'nizhny' && i === 1,
+                [styles.cover3nn]: city === 'nizhny' && i === 2
+              })}
+              >
                 <div className={styles.group}>
                   <div className={styles.sale}>
-                    -10%
+                    -{sale.discount}%
                   </div>
 
                   <div className={styles.season}>

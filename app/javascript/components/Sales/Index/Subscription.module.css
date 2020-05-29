@@ -86,6 +86,7 @@
   margin-bottom: calc(var(--yr) * var(--s1));
   composes: h1 from '../../Fonts.module.css';
   font-weight: 800;
+  letter-spacing: normal;
 }
 
 .season {
