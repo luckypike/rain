@@ -4,6 +4,7 @@ import axios from 'axios'
 import PropTypes from 'prop-types'
 
 import { Errors, useForm } from '../Form'
+import { useI18n } from '../I18n'
 
 import styles from './Show.module.css'
 import page from '../Page.module.css'
@@ -12,10 +13,13 @@ import form from '../Form.module.css'
 
 Show.propTypes = {
   sale: PropTypes.object,
-  city: PropTypes.string
+  city: PropTypes.string,
+  locale: PropTypes.string
 }
 
-export default function Show ({ city, sale }) {
+export default function Show ({ city, sale, locale }) {
+  const I18n = useI18n(locale)
+
   const {
     values,
     setSaved,
@@ -125,7 +129,7 @@ export default function Show ({ city, sale }) {
                 <div className={styles.text}>
                   {sale.state === 'Абонимент' &&
                     <>
-                      {sale.state} на маникюр с покрытием к топ&#8209;мастеру на {sale.quantity}
+                      {sale.state} на маникюр с покрытием к топ&#8209;мастеру на {I18n.t('sales.quantity', { count: sale.quantity })}
                     </>
                   }
 
@@ -137,17 +141,7 @@ export default function Show ({ city, sale }) {
                 </div>
 
                 <div className={styles.price}>
-                  {city === 'moscow' &&
-                    <>
-                      {sale.price_sale_msk} ₽
-                    </>
-                  }
-
-                  {city === 'nizhny' &&
-                      <>
-                        {sale.price_sale_nn} ₽
-                      </>
-                  }
+                  {city === 'moscow' ? sale.price_sale_msk : sale.price_sale_nn } ₽
                 </div>
               </div>
 

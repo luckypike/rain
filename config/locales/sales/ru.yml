@@ -1,0 +1,7 @@
+ru:
+  sales:
+      quantity:
+        one: "%{count} визит"
+        few: "%{count} визита"
+        many: "%{count} визитов"
+        other: "%{count} визитов"

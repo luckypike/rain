@@ -27,6 +27,8 @@ gem 'meta-tags'
 
 gem 'stateful_enum'
 
+gem 'i18n-js'
+
 gem 'aws-sdk-s3', require: false
 
 gem 'bootsnap', require: false

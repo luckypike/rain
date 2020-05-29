@@ -5,14 +5,18 @@ import PropTypes from 'prop-types'
 
 import styles from './Subscription.module.css'
 
+import { useI18n } from '../../I18n'
+
 import Swipe from '!svg-react-loader!../../../images/sale/swipe.svg'
 
 Subscription.propTypes = {
   city: PropTypes.string,
-  sales: PropTypes.array
+  sales: PropTypes.array,
+  locale: PropTypes.string
 }
 
-export default function Subscription ({ city, sales }) {
+export default function Subscription ({ city, sales, locale }) {
+  const I18n = useI18n(locale)
   const [active, setActive] = useState(0)
   const mount = useRef()
   const slides = useRef()
@@ -70,7 +74,7 @@ export default function Subscription ({ city, sales }) {
 
                 <div className={styles.info}>
                   <div className={styles.visit}>
-                    {sale.quantity}
+                    {I18n.t('sales.quantity', { count: sale.quantity })}
                   </div>
 
                   <div className={styles.price}>

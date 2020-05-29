@@ -13,10 +13,11 @@ import page from '../Page.module.css'
 Index.propTypes = {
   city: PropTypes.string,
   specialists: PropTypes.array,
-  sales: PropTypes.array
+  sales: PropTypes.array,
+  locale: PropTypes.string
 }
 
-export default function Index ({ city, specialists, sales }) {
+export default function Index ({ city, specialists, sales, locale }) {
   const [active, setActive] = useState(0)
 
   const openTab = e => setActive(+e.target.dataset.index)
@@ -92,7 +93,11 @@ export default function Index ({ city, specialists, sales }) {
           }
         </div>
 
-        <Subscription city={city} sales={sales.map(i => i).filter(s => s.state === 'Абонимент')} />
+        <Subscription
+          city={city}
+          locale={locale}
+          sales={sales.map(i => i).filter(s => s.state === 'Абонимент')}
+        />
       </section>
 
       <section className={classNames(page.section, styles.section)}>
