@@ -103,11 +103,11 @@ export default function Subscription ({ city, sales, locale }) {
                 </div>
               </div>
 
-              <div className={styles.pay}>
-                <a href={city === 'moscow' ? `/sales/${sale.id}` : `/nizhny/sales/${sale.id}` }>
+              <a href={city === 'moscow' ? `/sales/${sale.id}` : `/nizhny/sales/${sale.id}` }>
+                <div className={styles.pay}>
                   <h3>Купить</h3>
-                </a>
-              </div>
+                </div>
+              </a>
             </div>
           )}
         </div>
