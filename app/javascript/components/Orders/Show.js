@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-import styles from './Paid.module.css'
+import styles from './Show.module.css'
 import page from '../Page.module.css'
 
-Paid.propTypes = {
+Show.propTypes = {
   order: PropTypes.object
 }
 
-export default function Paid ({ order }) {
+export default function Show ({ order }) {
   return (
     <div className={classNames(page.root, styles.top)}>
       <div className={styles.section}>
@@ -18,7 +18,7 @@ export default function Paid ({ order }) {
         </div>
 
         <div className={styles.desc}>
-          Спасибо! Ваш заказ оправлен на электронную почту {order.email}.
+          Спасибо, {order.name}! Ваш заказ оправлен на электронную почту {order.email}.
         </div>
       </div>
     </div>
