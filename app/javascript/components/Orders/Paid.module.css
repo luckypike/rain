@@ -1,0 +1,16 @@
+.top {
+  composes: top from '../Sales/Index.module.css';
+}
+
+.section {
+  composes: section from '../Sales/Show.module.css';
+  max-width: 115rem;
+}
+
+.title {
+  composes: title from '../Sales/Show.module.css';
+}
+
+.desc {
+  composes: desc from '../Sales/Show.module.css';
+}

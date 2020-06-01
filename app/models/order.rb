@@ -1,34 +1,18 @@
 class Order < ApplicationRecord
   belongs_to :sale
 
-  def create_payment
+  def paid
     auth = {
       username: '710076',
       password: 'test_ttrd29_NJ0k2GEYzS4t-9ht9RdXOOBnoIWUotIQ1dDc'
     }
 
-    response = HTTParty.post(
-      'https://payment.yandex.net/api/v3/payments',
+    HTTParty.get(
+      'https://payment.yandex.net/api/v3/payments/' + (self.payment_id).to_s,
       basic_auth: auth,
       headers: {
-        'Content-Type': 'application/json',
-        'Idempotence-Key': SecureRandom.uuid
-      },
-      body: {
-        "amount": {
-          "value": '1.00',
-          "currency": 'RUB'
-        },
-        "capture": true,
-        "confirmation": {
-          "type": 'redirect',
-          "return_url": 'https://irinarain.com/team'
-        }
-      }.to_json
+        'Content-Type': 'application/json'
+      }
     )
-
-    return nil unless response
-
-    response.parsed_response
   end
 end

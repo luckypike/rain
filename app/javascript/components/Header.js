@@ -9,10 +9,11 @@ import Logo from '!svg-react-loader?!../images/logo.svg'
 
 Header.propTypes = {
   city: PropTypes.string,
-  sale: PropTypes.bool
+  sale: PropTypes.bool,
+  order: PropTypes.bool
 }
 
-export default function Header ({ city, sale }) {
+export default function Header ({ city, sale, order }) {
   const [toggle, setToggle] = useState(false)
   const [cities, setCities] = useState(false)
 
@@ -48,7 +49,7 @@ export default function Header ({ city, sale }) {
   }, [])
 
   return (
-    <div className={classNames(styles.header, { [styles.toggled]: toggle, [styles.sale]: sale })}>
+    <div className={classNames(styles.header, { [styles.toggled]: toggle, [styles.sale]: sale || order })}>
       <div className={styles.header_container}>
         <div className={styles.header_burger} onClick={handleToggle}>
           <svg viewBox="0 0 24 24">
