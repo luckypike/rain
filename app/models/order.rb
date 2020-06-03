@@ -7,6 +7,7 @@ class Order < ApplicationRecord
 
       after do
         OrderMailer.pay(self).deliver
+        OrderMailer.customer_notice(self).deliver
       end
     end
 
