@@ -14,7 +14,11 @@ Rails.application.routes.draw do
 
     resources :sales, only: %i[index show]
 
-    resources :orders, only: %i[create show]
+    resources :orders, only: %i[create show] do
+      collection do
+        get :pay
+      end
+    end
 
     resources :instagram, only: [:index], constraints: lambda { |req| req.format == :json }
   end

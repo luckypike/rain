@@ -17,6 +17,17 @@ class OrdersController < ApplicationController
 
   def show; end
 
+  def pay
+    data = params[:object]
+    @order = Order.find_by(payment_id: data[:id])
+
+    if data[:status] === 'succeeded'
+      @order.pay
+    else
+      @order.cancel
+    end
+  end
+
   private
 
   def set_order
@@ -24,6 +35,11 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:sale_id, :name, :surname, :phone, :email, :city, :uuid, :url)
+    permitted = %i[
+      sale_id name surname phone
+      email city uuid url state
+    ]
+
+    params.require(:order).permit(*permitted)
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_01_154718) do
+ActiveRecord::Schema.define(version: 2020_06_01_181805) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_06_01_154718) do
     t.string "city"
     t.string "uuid"
     t.string "url"
+    t.integer "state", default: 0
   end
 
   create_table "prices", force: :cascade do |t|

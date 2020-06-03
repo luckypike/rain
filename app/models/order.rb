@@ -1,6 +1,16 @@
 class Order < ApplicationRecord
   belongs_to :sale
 
+  enum state: { active: 0, paid: 1, canceled: 2 } do
+    event :pay do
+      transition active: :paid
+    end
+
+    event :cancel do
+      transition active: :canceled
+    end
+  end
+
   def create_payment
     self.uuid = SecureRandom.uuid
 
@@ -38,9 +48,5 @@ class Order < ApplicationRecord
     self.payment_id = response["id"]
     self.url = response["confirmation"]["confirmation_url"]
     self.save
-  end
-
-  def payed
-
   end
 end
