@@ -18,13 +18,27 @@ class OrdersController < ApplicationController
   def show; end
 
   def pay
-    data = params[:object]
-    @order = Order.find_by(payment_id: data[:id])
+    ip = request.remote_ip
+    localhost = '127.0.0.1/8'
+    ips = [
+      '185.71.76.0/27', '185.71.77.0/27', '77.75.153.0/25', '77.75.154.128/25',
+      '2a02:5180:0:1509::/64', '2a02:5180:0:2655::/64', '2a02:5180:0:1533::/64',
+      '2a02:5180:0:2669::/64', localhost
+    ]
 
-    if data[:status].eql?('succeeded')
-      @order.pay
+    request = ips.map { |i| IPAddr.new(i).include?(ip) }
+
+    if request.include?(true)
+      data = params[:object]
+      @order = Order.find_by(payment_id: data[:id])
+
+      if data[:status].eql?('succeeded')
+        @order.pay
+      else
+        @order.cancel
+      end
     else
-      @order.cancel
+      head :unprocessable_entity
     end
   end
 
