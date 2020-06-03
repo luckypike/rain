@@ -16,7 +16,7 @@ class Order < ApplicationRecord
   end
 
   def create_payment
-    self.uuid = SecureRandom.uuid
+    self.uuid ||= SecureRandom.uuid
 
     authorization = {
       username: Rails.application.credentials.payment[:username].to_s,
@@ -29,19 +29,19 @@ class Order < ApplicationRecord
         authorization,
       headers: {
         'Content-Type': 'application/json',
-        'Idempotence-Key': "#{self.uuid}"
+        'Idempotence-Key': uuid.to_s
       },
       body: {
         "amount": {
-          "value": self.city === 'moscow' ? self.sale.price_sale_msk : self.sale.price_sale_nn,
-          "currency": "RUB"
+          "value": city.eql?('moscow') ? sale.price_sale_msk : sale.price_sale_nn,
+          "currency": 'RUB'
         },
         "capture": true,
         "confirmation": {
-          "type": "redirect",
-          "return_url": "http://127.0.0.1:3000/orders/#{self.id}"
+          "type": 'redirect',
+          "return_url": "http://127.0.0.1:3000/orders/#{id}"
         },
-        "description": "Заказ №#{self.id}"
+        "description": "Заказ №#{id}"
       }.to_json
     )
 
@@ -49,8 +49,8 @@ class Order < ApplicationRecord
 
     response.parsed_response
 
-    self.payment_id = response["id"]
-    self.url = response["confirmation"]["confirmation_url"]
-    self.save
+    self.payment_id = response['id']
+    self.url = response['confirmation']['confirmation_url']
+    save
   end
 end

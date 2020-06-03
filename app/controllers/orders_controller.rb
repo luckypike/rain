@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
     data = params[:object]
     @order = Order.find_by(payment_id: data[:id])
 
-    if data[:status] === 'succeeded'
+    if data[:status].eql?('succeeded')
       @order.pay
     else
       @order.cancel
