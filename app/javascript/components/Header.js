@@ -87,14 +87,14 @@ export default function Header ({ city, sale, order }) {
         </div>
 
         <div className={styles.header_menu}>
-          <div className={styles.header_menu_item}>
+          {/* <div className={styles.header_menu_item}>
             {city === 'moscow' &&
               <a href="/sales">Акции</a>
             }
             {city === 'nizhny' &&
               <a href="/nizhny/sales">Акции</a>
             }
-          </div>
+          </div> */}
           <div className={styles.header_menu_item}>
             {city === 'moscow' &&
               <a href="/about">Пространство</a>
