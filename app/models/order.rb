@@ -4,6 +4,10 @@ class Order < ApplicationRecord
   enum state: { active: 0, paid: 1, canceled: 2 } do
     event :pay do
       transition active: :paid
+
+      after do
+        OrderMailer.pay(self).deliver
+      end
     end
 
     event :cancel do
