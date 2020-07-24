@@ -1,6 +1,7 @@
 class InstagramController < ApplicationController
   def index
+    url = "https://graph.instagram.com/me/media?fields=id,media_type,media_url,permalink&access_token=#{Rails.application.credentials.dig(:instagram, :token)}"
 
-    @media = JSON.parse(open('https://api.instagram.com/v1/users/1388142751/media/recent/?access_token=1388142751.0871ed8.a1fe16d1d5a24294b6304f061fc27512&count=20').read).with_indifferent_access[:data]
+    @media = JSON.parse(Net::HTTP.get(URI(url)))
   end
 end

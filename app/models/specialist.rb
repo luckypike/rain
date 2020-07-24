@@ -3,5 +3,5 @@ class Specialist < ApplicationRecord
 
   default_scope { order(weight: :asc) }
 
-  validates_presence_of :name, :city
+  validates :name, :city, presence: true
 end

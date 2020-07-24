@@ -15,13 +15,14 @@ import Glide from '@glidejs/glide'
 
 Index.propTypes = {
   city: PropTypes.string,
-  specialists: PropTypes.array,
+  specialists: PropTypes.object,
   prices: PropTypes.object,
   instagram: PropTypes.string
 }
 
-export default function Index ({ city, specialists, prices: data, instagram }) {
-  const prices = deserialize(data)
+export default function Index ({ city, specialists: specialistsData, prices: pricesData, instagram }) {
+  const prices = deserialize(pricesData)
+  const specialists = deserialize(specialistsData)
   const list = useRef()
   const scene = useRef()
 
@@ -130,7 +131,7 @@ export default function Index ({ city, specialists, prices: data, instagram }) {
                   <div className={classNames('glide__slide', styles.master)} key={_} >
                     {specialist.photo &&
                       <div className={styles.photo}>
-                        <img src={specialist.photo} />
+                        <img src={`https://irinarain.com/s3/rs:fill:800:1000/g:sm/q:75/${specialist.photo.encoded_path}`} />
                       </div>
                     }
 

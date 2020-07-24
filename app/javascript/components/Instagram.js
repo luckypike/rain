@@ -19,8 +19,8 @@ class InstagramItem extends React.Component {
 
     return (
       <div className={classNames(styles.instagram_list_item, { 'active': this.state.visibility })}>
-        <a href={instagram.url} target="_blank" className="url">
-          <img src={instagram.image} />
+        <a href={instagram.permalink} target="_blank" className="url">
+          <img src={instagram.media_url} />
         </a>
       </div>
     );
