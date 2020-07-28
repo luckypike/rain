@@ -8,7 +8,7 @@ set :deploy_to, '/home/deploy/apps/irinarain.com'
 
 set :ssh_options, { forward_agent: true }
 
-append :linked_files, 'config/database.yml', 'config/master.key', 'db/production.sqlite3', 'config/credentials/development.key'
+append :linked_files, 'config/database.yml', 'config/master.key', 'db/production.sqlite3', 'config/credentials/production.key'
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "public/uploads"
 
 set :keep_releases, 5
