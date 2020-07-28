@@ -35,7 +35,7 @@ gem 'bootsnap', require: false
 
 gem 'httparty'
 
-gem 'fast_jsonapi', github: 'fast-jsonapi/fast_jsonapi'
+gem 'jsonapi-serializer'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
