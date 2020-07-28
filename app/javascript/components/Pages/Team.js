@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { deserialize } from 'jsonapi-deserializer'
 
 import classNames from 'classnames'
 import styles from './Team.module.css'
@@ -10,7 +11,9 @@ Team.propTypes = {
   specialists: PropTypes.object
 }
 
-export default function Team ({ city, specialists }) {
+export default function Team ({ city, specialists: specialistsData }) {
+  const specialists = deserialize(specialistsData)
+
   return (
     <div className={page.root}>
       <div className={styles.top}>
@@ -61,7 +64,7 @@ export default function Team ({ city, specialists }) {
               <div className={styles.list} key={_}>
                 {specialist.photo &&
                   <div className={styles.specialist}>
-                    <img src={specialist.photo} />
+                    <img src={`https://irinarain.com/s3/rs:fill:800:1000/g:sm/q:75/${specialist.photo.encoded_path}`} />
                   </div>
                 }
 
