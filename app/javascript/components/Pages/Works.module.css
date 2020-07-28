@@ -116,7 +116,7 @@
 .first {
   & .image {
     &:nth-child(1) {
-      background-image: url('../../images/works/work_1.jpg');
+      background-image: url('../../images/works/work_001.jpg');
       grid-column: span 4;
 
       @media (--s) {
@@ -129,7 +129,7 @@
     }
 
     &:nth-child(2) {
-      background-image: url('../../images/works/work_2.jpg');
+      background-image: url('../../images/works/work_002.jpg');
       grid-column: 2 / span 3;
 
       @media (--s) {
@@ -142,7 +142,7 @@
     }
 
     &:nth-child(3) {
-      background-image: url('../../images/works/work_3.jpg');
+      background-image: url('../../images/works/work_003.jpg');
 
       @media (--s) {
         grid-column: 2 / span 5;
@@ -154,7 +154,7 @@
     }
 
     &:nth-child(4) {
-      background-image: url('../../images/works/work_4.jpg');
+      background-image: url('../../images/works/work_004.jpg');
 
       @media (--s) {
         grid-column: 7 / span 5;
@@ -170,7 +170,7 @@
 .second {
   & .image {
     &:nth-child(1) {
-      background-image: url('../../images/works/work_5.jpg');
+      background-image: url('../../images/works/work_005.jpg');
       grid-column: span 4;
 
       @media (--s) {
@@ -184,7 +184,7 @@
     }
 
     &:nth-child(2) {
-      background-image: url('../../images/works/work_6.jpg');
+      background-image: url('../../images/works/work_006.jpg');
       grid-column: 1 / span 3;
 
       @media (--s) {
@@ -197,7 +197,7 @@
     }
 
     &:nth-child(3) {
-      background-image: url('../../images/works/work_7.jpg');
+      background-image: url('../../images/works/work_007.jpg');
 
       @media (--s) {
         grid-column: 2 / span 5;
@@ -209,7 +209,7 @@
     }
 
     &:nth-child(4) {
-      background-image: url('../../images/works/work_8.jpg');
+      background-image: url('../../images/works/work_008.jpg');
 
       @media (--s) {
         grid-column: 7 / span 4;
@@ -237,23 +237,23 @@
     }
 
     &:nth-child(1) {
-      background-image: url('../../images/works/work_9.jpg');
+      background-image: url('../../images/works/work_009.jpg');
     }
 
     &:nth-child(2) {
-      background-image: url('../../images/works/work_10.jpg');
+      background-image: url('../../images/works/work_010.jpg');
     }
 
     &:nth-child(3) {
-      background-image: url('../../images/works/work_11.jpg');
+      background-image: url('../../images/works/work_011.jpg');
     }
 
     &:nth-child(4) {
-      background-image: url('../../images/works/work_12.jpg');
+      background-image: url('../../images/works/work_012.jpg');
     }
 
     &:nth-child(5) {
-      background-image: url('../../images/works/work_13.jpg');
+      background-image: url('../../images/works/work_013.jpg');
       grid-column: span 4;
 
       @media (--s) {
@@ -266,7 +266,7 @@
     }
 
     &:nth-child(6) {
-      background-image: url('../../images/works/work_14.jpg');
+      background-image: url('../../images/works/work_014.jpg');
       grid-column: 2 / span 3;
 
       @media (--s) {
@@ -279,7 +279,7 @@
     }
 
     &:nth-child(7) {
-      background-image: url('../../images/works/work_15.jpg');
+      background-image: url('../../images/works/work_015.jpg');
 
       @media (--s) {
         grid-column: span 3;
@@ -291,7 +291,7 @@
     }
 
     &:nth-child(8) {
-      background-image: url('../../images/works/work_16.jpg');
+      background-image: url('../../images/works/work_016.jpg');
 
       @media (--s) {
         grid-column: span 3;
